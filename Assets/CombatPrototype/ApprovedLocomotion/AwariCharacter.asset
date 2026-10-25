@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467a7dae652f94e458141ce9ddeb0858, type: 3}
+  m_Name: AwariCharacter
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingApprovedCharacter
+  characterName: "\u3041\u308E\u308A"
+  provisionalPoses: {fileID: 11400000, guid: 126814fc1d9f68f4ca47fe0f7969482e, type: 2}
+  backstepSequence:
+  - {fileID: 21300000, guid: ae26bde5997a6bd499c8f249c3488e71, type: 3}
+  - {fileID: 21300000, guid: b113abe1076574d499bf5ecf74b48366, type: 3}
+  - {fileID: 21300000, guid: 74e6d7cdc6a739c4b88f78bf87d8c753, type: 3}
+  - {fileID: 21300000, guid: 91bc6abaf6e1ec741a8cbe7d5f6690a7, type: 3}
+  - {fileID: 21300000, guid: 24120f9775c6b434db3e90a01560cbf5, type: 3}
+  - {fileID: 21300000, guid: 30e654241db1922478a6c86084acf2b5, type: 3}
+  - {fileID: 21300000, guid: 0f1a2e91dce19c7478f98134109a6ef3, type: 3}
+  - {fileID: 21300000, guid: f1d77ec085c29a14785ff02aa0def44a, type: 3}
+  - {fileID: 21300000, guid: 89f3e482cb3a4ef4a925b5e3e24a4585, type: 3}
+  airDash: {fileID: 21300000, guid: aa64b17f0f1415c40abaf1b904a36cf9, type: 3}
+  airDashVisualOffset: {x: 0, y: 0.85, z: 0}
+  bodyCalibration: {fileID: 11400000, guid: 35beed41ff465b447a108a9e3c1bfc5e, type: 2}
+  idle: {fileID: 21300000, guid: 975657c62cf0e184082296704da8950d, type: 3}
+  forward: {fileID: 21300000, guid: 37a37e45c2bc2e643aa8e36edf7eca73, type: 3}
+  backward: {fileID: 21300000, guid: dbf8344e36caa0d4b955c4359261d1b7, type: 3}
+  jump: {fileID: 21300000, guid: 8ecd8fec903409e45be5db6e393dce64, type: 3}
+  strongKick: {fileID: 21300000, guid: 2b8b5a720935ed342ab52c755dd8276b, type: 3}
+  dash: {fileID: 21300000, guid: 604c60dce42d6384b944021008096017, type: 3}
+  crouch: {fileID: 21300000, guid: b878aee0ca9aa3945bcd7857c40c437c, type: 3}
+  jumpDescent: {fileID: 21300000, guid: 25b6ba863f6cf3845829ff35367a8ac6, type: 3}
+  backstep1: {fileID: 21300000, guid: ae26bde5997a6bd499c8f249c3488e71, type: 3}
+  backstep2: {fileID: 21300000, guid: 24120f9775c6b434db3e90a01560cbf5, type: 3}
+  backstep3: {fileID: 21300000, guid: 89f3e482cb3a4ef4a925b5e3e24a4585, type: 3}
+  weakPunch: {fileID: 21300000, guid: 844fb040994331c4e8c19b077b8c17f0, type: 3}
+  mediumPunch: {fileID: 21300000, guid: 272b09ed1feba4241b34479b13e5d052, type: 3}
+  strongPunch: {fileID: 21300000, guid: 057a8b7e84165b64aaf148dc0a3bb60d, type: 3}
+  standingGuard: {fileID: 21300000, guid: ae5f5688a36202b4eb3c57941539a4a4, type: 3}

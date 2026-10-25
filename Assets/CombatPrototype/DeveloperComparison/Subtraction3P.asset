@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782ab9ea63d4b344fbb0ad635ca0ea95, type: 3}
+  m_Name: Subtraction3P
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingFormulaProfile
+  formula: 0
+  moves:
+  - command: 1
+    minimumAttack: 45
+    maximumAttack: 60
+    defenseMultiplier: 1
+    threshold: 0
+    guardDamageScale: 0
+  - command: 2
+    minimumAttack: 56.25
+    maximumAttack: 75
+    defenseMultiplier: 1
+    threshold: 0
+    guardDamageScale: 0
+  - command: 3
+    minimumAttack: 67.5
+    maximumAttack: 90
+    defenseMultiplier: 1
+    threshold: 0
+    guardDamageScale: 0

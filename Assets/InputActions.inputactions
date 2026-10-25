@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "name": "InputActions",
+  "maps": [
+    {
+      "name": "Player",
+      "id": "32641329-568d-466c-80e5-761ebc4c23b8",
+      "actions": [
+        {
+          "name": "Move",
+          "type": "Value",
+          "id": "1cc5a46e-9273-4513-8e22-24357bd2bfff",
+          "expectedControlType": "Vector2",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": true
+        },
+        {
+          "name": "Dash",
+          "type": "Button",
+          "id": "da074f59-03c4-4916-ae2d-9ba85604eb02",
+          "expectedControlType": "",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "2D Vector",
+          "id": "bc29b08a-3a6b-405e-b91e-efb79ed36882",
+          "path": "2DVector",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": true,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "up",
+          "id": "0cce8f47-39cc-45b2-afa7-fe456778157f",
+          "path": "<Keyboard>/w",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "down",
+          "id": "b1d35bc8-d181-4bd1-8e42-29d958547697",
+          "path": "<Keyboard>/s",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "left",
+          "id": "91bca040-f13b-4588-8a92-feffc96b7a43",
+          "path": "<Keyboard>/a",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "right",
+          "id": "6c9791f8-18b4-42d3-8e07-b9bfc1037e0d",
+          "path": "<Keyboard>/d",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "",
+          "id": "5893bc5e-807f-4660-80d7-8e7375bd4d54",
+          "path": "<Gamepad>/leftStick",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "e23dd3d5-f971-4187-ac6d-84a6262e5243",
+          "path": "<Keyboard>/space",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Dash",
+          "isComposite": false,
+          "isPartOfComposite": false
+        }
+      ]
+    },
+    {
+      "name": "Training2P",
+      "id": "ac09e56b-1eb9-46d3-9d6a-268af8a2b86d",
+      "actions": [
+        {
+          "name": "Move",
+          "type": "Value",
+          "id": "637b174d-2b4f-4789-8d12-c848c51faa5a",
+          "expectedControlType": "Vector2",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": true
+        },
+        {
+          "name": "Jump",
+          "type": "Button",
+          "id": "89e32b07-aaac-4e52-a63b-2da084028a36",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Light",
+          "type": "Button",
+          "id": "ff78a2b4-fa52-45fa-b5cb-e0267d98cc71",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Medium",
+          "type": "Button",
+          "id": "7ddca955-4885-4141-887d-1c09a7c47cea",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Heavy",
+          "type": "Button",
+          "id": "cd1379c6-50e6-4fb5-a5ed-04d3c0dd2d50",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Slash",
+          "type": "Button",
+          "id": "98dfda56-5dd9-47a1-8500-f1b4ae34e3ea",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "HeavySlash",
+          "type": "Button",
+          "id": "5e58be44-6116-40fc-8949-68b4a4a3ed2d",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Cancel",
+          "type": "Button",
+          "id": "a3557dee-825b-41a1-a5a2-09e3f7471261",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Dash",
+          "type": "Button",
+          "id": "5ccc66b2-dd57-4c16-87e5-149c7b7784fb",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "LeftTap",
+          "type": "Button",
+          "id": "19b26323-15cc-4181-be76-cf0421af343b",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "RightTap",
+          "type": "Button",
+          "id": "634f1e6e-e5bc-4cd9-a6b6-ad5bcb5a9b31",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "Numpad movement",
+          "id": "31413ff1-80b6-4b7d-b7dc-f5baaa08c24c",
+          "path": "2DVector(mode=1)",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": true,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "up",
+          "id": "b97832fe-1f38-45a3-bc8a-555b4018c8c7",
+          "path": "<Keyboard>/numpad8",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "down",
+          "id": "2a07fe99-329e-42b3-816a-7c9bf5b39a7f",
+          "path": "<Keyboard>/numpad5",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "left",
+          "id": "e6d0ca4b-9758-453b-89de-a4887f5bd279",
+          "path": "<Keyboard>/numpad4",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "right",
+          "id": "0d2c0c79-1d84-4606-b60d-78e45ce1dcb0",
+          "path": "<Keyboard>/numpad6",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Move",
+          "isComposite": false,
+          "isPartOfComposite": true
+        },
+        {
+          "name": "",
+          "id": "bf35a2b8-cd8d-4377-a4c9-0c82beb069ac",
+          "path": "<Keyboard>/numpad8",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Jump",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "8e99bba3-7408-4299-a891-16633c394825",
+          "path": "<Keyboard>/numpad1",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Light",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "b7ed773e-86a1-4d3b-a105-95b10e1f1b7e",
+          "path": "<Keyboard>/numpad2",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Medium",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "dfd12e23-74df-4903-907f-7cbebca2398e",
+          "path": "<Keyboard>/numpad3",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Heavy",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "b87f78ff-25cd-4b1b-904d-968f4bc8729f",
+          "path": "<Keyboard>/numpad7",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Slash",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "f84add0f-2194-447b-996d-186bcf197558",
+          "path": "<Keyboard>/numpad9",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "HeavySlash",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "a926c534-a37f-42c5-8af7-56b24330cc48",
+          "path": "<Keyboard>/numpadEnter",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Cancel",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "2cf0bc98-403d-4a3a-a8a9-92d7ac67b5b9",
+          "path": "<Keyboard>/numpad0",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Dash",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "3b815038-6fe0-4a88-a2df-7c46198d6d85",
+          "path": "<Keyboard>/numpad4",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "LeftTap",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "88078e9e-47c4-4c2c-b7eb-b6d8285656e6",
+          "path": "<Keyboard>/numpad6",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "RightTap",
+          "isComposite": false,
+          "isPartOfComposite": false
+        }
+      ]
+    }
+  ],
+  "controlSchemes": []
+}

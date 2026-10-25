@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f61e7da3bfef049a736aa18e6e07b2, type: 3}
+  m_Name: TrainingInputConfig
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingInputConfig
+  layoutVersion: 2
+  chordWindowSeconds: 0.03
+  fdChordEnabled: 1
+  throwChordEnabled: 1
+  parryChordEnabled: 0
+  special1ChordEnabled: 1
+  special2ChordEnabled: 1
+  firstWeakPKeyboardBinding: <Keyboard>/j
+  firstMediumPKeyboardBinding: <Keyboard>/k
+  firstStrongPKeyboardBinding: <Keyboard>/l
+  firstWeakKKeyboardBinding: <Keyboard>/m
+  firstMediumKKeyboardBinding: <Keyboard>/comma
+  firstStrongKKeyboardBinding: <Keyboard>/period
+  secondWeakPKeyboardBinding: <Keyboard>/numpad1
+  secondMediumPKeyboardBinding: <Keyboard>/numpad2
+  secondStrongPKeyboardBinding: <Keyboard>/numpad3
+  secondWeakKKeyboardBinding: <Keyboard>/numpad7
+  secondMediumKKeyboardBinding: <Keyboard>/numpad9
+  secondStrongKKeyboardBinding: <Keyboard>/numpadMinus
+  firstTrcKeyboardBinding: <Keyboard>/semicolon
+  secondTrcKeyboardBinding: <Keyboard>/numpadEnter
+  firstStrongKickGamepadBinding: 
+  firstSpecial1DedicatedBinding: 
+  secondSpecial1DedicatedBinding: 
+  firstSpecial2DedicatedBinding: 
+  secondSpecial2DedicatedBinding: 
+  firstParryKeyboardBinding: <Keyboard>/o
+  secondParryKeyboardBinding: <Keyboard>/numpadPlus
+  firstAssistKeyboardBinding: <Keyboard>/slash
+  inputActions: {fileID: -944628639613478452, guid: 235337b5530f37742a3a93324ed5549f, type: 3}
+  secondPlayerMap: Training2P
+  doubleTapSeconds: 0.25
+  firstSpecialKeyboardBinding: <Keyboard>/o
+  firstSpecialGamepadBinding: 
+  secondSpecialKeyboardBinding: <Keyboard>/numpadPlus
+  firstFdGamepadBinding: <Gamepad>/select
+  firstLightGamepadBinding: <Gamepad>/buttonWest
+  firstSlashGamepadBinding: <Gamepad>/leftShoulder
+  firstCancelGamepadBinding: <Gamepad>/rightTrigger
+  firstHeavySlashGamepadBinding: <Gamepad>/leftTrigger
+  firstMoveDpadGamepadBinding: <Gamepad>/dpad
+  firstDashGamepadBinding: <Gamepad>/rightShoulder
+  firstMediumGamepadBinding: <Gamepad>/buttonNorth
+  firstMoveStickGamepadBinding: <Gamepad>/leftStick
+  firstJumpGamepadBinding: <Gamepad>/buttonSouth
+  firstHeavyGamepadBinding: <Gamepad>/buttonEast
+  firstThrowKeyboardBinding: <Keyboard>/i
+  firstThrowGamepadBinding: <Gamepad>/leftStickPress
+  secondThrowKeyboardBinding: <Keyboard>/numpadDivide
+  firstFdKeyboardBinding: <Keyboard>/u
+  secondFdKeyboardBinding: <Keyboard>/numpadMultiply
+  firstGuardKeyboardBinding: <Keyboard>/f
+  firstGuardGamepadBinding: <Gamepad>/rightStickPress
+  secondGuardKeyboardBinding: <Keyboard>/numpadPeriod

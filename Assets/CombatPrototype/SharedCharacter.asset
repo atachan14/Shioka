@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835b67cc5c8867349ac26e0e53f6042a, type: 3}
+  m_Name: SharedCharacter
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingCharacterDefinition
+  walkSpeed: 3.5
+  dashSpeed: 6
+  acceleration: 30
+  dashDeceleration: 10
+  backstepSpeed: 6
+  backstepSeconds: 0.18
+  jumpVelocity: 9.5
+  gravity: -25
+  takeoffSeconds: 0.1
+  landingSeconds: 0.14
+  crouchHeight: 1.1
+  crouchTransitionSeconds: 0.15
+  attackStartup: 0.12
+  attackActive: 0.08
+  attackRecovery: 0.22
+  attackLevel: 60
+  damage: 10
+  maxHealth: 100
+  defenseLevel: 50
+  guardDefenseLevel: 100
+  standingLowGuardMultiplier: 0.65
+  crouchingLowGuardMultiplier: 1.5
+  standingHighGuardMultiplier: 1.3
+  crouchingHighGuardMultiplier: 0.7
+  timedGuardWindowFrames: 10
+  timedGuardCooldownFrames: 20
+  timedGuardNearBonus: 0.5
+  timedGuardFarBonus: 0.05
+  idleClip: {fileID: 0}
+  jabClip: {fileID: 0}
+  crouchStartClip: {fileID: 0}
+  crouchIdleClip: {fileID: 0}
+  crouchEndClip: {fileID: 0}
+  jabContactNormalized: 0.5483871

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caed614f423a0724d8153271dd6754ab, type: 3}
+  m_Name: FlyingKick
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingAirAttackCandidate
+  spatialProfile: {fileID: 0}
+  clip: {fileID: 0}
+  standaloneDurationSeconds: 0.32000005
+  poseOffset: {x: -0.0444, y: -0.4632, z: -0.7481}
+  sourceStartSeconds: 0.38
+  sourceEndSeconds: 0.7
+  sourceContactSeconds: 0.5
+  contactNormalized: 0.37500003
+  extendedPoseStartNormalized: 0.06250004
+  extendedPoseEndNormalized: 0.79156256
+  measuredContactCenter: {x: -0.35740522, y: 0.85794115, z: 0.8173936}
+  proposedHalfSize: {x: 0.32, y: 0.16, z: 0.2}
+  connectedToCombat: 1

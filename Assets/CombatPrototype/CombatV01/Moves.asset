@@ -1,0 +1,2087 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daebe4f506fb4504096e6a998ae079e5, type: 3}
+  m_Name: Moves
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingMoveSet
+  moves:
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 1
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Jab
+    clip: {fileID: 0}
+    startupFrames: 7.2
+    activeFrames: 4.8
+    recoveryFrames: 13.2
+    groundHitKnockbackSpeed: 0
+    attackLevel: 260
+    damage: 10
+    hitGain: 8
+    center: {x: 0, y: 0.95, z: 0.65}
+    halfSize: {x: 0.32, y: 0.3, z: 0.4}
+    contactNormalized: 0.5483871
+    chains: 010000000200000003000000
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 2
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Hook
+    clip: {fileID: 0}
+    startupFrames: 11
+    activeFrames: 6
+    recoveryFrames: 18
+    groundHitKnockbackSpeed: 0
+    attackLevel: 360
+    damage: 13
+    hitGain: 8
+    center: {x: 0, y: 0.95, z: 0.65}
+    halfSize: {x: 0.32, y: 0.3, z: 0.4}
+    contactNormalized: 0.5231
+    chains: 03000000
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 3
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Uppercut
+    clip: {fileID: 0}
+    startupFrames: 13
+    activeFrames: 6
+    recoveryFrames: 21
+    groundHitKnockbackSpeed: 0
+    attackLevel: 460
+    damage: 16
+    hitGain: 8
+    center: {x: 0, y: 0.95, z: 0.65}
+    halfSize: {x: 0.32, y: 0.3, z: 0.4}
+    contactNormalized: 0.35
+    chains: 09000000
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 4
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 2
+    causesKnockdown: 0
+    state: WeakKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 15
+    activeFrames: 6
+    recoveryFrames: 24
+    groundHitKnockbackSpeed: 0
+    attackLevel: 105
+    damage: 19
+    hitGain: 8
+    center: {x: 0, y: 0.5, z: 0.65}
+    halfSize: {x: 0.3, y: 0.22, z: 0.4}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 5
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 1
+    causesKnockdown: 0
+    state: MediumKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 17
+    activeFrames: 6
+    recoveryFrames: 27
+    groundHitKnockbackSpeed: 0
+    attackLevel: 120
+    damage: 22
+    hitGain: 8
+    center: {x: 0, y: 0.82, z: 0.72}
+    halfSize: {x: 0.3, y: 0.24, z: 0.44}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 10
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 1
+    causesKnockdown: 0
+    state: StrongKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 20
+    activeFrames: 6
+    recoveryFrames: 30
+    groundHitKnockbackSpeed: 0
+    attackLevel: 135
+    damage: 25
+    hitGain: 10
+    center: {x: 0, y: 1.16, z: 0.68}
+    halfSize: {x: 0.3, y: 0.24, z: 0.43}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 12
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 2
+    causesKnockdown: 0
+    state: CrouchWeakKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 7
+    activeFrames: 3
+    recoveryFrames: 13
+    groundHitKnockbackSpeed: 0
+    attackLevel: 65
+    damage: 8
+    hitGain: 5
+    center: {x: 0, y: 0.18, z: 0.45}
+    halfSize: {x: 0.28, y: 0.15, z: 0.3}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 13
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 2
+    causesKnockdown: 0
+    state: CrouchMediumKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 10
+    activeFrames: 4
+    recoveryFrames: 18
+    groundHitKnockbackSpeed: 0
+    attackLevel: 85
+    damage: 12
+    hitGain: 7
+    center: {x: 0, y: 0.22, z: 0.55}
+    halfSize: {x: 0.28, y: 0.17500001, z: 0.38}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 14
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 2
+    causesKnockdown: 0
+    state: CrouchStrongKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 14
+    activeFrames: 5
+    recoveryFrames: 22
+    groundHitKnockbackSpeed: 0
+    attackLevel: 105
+    damage: 17
+    hitGain: 8
+    center: {x: 0, y: 0.26, z: 0.65}
+    halfSize: {x: 0.28, y: 0.2, z: 0.46}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 20
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Jab
+    clip: {fileID: 0}
+    startupFrames: 6
+    activeFrames: 4
+    recoveryFrames: 12
+    groundHitKnockbackSpeed: 0
+    attackLevel: 60
+    damage: 10
+    hitGain: 8
+    center: {x: 0, y: 0.55, z: 0.55}
+    halfSize: {x: 0.32, y: 0.22, z: 0.3}
+    contactNormalized: 0.5
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 21
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Hook
+    clip: {fileID: 0}
+    startupFrames: 9
+    activeFrames: 5
+    recoveryFrames: 17
+    groundHitKnockbackSpeed: 0
+    attackLevel: 75
+    damage: 13
+    hitGain: 8
+    center: {x: 0, y: 0.55, z: 0.75}
+    halfSize: {x: 0.32, y: 0.24, z: 0.4}
+    contactNormalized: 0.5
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 22
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Uppercut
+    clip: {fileID: 0}
+    startupFrames: 13
+    activeFrames: 6
+    recoveryFrames: 23
+    groundHitKnockbackSpeed: 0
+    attackLevel: 90
+    damage: 16
+    hitGain: 8
+    center: {x: 0, y: 0.9, z: 0.6}
+    halfSize: {x: 0.32, y: 0.45, z: 0.35}
+    contactNormalized: 0.5
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  sweep:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 7
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 2
+    causesKnockdown: 1
+    state: LowKick
+    clip: {fileID: 0}
+    startupFrames: 14
+    activeFrames: 6
+    recoveryFrames: 26
+    groundHitKnockbackSpeed: 0
+    attackLevel: 90
+    damage: 16
+    hitGain: 8
+    center: {x: 0, y: 0.23, z: 0.78}
+    halfSize: {x: 0.32, y: 0.18, z: 0.46}
+    contactNormalized: 0.41666666
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  special:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 9
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: SideKick
+    clip: {fileID: 0}
+    startupFrames: 18
+    activeFrames: 5
+    recoveryFrames: 26
+    groundHitKnockbackSpeed: 5
+    attackLevel: 140
+    damage: 18
+    hitGain: 10
+    center: {x: 0, y: 0.95, z: 1}
+    halfSize: {x: 0.32, y: 0.3, z: 0.5}
+    contactNormalized: 0.43333334
+    chains: 
+    useLevelCurves: 1
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.42857143
+        value: 0.78571427
+        inSlope: 0
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.78571427
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.7
+        inSlope: 0
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.36734694
+        value: 1.2
+        inSlope: 0
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.46938777
+        value: 0.7
+        inSlope: 0
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.7
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 1
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -2.6
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.1923077
+        value: 0.5
+        inSlope: -2.6
+        outSlope: 2.6
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.3846154
+        value: 1
+        inSlope: 2.6
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  throwSettings: {fileID: 11400000, guid: 44f2c59319bd3b842aea941b68ca557b, type: 2}
+  fdSettings: {fileID: 11400000, guid: 1fb7670e079e443e81396ba8f83c7fb2, type: 2}
+  knockdownClip: {fileID: 0}
+  getUpBackClip: {fileID: 0}
+  knockdownSeconds: 0.35
+  downHoldSeconds: 0.55
+  getUpSeconds: 0.9
+  allowDownFollowup: 0
+  maxDownFollowups: 1
+  downFollowupDamageScale: 0.25
+  flyingKick: {fileID: 11400000, guid: 9283689713dab8d40802fe6edaac15e3, type: 2}
+  dropKick: {fileID: 11400000, guid: 06fb89e659783c34c9fb9900ac607b72, type: 2}
+  airStrongKick: {fileID: 11400000, guid: 574e9e71c09abf5488a4f163fdf9d5ac, type: 2}
+  airDownStrongKick: {fileID: 11400000, guid: 296b9cf215581e946b8df37a3870730f, type: 2}
+  airStrongPunch: {fileID: 11400000, guid: 974778028f525064088758b65f1b9bda, type: 2}
+  airStrongKickMove:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 15
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: AirStrongKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 12
+    activeFrames: 6
+    recoveryFrames: 16
+    groundHitKnockbackSpeed: 0
+    attackLevel: 120
+    damage: 20
+    hitGain: 8
+    center: {x: 0, y: 0.78, z: 0.76}
+    halfSize: {x: 0.3, y: 0.25, z: 0.42}
+    contactNormalized: 0.3529412
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  airDownStrongKickMove:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 16
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: AirDownStrongKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 14
+    activeFrames: 6
+    recoveryFrames: 18
+    groundHitKnockbackSpeed: 0
+    attackLevel: 125
+    damage: 21
+    hitGain: 8
+    center: {x: 0, y: 0.15, z: 0.58}
+    halfSize: {x: 0.3, y: 0.26, z: 0.36}
+    contactNormalized: 0.36842105
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  airStrongPunchMove:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 17
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: AirStrongPunchGameplay
+    clip: {fileID: 0}
+    startupFrames: 11
+    activeFrames: 5
+    recoveryFrames: 16
+    groundHitKnockbackSpeed: 0
+    attackLevel: 110
+    damage: 18
+    hitGain: 8
+    center: {x: 0, y: 1.2, z: 0.64}
+    halfSize: {x: 0.28, y: 0.24, z: 0.35}
+    contactNormalized: 0.34375
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  special2:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 11
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: Special2Gameplay
+    clip: {fileID: 0}
+    startupFrames: 13
+    activeFrames: 6
+    recoveryFrames: 25
+    groundHitKnockbackSpeed: 0
+    attackLevel: 125
+    damage: 22
+    hitGain: 9
+    center: {x: 0, y: 1.45, z: 0.42}
+    halfSize: {x: 0.3, y: 0.45, z: 0.35}
+    contactNormalized: 0.4
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  forwardSpecial1:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 18
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: ForwardSpecial1Gameplay
+    clip: {fileID: 0}
+    startupFrames: 18
+    activeFrames: 7
+    recoveryFrames: 25
+    groundHitKnockbackSpeed: 0
+    attackLevel: 130
+    damage: 20
+    hitGain: 9
+    center: {x: 0, y: 1, z: 1.15}
+    halfSize: {x: 0.32, y: 0.3, z: 0.48}
+    contactNormalized: 0.4
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  airSpecial2Move:
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 19
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: AirSpecial2Gameplay
+    clip: {fileID: 0}
+    startupFrames: 14
+    activeFrames: 6
+    recoveryFrames: 20
+    groundHitKnockbackSpeed: 0
+    attackLevel: 120
+    damage: 21
+    hitGain: 8
+    center: {x: 0, y: 0.58, z: 0.6}
+    halfSize: {x: 0.32, y: 0.34, z: 0.38}
+    contactNormalized: 0.35
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  airSpecial2: {fileID: 11400000, guid: eb4d12c42ac73054d9670f5306680360, type: 2}
+  receiverGain: 4
+  dashGainPerSecond: 12
+  tensionLevelGainRate: 0.1
