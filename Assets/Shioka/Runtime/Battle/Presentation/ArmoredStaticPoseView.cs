@@ -3,13 +3,13 @@ public sealed class ArmoredStaticPoseView:TrainingFighterPresentation{
  public TrainingApprovedCharacter characterProfile;public bool showTrialControls=true;public bool frameSharedCamera=true;
  public string CharacterName=>characterProfile==null?"":characterProfile.characterName;
  void Awake(){if(characterProfile!=null)characterProfile.Apply(this);}
- public TrainingBodyCalibration bodyCalibration;
+ [HideInInspector]public TrainingBodyCalibration bodyCalibration;
  public float CalibratedVisualScale=>bodyCalibration==null?1f:bodyCalibration.VisualScale;
- public Sprite idle,forward,backward,jump,strongKick;
+ [HideInInspector]public Sprite idle,forward,backward,jump,strongKick;
  public static int BackstepSequenceIndex(float elapsedSeconds,float key2Frame,float key3Frame){float f=Mathf.Max(0,elapsedSeconds*60+.0001f);if(f<key2Frame)return Mathf.Clamp(Mathf.FloorToInt(f*4/Mathf.Max(.0001f,key2Frame)),0,3);if(f<key3Frame)return 4+Mathf.Clamp(Mathf.FloorToInt((f-key2Frame)*4/Mathf.Max(.0001f,key3Frame-key2Frame)),0,3);return 8;}
- public Sprite dash,crouch,jumpDescent,backstep1,backstep2,backstep3;
- public Sprite airDash;public Vector3 airDashVisualOffset=new Vector3(0,.85f,0);
- public Sprite weakPunch,mediumPunch,strongPunch,standingGuard;
+ [HideInInspector]public Sprite dash,crouch,jumpDescent,backstep1,backstep2,backstep3;
+ [HideInInspector]public Sprite airDash;[HideInInspector]public Vector3 airDashVisualOffset=new Vector3(0,.85f,0);
+ [HideInInspector]public Sprite weakPunch,mediumPunch,strongPunch,standingGuard;
  public Sprite ActivePunch(TrainingFighter fighter){if(fighter.CurrentPhase!=TrainingFighter.Phase.Attack||!fighter.HitboxActive||fighter.CurrentMove==null)return null;switch(fighter.CurrentMove.command){case TrainingCommand.Light:return weakPunch;case TrainingCommand.Medium:return mediumPunch;case TrainingCommand.Heavy:return strongPunch;default:return null;}}
  public bool StandingGuardVisible(TrainingFighter fighter)=>fighter.IsGrounded&&!fighter.IsCrouching&&(fighter.CurrentPhase==TrainingFighter.Phase.GuardStun||((fighter.CurrentPhase==TrainingFighter.Phase.Idle||fighter.CurrentPhase==TrainingFighter.Phase.Move)&&fighter.IsGuarding));
 

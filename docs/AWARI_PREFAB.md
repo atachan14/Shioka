@@ -1,0 +1,4 @@
+# Awari prefab
+Assets/Shioka/調整Data/Fighter/Awari/Awari.prefab owns the common2D body, presentation/profile, character definition and skill/hurt catalog references. Both adopted Scene fighters are linked instances. Player controls, CombatTestV01 session and the existing player-only ApprovedLocomotionTuning remain Scene component overrides; dummy role logic remains separate. Actor serialized component values and body sizes were compared before/after conversion and retained. View sprite/calibration fields are hidden compatibility caches; edit referenced character/motion data.
+
+The existing player/dummy movement tuning difference is intentionally retained. This prefab does not claim movement performance consolidation or silently add player jump tuning to dummy. That decision is pending. Unity compilation and input73/combat146/reference checks plus product virtual-inputPlay36 passed after conversion. No physical-device/native mouse verification.
