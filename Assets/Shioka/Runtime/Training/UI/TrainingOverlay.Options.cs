@@ -146,9 +146,9 @@ public sealed partial class TrainingOverlay
 
     {
 
-        if(optionPanel==null)return;RefreshOptionSettings();float w=Mathf.Min((OptionTrainingVisible||OptionLocomotionVisible||OptionComparisonVisible)?1080:820,Mathf.Max(360,width-24)),h=Mathf.Min((OptionTrainingVisible||OptionLocomotionVisible||OptionComparisonVisible)?700:520,height-24),left=Mathf.Clamp(w*.25f,130,190),x=left+20,right=w-x-18;
+        if(optionPanel==null)return;RefreshOptionSettings();float w=1080,h=700,scale=Mathf.Min(1,Mathf.Max(1,height-24)/h,Mathf.Max(1,width-24)/w),left=Mathf.Clamp(w*.25f,130,190),x=left+20,right=w-x-18;
 
-        optionPanel.anchorMin=optionPanel.anchorMax=new Vector2(.5f,.5f);optionPanel.pivot=new Vector2(.5f,.5f);optionPanel.anchoredPosition=Vector2.zero;optionPanel.sizeDelta=new Vector2(w,h);
+        optionPanel.anchorMin=optionPanel.anchorMax=new Vector2(.5f,.5f);optionPanel.pivot=new Vector2(.5f,.5f);optionPanel.anchoredPosition=Vector2.zero;optionPanel.sizeDelta=new Vector2(w,h);optionPanel.localScale=new Vector3(scale,scale,1);
 
         foreach(Transform child in optionPanel){var r=(RectTransform)child;switch(child.name){case "Title":OptionPlace(r,18,12,200,30);break;case "Navigation":OptionPlace(r,18,62,left-24,35);break;case "Close":OptionPlace(r,w-145,12,126,30);break;case "PostureLabel":OptionPlace(r,x,65,right,25);break;case "GuardLabel":OptionPlace(r,x,140,right,25);break;case "CounterLabel":OptionPlace(r,x,245,right,25);break;case "CounterInput":OptionPlace(r,x,274,right,34);break;case "Validation":OptionPlace(r,x,314,right,44);break;case "Note":OptionPlace(r,x,365,right,54);break;case "Pause":OptionPlace(r,18,h-30,w-36,25);break;}}
 

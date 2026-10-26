@@ -15,3 +15,10 @@ T1/T2 と通常操作の不正な物理重複は拒否します。Menu/Battle �
 検証: KeyConfig 49、入力基礎73、戦闘回帰146、仮想入力72、製品Play入力36項目すべて成功。仮想Keyboard/GamepadとUI Buttonイベントによる検証です。保存は専用一時profileで行い、ユーザー設定は変更していません。実物パッド、ユーザー物理キー、通常画面の目視・実マウスは未検証（computer-use app承認タイムアウト）。
 
 開発用 Shioka/Development/Preview KeyConfig は未保存sceneを破棄せず通常UIを開く補助です。戦闘側の同時押し確定待ちは追加していません。
+
+## Option layout and navigation (2026-10-26)
+All pages share a 1080x700 logical shell, uniformly fitted inside a 12px screen margin; headers/sidebar/help positions do not jump when pages change. At small resolutions the shell scales down; the content scroll views remain usable. KeyConfig reserves less footer space for a taller list, and column headers align with their values.
+W/S selects the immediately adjacent interactive row within the current content/sidebar; A/D selects controls in the same row first. Missing columns fall back to the closest column in that adjacent row. Focused scroll content is revealed automatically. KeyConfig tabs focus the selected tab, and swap dialogs return focus to the previous control. Binding capture/text/number editing retain their own input modes.
+Verification uses scripted UI and virtual devices. HUD-camera PNGs are automated renders, not physical mouse/gamepad verification. Production input tests use an isolated temporary default profile; they never reset user bindings. The no-graphics Play configuration triggered a Unity native Line/Trail rendering crash; verification uses D3D11 without changing project graphics settings.
+
+Final Option-fix verification: 59 UI/profile/navigation checks, 73 input foundation checks, 146 combat/reference checks, and 36 production Play checks passed on final code. Automated HUD-camera renders reviewed at 1280x720 and 640x360. Native mouse/physical gamepad remain unverified. User KeyConfig JSON SHA256 unchanged before/after tests.
