@@ -138,7 +138,7 @@ public sealed partial class TrainingOverlay
 
         OptionText("Pause","設定中は戦闘停止。閉じた後は操作キーを一度離してください。",panel.transform,12);
 
-        CreateInputOptions();CreateDeveloperOptions();CreateTrainingOptions();optionRoot.AddComponent<TrainingOptionNavigation>().Configure(this,optionRoot);optionPanel.Find("Pause").GetComponent<Text>().text="WASD: select | J: confirm / edit | K: back | Enter: finish text | Esc: close | Mouse: click";optionRoot.SetActive(false);LayoutOption(hudWidth,hudHeight);
+        OptionButton("NavTitle","Titleへ戻る",optionPanel,()=>{SetOptionVisible(false);UnityEngine.SceneManagement.SceneManager.LoadScene(TrainingFlowSession.TitleScene);});CreateInputOptions();CreateDeveloperOptions();CreateTrainingOptions();optionRoot.AddComponent<TrainingOptionNavigation>().Configure(this,optionRoot);optionPanel.Find("Pause").GetComponent<Text>().text="WASD: select | J: confirm / edit | K: back | Enter: finish text | Esc: close | Mouse: click";optionRoot.SetActive(false);LayoutOption(hudWidth,hudHeight);
 
     }
 
@@ -154,7 +154,7 @@ public sealed partial class TrainingOverlay
 
         for(int i=0;i<3;i++)OptionPlace((RectTransform)postureButtons[i].transform,x+i*(right/3),96,right/3-5,32);
 
-        for(int i=0;i<4;i++)OptionPlace((RectTransform)guardButtons[i].transform,x+(i%2)*(right/2),174+(i/2)*35,right/2-5,30);LayoutInputOptions(w,h,left,x,right);LayoutDeveloperOptions(w,h,left,x,right);LayoutTrainingOptions(w,h,left,x,right);
+        for(int i=0;i<4;i++)OptionPlace((RectTransform)guardButtons[i].transform,x+(i%2)*(right/2),174+(i/2)*35,right/2-5,30);LayoutInputOptions(w,h,left,x,right);LayoutDeveloperOptions(w,h,left,x,right);LayoutTrainingOptions(w,h,left,x,right);var back=optionPanel.Find("NavTitle");if(back!=null)OptionPlace((RectTransform)back,18,h-82,left-24,32);
 
     }
 

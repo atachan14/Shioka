@@ -26,3 +26,9 @@
 - 画像／HurtBoxのSceneハンドルは生成・保存回帰済みだが、実マウスdrag／実機操作は未検証。以前のcomputer-use承認timeoutを迂回していない。
 
 旧ごみ箱／private archive／公開コピー／remoteと実ユーザー保存は不変更。無断の性能・計算式変更、新5MP候補導入はない。
+
+## 後続: 最小画面導線
+Title.unity → Fighter select → 既存Trainingと、Option共通のTitle戻りを追加。既存Sceneのキャラ生成／性能は変更しない。現在のぁゎりのみ選択可、他モード非表示。通常Training直起動も維持。
+新導線28件、別Unityプロセスで選択読込3件成功。最終入力73／戦闘146／KeyConfig59／製品Play36も成功。保存は一時ファイルへ隔離。画面は自動Camera.Renderで確認、物理操作未検証。詳しい入口はTRAINING_FLOW.md。
+FrontWalk4F×4は作業上の暫定値で、承認済み周期ではない。ゲーム用最終周期は未確定。弱P v14 ZIP所在（Library libfile_c449ce57d4ec8191a05cdfb2b55714dc）は判明したが、全体採用と戦闘phase対応未確定のため導入保留。BackAirDash仕様と移動性能統一も引き続き保留。
+Title/Training両Sceneを含む通常Windows64ビルド成功（errors0、387851622bytes）。ビルド由来の4設定だけを外部退避後に復元、EditorBuildSettingsのTitle追加は保持。

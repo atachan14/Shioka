@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Shioka/Scenes/Title.unity
+    guid: dc11f7687559c314b8dea115ef79034d
+  - enabled: 1
     path: Assets/Shioka/Scenes/CombatFormulaComparison.unity
     guid: 39c9cd44623d35a4bbd6fe959a5686b8
   m_configObjects:

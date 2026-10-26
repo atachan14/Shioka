@@ -38,3 +38,6 @@ The stage-1 input-unchanged statement describes the layout commit only. See INPU
 - 選択キャラ／履歴の最小API: PROFILES_AND_FLOW.md。画面は未実装。
 - 既存KeyConfig編集保存は実装済み（KEYCONFIG.md）。入力仕様はINPUT_REWORK_CHECKPOINT.md。
 - 移動性能一元化は1P/2P既存差の判断待ち。新弱P原本とBackAirDash採用／挙動も保留。D1-D3技割当、Mania新効果、Online等は未実装。
+
+## 最小画面導線の追加
+Scenes/Title.unity → Runtime/Menus/TrainingFrontMenu → 既存Training。Runtime/Flowは既存Scene接続と入場入力gate。生成／性能統一なし。TRAINING_FLOW.md参照。
