@@ -23,3 +23,6 @@ Old G-only QA, source exploration images, legacy preview scenes and guides were 
 - A UnityEditor.Search.SearchDatabase startup index exception occurred during batch Play, outside gameplay code. No migration workaround or package change made. Full manual Editor smoke remains advisable.
 - Original file asset/script GUIDs retained; no duplicate Assets GUIDs. Serialized SO values/art and all adopted image files preserved. BuildSettings repaired using the relocated scene GUID and clean-source bytes; only its path differs.
 - New tests are Editor-only explicit entry points, idle during ordinary Play. This is not a claim that every old private QA suite was transferred or run.
+
+## Subsequent input work
+The stage-1 input-unchanged statement describes the layout commit only. See INPUT_REWORK_CHECKPOINT.md for the later approved nine-slot/no-confirmation-wait input revision and its remaining undecided bindings.

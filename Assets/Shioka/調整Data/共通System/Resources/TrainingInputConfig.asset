@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f61e7da3bfef049a736aa18e6e07b2, type: 3}
   m_Name: TrainingInputConfig
   m_EditorClassIdentifier: Assembly-CSharp::TrainingInputConfig
-  layoutVersion: 2
-  chordWindowSeconds: 0.03
+  layoutVersion: 3
+  chordWindowSeconds: 0
   fdChordEnabled: 1
   throwChordEnabled: 1
   parryChordEnabled: 0

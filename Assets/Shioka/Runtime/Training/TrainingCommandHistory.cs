@@ -11,15 +11,17 @@ public sealed class TrainingCommandHistory {
   var sample=buffer.Samples.Count==0?default:buffer.Samples[buffer.Samples.Count-1];
   bool actionEvent=false;var entries=new List<string>();available.Clear();foreach(var item in buffer.Trace)available.Add(item);seen.IntersectWith(available);
   foreach(var trace in buffer.Trace)if(trace.Outcome==TrainingCommandOutcome.Executed&&!seen.Contains(trace)){
-   seen.Add(trace);string action=Name(trace.Command);if(action.Length==0)continue;
+   seen.Add(trace);string action=Name(fighter,trace.Command);if(action.Length==0)continue;
    var issued=sample;for(int i=buffer.Samples.Count-1;i>=0;i--)if(buffer.Samples[i].Frame==trace.IssuedFrame){issued=buffer.Samples[i];break;}
    actionEvent=true;if(entries.Count<8)entries.Add(Format(issued.Movement,issued.Facing,issued.Airborne,action));
   }
-  if(entries.Count==0)entries.Add(Format(sample.Movement,sample.Facing,sample.Airborne,sample.FdHeld?"FD":sample.Dash?"D":""));
+  if(entries.Count==0)entries.Add(Format(sample.Movement,sample.Facing,sample.Airborne,sample.ForceHeld?"Mania":sample.FdHeld?"FD":sample.Dash?"D":""));
   string text=string.Join("/",entries);if(actionEvent||rows.Count==0||rows[rows.Count-1]!=text){rows.Add(text);if(rows.Count>64)rows.RemoveAt(0);}
  }
  public string Text(int visible=24){var b=new StringBuilder();for(int i=rows.Count-1;i>=Math.Max(0,rows.Count-visible);i--)b.Append(rows[i]).Append('\n');return b.ToString();}
  public static string Direction(Vector2 move,int facing=1){int x=move.x*(facing<0?-1:1)<-.1f?-1:move.x*(facing<0?-1:1)>.1f?1:0,y=move.y<-.1f?-1:move.y>.1f?1:0;return (5+x+3*y).ToString();}
  public static string Format(Vector2 move,int facing,bool airborne,string action)=>Direction(move,facing)+(string.IsNullOrEmpty(action)?"":(airborne?"J":"")+action);
+ public static string Name(TrainingFighter actor,TrainingCommand c){var p=actor==null?null:actor.InputCharacter;if(p!=null){var chords=p.contextualMoves;if(chords!=null)foreach(var d in chords)if(d!=null&&d.defined&&d.command==Base(c))return d.displayName;var basic=Base(c);if(p.attackSlots!=null)foreach(var slot in p.attackSlots)if(slot!=null&&slot.assigned&&slot.command==basic)return slot.displayName;}return Name(c);}
+ static TrainingCommand Base(TrainingCommand c){switch(c){case TrainingCommand.CrouchWeakPunch:return TrainingCommand.Light;case TrainingCommand.CrouchMediumPunch:return TrainingCommand.Medium;case TrainingCommand.CrouchStrongPunch:case TrainingCommand.AirStrongPunch:return TrainingCommand.Heavy;case TrainingCommand.CrouchWeakKick:return TrainingCommand.Slash;case TrainingCommand.CrouchMediumKick:return TrainingCommand.HeavySlash;case TrainingCommand.CrouchStrongKick:case TrainingCommand.AirStrongKick:case TrainingCommand.AirDownStrongKick:return TrainingCommand.StrongKick;case TrainingCommand.ForwardSpecial1:return TrainingCommand.Special;case TrainingCommand.AirSpecial2:return TrainingCommand.Special2;default:return c;}}
  public static string Name(TrainingCommand c){switch(c){case TrainingCommand.Light:case TrainingCommand.CrouchWeakPunch:return "LP";case TrainingCommand.Medium:case TrainingCommand.CrouchMediumPunch:return "MP";case TrainingCommand.Heavy:case TrainingCommand.CrouchStrongPunch:case TrainingCommand.AirStrongPunch:return "HP";case TrainingCommand.Slash:case TrainingCommand.CrouchWeakKick:return "LK";case TrainingCommand.HeavySlash:case TrainingCommand.CrouchMediumKick:return "MK";case TrainingCommand.StrongKick:case TrainingCommand.CrouchStrongKick:case TrainingCommand.AirStrongKick:case TrainingCommand.AirDownStrongKick:return "HK";case TrainingCommand.Jump:return "";case TrainingCommand.Cancel:return "TRC";case TrainingCommand.Throw:return "Throw";default:return c.ToString();}}
 }

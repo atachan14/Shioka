@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public sealed class TrainingInputConfig:ScriptableObject
+public sealed partial class TrainingInputConfig:ScriptableObject
 {
 
  // Old assets without this field retain the original mapping. This trial explicitly saves version2.
  public int layoutVersion=1;
- public float chordWindowSeconds=.03f;
- public bool fdChordEnabled=true,throwChordEnabled=true,parryChordEnabled=false,special1ChordEnabled=true,special2ChordEnabled=true;
+ [HideInInspector] public float chordWindowSeconds=0; // retired compatibility field; never read by input resolution.
+ [HideInInspector] public bool fdChordEnabled=true,throwChordEnabled=true,parryChordEnabled=false,special1ChordEnabled=true,special2ChordEnabled=true;
  public string firstWeakPKeyboardBinding="<Keyboard>/j",firstMediumPKeyboardBinding="<Keyboard>/k",firstStrongPKeyboardBinding="<Keyboard>/l";
  public string firstWeakKKeyboardBinding="<Keyboard>/m",firstMediumKKeyboardBinding="<Keyboard>/comma",firstStrongKKeyboardBinding="<Keyboard>/period";
  public string secondWeakPKeyboardBinding="<Keyboard>/numpad1",secondMediumPKeyboardBinding="<Keyboard>/numpad2",secondStrongPKeyboardBinding="<Keyboard>/numpad3";

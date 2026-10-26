@@ -4,6 +4,7 @@ public enum TrainingAttackClass { Mid, High, Low, Throw }
 [System.Serializable]
 public sealed class TrainingMove
 {
+    public TechniqueCategory category; // Metadata only; never an input button or automatic Mania effect.
     public TrainingMoveSpatialProfile spatialProfile;
     [Min(0)]public float combatDamageMultiplier=1,combatChipMultiplier=.1f,combatPushbackScale=.001f;
     public TrainingCommand command;

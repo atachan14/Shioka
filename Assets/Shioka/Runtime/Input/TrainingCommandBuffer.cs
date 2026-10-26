@@ -14,9 +14,9 @@ public readonly struct TrainingBufferedCommand {
  public TrainingBufferedCommand(TrainingCommand c,long issued,int lifetime,TrainingLockKind kind){Command=c;IssuedFrame=issued;ExpiresFrame=issued+lifetime;LockAtIssue=kind;}
 }
 public readonly struct TrainingInputSample {
- public readonly int Facing;public readonly bool Airborne;
- public readonly long Frame;public readonly Vector2 Movement;public readonly bool Dash,GuardHeld,FdHeld;public readonly TrainingLockKind LockKind;public readonly string Presses;
- public TrainingInputSample(long frame,TrainingInputFrame input,TrainingLockKind kind,int facing=1,bool airborne=false){Facing=facing<0?-1:1;Airborne=airborne;Frame=frame;Movement=input.Movement;Dash=input.Dash;GuardHeld=input.GuardHeld;FdHeld=input.FdHeld;LockKind=kind;
+ public readonly int AttackPressedMask;public readonly int Facing;public readonly bool Airborne;
+ public readonly long Frame;public readonly Vector2 Movement;public readonly bool Dash,GuardHeld,FdHeld,ForceHeld;public readonly TrainingLockKind LockKind;public readonly string Presses;
+ public TrainingInputSample(long frame,TrainingInputFrame input,TrainingLockKind kind,int facing=1,bool airborne=false){AttackPressedMask=input.AttackPressedMask;Facing=facing<0?-1:1;Airborne=airborne;Frame=frame;Movement=input.Movement;Dash=input.Dash;GuardHeld=input.GuardHeld;FdHeld=input.FdHeld;ForceHeld=input.ForceHeld;LockKind=kind;
  if(input.Commands!=null&&input.Commands.Length>0)Presses=string.Join(",",input.Commands);
  else if(!input.Jump&&!input.Attack&&!input.Medium&&!input.Heavy&&!input.Slash&&!input.HeavySlash&&!input.Throw&&!input.Cancel&&!input.Special)Presses=string.Empty;else {var s=new System.Text.StringBuilder();if(input.Jump)s.Append("Jump,");if(input.Attack)s.Append("Light,");if(input.Medium)s.Append("Medium,");if(input.Heavy)s.Append("Heavy,");if(input.Slash)s.Append("Slash,");if(input.HeavySlash)s.Append("HeavySlash,");if(input.Throw)s.Append("Throw,");if(input.Cancel)s.Append("Cancel,");if(input.Special)s.Append("Special,");Presses=s.ToString().TrimEnd(',');}}
 }

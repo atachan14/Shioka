@@ -5,7 +5,7 @@ public sealed class TrainingRecorder {
  public Mode State{get;private set;}public int Remaining{get;private set;}public int Position{get;private set;}public int SavedCount=>saved.Count;public int DraftCount=>draft.Count;
  readonly List<TrainingInputFrame> saved=new List<TrainingInputFrame>(),draft=new List<TrainingInputFrame>();
  public string Status{get;private set;}="R record | P play | Ctrl reset";
- public static TrainingInputFrame Logical(TrainingInputFrame f){f.Reset=f.ToggleOpponentGuard=false;if(f.Commands!=null){int count=Math.Min(32,f.Commands.Length);var list=new List<TrainingCommand>();for(int i=0;i<count;i++)if(Enum.IsDefined(typeof(TrainingCommand),f.Commands[i]))list.Add(f.Commands[i]);f.Commands=list.ToArray();}return f;}
+ public static TrainingInputFrame Logical(TrainingInputFrame f){f.Reset=f.ToggleOpponentGuard=f.RecordPressed=f.PlayPressed=false;if(f.Commands!=null){int count=Math.Min(32,f.Commands.Length);var list=new List<TrainingCommand>();for(int i=0;i<count;i++)if(Enum.IsDefined(typeof(TrainingCommand),f.Commands[i]))list.Add(f.Commands[i]);f.Commands=list.ToArray();}return f;}
  public void RecordKey(){if(State==Mode.Playback){Status="Playback busy; Ctrl cancels";return;}if(State==Mode.Idle){Remaining=CountdownFrames;Position=0;draft.Clear();State=Mode.Countdown;Status="Recording countdown";}else if(State==Mode.Countdown)Cancel(false);else Finish();}
  public bool PlayKey(){if(State!=Mode.Idle){Status="Recorder busy";return false;}if(saved.Count==0){Status="No saved recording";return false;}State=Mode.Playback;Position=0;Status="Playing dummy (one shot)";return true;}
  void Finish(){if(draft.Count>0){saved.Clear();saved.AddRange(draft);}draft.Clear();State=Mode.Idle;Position=0;Status="Recording saved: "+saved.Count+"F";}

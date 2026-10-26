@@ -36,6 +36,8 @@ public sealed partial class TrainingFighter : MonoBehaviour
     public TrainingComparisonRule CurrentComparisonRule => (Application.isEditor||Debug.isDebugBuild)&&ComparisonProfile!=null&&currentMove!=null ? ComparisonProfile.Rule(currentMove.command) : TrainingComparisonRule.Legacy;
     public TrainingResolvedContact LastResolvedContact {get;private set;}
     public int ContactSequence {get;private set;}
+    readonly CharacterCommandResolver characterCommands=new CharacterCommandResolver();
+    public TrainingApprovedCharacter InputCharacter=>(presentation as ArmoredStaticPoseView)?.characterProfile;
     private TrainingMove currentMove;
     private bool airCombatActive;
     public TrainingMove CurrentMove => currentMove;
@@ -153,7 +155,7 @@ public sealed partial class TrainingFighter : MonoBehaviour
     private void Start() { IgnoreCharacterSupport(); }
     private void IgnoreCharacterSupport() { if(opponent!=null&&opponent.GetComponent<TrainingMotor2D>()!=null)Physics2D.IgnoreCollision(body.Shape,opponent.GetComponent<TrainingMotor2D>().Shape,true); }
     public void SetMovement(Vector2 value) { movement = value; }
-    private void ClearInputBoundary(){if(inputSource is ITrainingResettableInputSource resettable)resettable.Clear();InputBuffer.ClearPending();movement=Vector2.zero;dash=previousDash=jumpRequested=attackRequested=false;guardHeld=fdHeld=false;guardWindowStart=-1;}
+    private void ClearInputBoundary(){if(inputSource is ITrainingResettableInputSource resettable)resettable.Clear();InputBuffer.ClearPending();characterCommands.Clear();movement=Vector2.zero;dash=previousDash=jumpRequested=attackRequested=false;guardHeld=fdHeld=false;guardWindowStart=-1;}
     private void OnEnable(){ClearInputBoundary();RefreshThrowVolumes();}
     public void SetInputSource(MonoBehaviour source)
     {
@@ -204,7 +206,7 @@ public sealed partial class TrainingFighter : MonoBehaviour
         airTrialClock.Reset(); AirTrialCandidate = null;
         currentMove = null; airCombatActive = false;
         if(inputSource is ITrainingResettableInputSource resettable)resettable.Clear();
-        ThrowInvulnerable=false;RefreshThrowVolumes();LastContactHurtboxId=-1; InputBuffer.Reset(); Tension.Reset(); ChainCount = CancelCount = 0;guardHeld=false;fdHeld=false;guardWindowStart=-1;nextGuardWindowFrame=0;
+        ThrowInvulnerable=false;RefreshThrowVolumes();LastContactHurtboxId=-1; InputBuffer.Reset(); characterCommands.Clear(); Tension.Reset(); ChainCount = CancelCount = 0;guardHeld=false;fdHeld=false;guardWindowStart=-1;nextGuardWindowFrame=0;
         timer = verticalSpeed = horizontalSpeed = hitstop = walkTime = idleTime = locomotionDistance = 0f;
         pendingKnockdown=false; downElapsed=0; DownFollowupCount=0; UpdateHurtboxes();
         crouchPoseProgress = 0f;
@@ -232,7 +234,7 @@ public sealed partial class TrainingFighter : MonoBehaviour
         if (inputSource != null || TrainingSession!=null)
         {
             TrainingInputFrame input = TrainingSession==null?inputSource.ReadInput():TrainingSession.ReadFor(this);
-            movement = input.Movement; dash = input.Dash; fdHeld=input.FdHeld;
+            input.FdHeld|=input.ForceHeld; movement = input.Movement; dash = input.Dash; fdHeld=input.FdHeld;
             dashPressed = input.DashPressed || (dash && !previousDash);
             if (input.Reset) { if(TrainingSession!=null){TrainingSession.ResetConfigured();return;}if(CombatV01!=null)CombatV01.ResetTest();else ResetTraining(); return; }
             CaptureCommands(input);
@@ -356,7 +358,9 @@ public sealed partial class TrainingFighter : MonoBehaviour
     private void CaptureCommands(TrainingInputFrame input)
     {
         InputBuffer.RecordSample(input, LockKind, Facing, !grounded);
-        if(CombatV01!=null&&input.FdHeld&&V01CanFD(input.Movement)){InputBuffer.RemovePending(c=>c!=TrainingCommand.Cancel&&c!=TrainingCommand.Jump);if(input.Commands!=null)input.Commands=System.Array.FindAll(input.Commands,c=>c==TrainingCommand.Cancel||c==TrainingCommand.Jump);input.Attack=input.Medium=input.Heavy=input.Slash=input.HeavySlash=input.Throw=input.Special=false;}
+        var profile=InputCharacter;var resolved=characterCommands.Sample(InputBuffer.Frame,input.AttackPressedMask,input.AttackHeldMask,profile?.attackSlots,profile?.contextualMoves,int.Parse(TrainingCommandHistory.Direction(input.Movement,Facing)));
+        if(resolved.Length>0){var list=new System.Collections.Generic.List<TrainingCommand>(input.Commands??new TrainingCommand[0]);list.AddRange(resolved);input.Commands=list.ToArray();}
+        if(CombatV01!=null&&input.FdHeld&&V01CanFD(input.Movement)){characterCommands.Clear();InputBuffer.RemovePending(c=>c!=TrainingCommand.Cancel&&c!=TrainingCommand.Jump);if(input.Commands!=null)input.Commands=System.Array.FindAll(input.Commands,c=>c==TrainingCommand.Cancel||c==TrainingCommand.Jump);input.Attack=input.Medium=input.Heavy=input.Slash=input.HeavySlash=input.Throw=input.Special=false;}
         if (input.Commands != null && input.Commands.Length > 0) { foreach (var command in input.Commands) InputBuffer.Push(DirectionalCommand(command), LockKind); return; }
         if (input.Jump) InputBuffer.Push(TrainingCommand.Jump, LockKind);
         if (input.Attack) InputBuffer.Push(TrainingCommand.Light, LockKind);

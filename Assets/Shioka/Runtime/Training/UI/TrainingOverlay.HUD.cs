@@ -116,7 +116,7 @@ public sealed partial class TrainingOverlay
     public bool HudTextFits(string id)=>hudItems.ContainsKey(id)&&(string.IsNullOrEmpty(hudItems[id].text.text)||hudItems[id].text.preferredHeight<=hudItems[id].rect.height+.1f);
     public bool HudVisible(string id)=>hudItems.ContainsKey(id)&&hudItems[id].root.gameObject.activeInHierarchy;
     public string HudText(string id)=>hudItems.ContainsKey(id)?hudItems[id].text.text:"";
-    void OnDisable(){if(hudRoot!=null)hudRoot.SetActive(false);if(HudCamera!=null)HudCamera.enabled=false;if(worldCamera!=null&&worldCamera.targetTexture==worldTexture)worldCamera.targetTexture=null;}
+    void OnDisable(){menuInput?.Dispose();menuInput=null;if(hudRoot!=null)hudRoot.SetActive(false);if(HudCamera!=null)HudCamera.enabled=false;if(worldCamera!=null&&worldCamera.targetTexture==worldTexture)worldCamera.targetTexture=null;}
     void OnEnable(){if(hudRoot!=null)hudRoot.SetActive(true);if(HudCamera!=null)HudCamera.enabled=true;if(worldCamera!=null&&worldTexture!=null)worldCamera.targetTexture=worldTexture;hudDirty=true;}
     void DestroyHud(){if(MatchDisplay!=null)Destroy(MatchDisplay);if(ownsDisplaySettings&&DisplaySettings!=null)Destroy(DisplaySettings);if(worldCamera!=null){if(worldCamera.targetTexture==worldTexture)worldCamera.targetTexture=null;worldCamera.cullingMask=worldMask;}if(worldTexture!=null){worldTexture.Release();Destroy(worldTexture);}if(HudCamera!=null)Destroy(HudCamera.gameObject);if(hudRoot!=null)Destroy(hudRoot);}
 }

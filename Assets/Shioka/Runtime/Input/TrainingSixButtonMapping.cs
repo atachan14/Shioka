@@ -11,11 +11,9 @@ public static class TrainingSixButtonMapping
   Pulse(map,"Jump",second?"<Keyboard>/numpad8":"<Keyboard>/w",second?"":c.firstJumpGamepadBinding,()=>emit(TrainingCommand.Jump));if(!second)Add(map["Jump"],"<Keyboard>/upArrow");
   Pulse(map,"Cancel",second?c.secondTrcKeyboardBinding:c.firstTrcKeyboardBinding,second?"":c.firstCancelGamepadBinding,()=>{router.Clear();emit(TrainingCommand.Cancel);});
   Pulse(map,"Throw",second?c.secondThrowKeyboardBinding:c.firstThrowKeyboardBinding,second?"":c.firstThrowGamepadBinding,()=>emit(TrainingCommand.Throw));
-  Pulse(map,"Special",second?c.secondSpecial1DedicatedBinding:c.firstSpecial1DedicatedBinding,second?"":c.firstSpecialGamepadBinding,()=>emit(TrainingCommand.Special));
-  Pulse(map,"Special2",second?c.secondSpecial2DedicatedBinding:c.firstSpecial2DedicatedBinding,"",()=>emit(TrainingCommand.Special2));
   Pulse(map,"ParryFuture",second?c.secondParryKeyboardBinding:c.firstParryKeyboardBinding,"",()=>{});if(!second)Pulse(map,"AssistFuture",c.firstAssistKeyboardBinding,"",()=>{});
   // Player guard is derived from movement plus opponent attack state in TrainingFighter.
-  Held(map,"FD",second?c.secondFdKeyboardBinding:c.firstFdKeyboardBinding,second?"":c.firstFdGamepadBinding,fd);Held(map,"Dash",second?"<Keyboard>/numpad0":"<Keyboard>/space",second?"":c.firstDashGamepadBinding,dash);
+  Held(map,"Mania",second?"":"<Keyboard>/leftShift","",fd);if(!second)Add(map["Mania"],"<Keyboard>/rightShift");Held(map,"Dash",second?"<Keyboard>/numpad0":"<Keyboard>/space",second?"":c.firstDashGamepadBinding,dash);
   if(!second){Pulse(map,"Reset","<Keyboard>/leftCtrl","",reset);Add(map["Reset"],"<Keyboard>/rightCtrl");Pulse(map,"Guard","<Keyboard>/g","",toggle);}return map;
  }
  static void Add(InputAction a,string binding){if(!string.IsNullOrWhiteSpace(binding))a.AddBinding(binding);}
