@@ -1,0 +1,6 @@
+# Shared system tuning
+Assets/Shioka/調整Data/共通System/Guard.asset, TG.asset and Combat.asset are authoritative parameters referenced by CombatTestV01.asset. They extract the existing constants only; initial gameplay values are unchanged. Guard owns JG windows/decay/max effect and JG/FD push ratios. TG owns positive/negative multiplier divisors. Combat owns defense/stun/hitstop divisors and hit/Block push ratios. Per-move attack, damage/chip multipliers and push scale remain move data; push duration remains CombatTestV01 profile. Camera/Display remains MatchDisplayProfile.
+
+Edit outside Play. Profile validation rejects invalid divisors/nonfinite values. Legacy isolated formulas/tests without a profile use the same defaults. Live actors and equal-priority contact comparison now pass the shared profile. No guard break, TG earning/cost, wall/down or new Mania mechanics are introduced. JG max effect is supported0..10F in this UI; disabled higher dummy-effect buttons follow the configured maximum. Source fallback TrainingFdSettings is not the current v0.1 FD authority.
+
+Verification: 504 representative contacts compare exactly with old default results, 72 JG boundaries match. Additional final-code regression results are recorded with the implementation checkpoint.

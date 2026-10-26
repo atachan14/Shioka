@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f2485d954a966408f12d7ddf50e8d7, type: 3}
   m_Name: CombatTestV01
   m_EditorClassIdentifier: Assembly-CSharp::CombatV01Profile
+  guard: {fileID: 11400000, guid: b80fddc10be46da4ebdb6ee5920e8987, type: 2}
+  tg: {fileID: 11400000, guid: e01d40b6070ca8340a4d5e2b4c1d85e1, type: 2}
+  formula: {fileID: 11400000, guid: 4bcc505b7eea02f498a7c7a4f6fc0cba, type: 2}
   moves: {fileID: 11400000, guid: 31721336e296b9a4498de3b2ccb7d245, type: 2}
   hurtboxes: {fileID: 11400000, guid: b17f4f1928327c845b43f67912ea150b, type: 2}
   playerTG: 0

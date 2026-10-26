@@ -1,0 +1,4 @@
+using System;using UnityEngine;
+[Serializable]public sealed class GuardSystemValues {public int normalWindow=30,continuousWindow=20,normalDecayFrames=3,continuousDecayFrames=2;[Range(0,10)]public int maxReduction=10;public double jgSelfPushReduction=.4,fdAttackerPush=.2,fdJGBonus=1.5;public bool Valid=>normalWindow>=0&&continuousWindow>=0&&normalDecayFrames>0&&continuousDecayFrames>0&&maxReduction>=0&&maxReduction<=10&&CombatV01Formula.Finite(jgSelfPushReduction)&&jgSelfPushReduction>=0&&jgSelfPushReduction<=1&&CombatV01Formula.Finite(fdAttackerPush)&&fdAttackerPush>=0&&CombatV01Formula.Finite(fdJGBonus)&&fdJGBonus>=0;}
+[CreateAssetMenu(menuName="Shioka/System/Guard")]
+public sealed class GuardSystemTuning:ScriptableObject {public GuardSystemValues values=new GuardSystemValues();public bool Valid=>values!=null&&values.Valid;}

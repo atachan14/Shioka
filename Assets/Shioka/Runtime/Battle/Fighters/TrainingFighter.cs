@@ -502,7 +502,7 @@ public sealed partial class TrainingFighter : MonoBehaviour
         foreach(var c in contacts){if(c==null)continue;var h=c.GetComponent<TrainingHurtbox>();if(h==null||h.Fighter==this||h.Fighter==null||!h.Fighter.isActiveAndEnabled||!h.Collider.enabled||!h.gameObject.activeInHierarchy)continue;
             if(!selected.TryGetValue(h.Fighter,out var prev)){selected.Add(h.Fighter,h);continue;}
             float value=rule.Final(AttackLevelFor(h)*Tension.Bonus,rule.Defense(h.Fighter.HurtboxDefense(kind,h,true))),before=rule.Final(AttackLevelFor(prev)*Tension.Bonus,rule.Defense(prev.Fighter.HurtboxDefense(kind,prev,true)));
-            if(CombatV01!=null){value=(float)CombatV01Formula.HitLevel(AttackLevelFor(h),h.Fighter.V01Defense(h,kind),0,0);before=(float)CombatV01Formula.HitLevel(AttackLevelFor(prev),prev.Fighter.V01Defense(prev,kind),0,0);}
+            if(CombatV01!=null){value=(float)CombatV01Formula.HitLevel(AttackLevelFor(h),h.Fighter.V01Defense(h,kind),0,0,CombatV01.profile);before=(float)CombatV01Formula.HitLevel(AttackLevelFor(prev),prev.Fighter.V01Defense(prev,kind),0,0,CombatV01.profile);}
             if(TrainingContactOrder.Prefer(h.Region.selectionPriority,value,h.StableId,prev.Region.selectionPriority,before,prev.StableId))selected[h.Fighter]=h;
         }
         var result=new System.Collections.Generic.List<TrainingHurtbox>(selected.Values);

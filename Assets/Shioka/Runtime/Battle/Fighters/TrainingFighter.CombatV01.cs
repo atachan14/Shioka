@@ -1,7 +1,7 @@
 using System.Collections.Generic;using UnityEngine;
 public sealed partial class TrainingFighter {
  [System.NonSerialized]public CombatTestV01 CombatV01;
- public CombatV01Result? V01LastContact{get;private set;}public long V01JGAge=>v01JGStart<0?-1:InputBuffer.Frame-v01JGStart;public int V01JGReduction=>TrainingSession?.DummyJGFor(this)??CombatV01Formula.JGReduction(V01JGAge,v01JGContinuous);
+ public CombatV01Result? V01LastContact{get;private set;}public long V01JGAge=>v01JGStart<0?-1:InputBuffer.Frame-v01JGStart;public int V01JGReduction=>TrainingSession?.DummyJGFor(this)??CombatV01Formula.JGReduction(V01JGAge,v01JGContinuous,CombatV01==null?null:CombatV01.profile);
  public bool V01BlockPaused=>v01Block&&v01Stun>0;public float V01ActionFrame=>timer*60;public bool V01FdDirectionAvailable=>V01CanFD(movement);
  bool v01FrozenThisTick;public bool V01CanContact=>Health>0&&!OptionInputSuspended&&HitboxActive&&!attackConnected&&!v01FrozenThisTick&&StunRemaining<=0&&hitstop<=0&&!IsThrowState;public void V01Connect(){attackConnected=true;}
  long v01JGStart=-1;int v01GuardDirection,v01Stop,v01Stun;bool v01JGContinuous,v01Block;
