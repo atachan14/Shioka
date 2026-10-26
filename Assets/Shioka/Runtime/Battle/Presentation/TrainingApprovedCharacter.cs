@@ -1,6 +1,7 @@
 using UnityEngine;
 [CreateAssetMenu(menuName="Shioka/Approved Character Presentation")]
 public sealed class TrainingApprovedCharacter:ScriptableObject {
+ public string characterId="awari";
  public CharacterAttackSlot[] attackSlots=CharacterAttackSlot.AwariDefaults();
  public CharacterDirectionalMove[] contextualMoves=new CharacterDirectionalMove[0];
  public string characterName="\u3041\u308e\u308a";

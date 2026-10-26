@@ -37,3 +37,5 @@ Input settings currently edits runtime direct bindings and T1/T2 paths; modifier
 Final Unity compilation and scene/dependency checks passed. Foundation: 73 pass; existing formula regressions: 146 pass; Play-mode virtual Keyboard/Gamepad: 72 pass; actual production source/session/fighter Play: 36 pass, exit0. Includes HP first then fixture-only late D3, held/reformed edges, unchanged startup, ordinary buffering, Mania with ABC, character history, both-facing FD, menu nonleak and record/play/reset. The fixture uses detached character data and restores it; real D1/D2/D3 stay unassigned.
 A failed live fixture was diagnosed: GamepadState.WithButton mutates its struct; the HP-only test state accidentally acquired L1. Independent state construction fixed it. No production workaround was made for that failure. Physical devices/mouse and visual layout are unverified. The preexisting UnityEditor.Search startup index exception remains separate from game code.
 Old G, public copy, remote and published history remain unchanged; no push/deploy.
+
+KeyConfig UIとユーザー保存は後続実装済み。現仕様・検証限界は docs/KEYCONFIG.md を参照。

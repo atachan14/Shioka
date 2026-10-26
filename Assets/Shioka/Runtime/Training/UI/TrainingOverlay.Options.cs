@@ -42,7 +42,7 @@ public sealed partial class TrainingOverlay
 
     {
 
-        if(OptionVisible==visible)return;
+        if(OptionVisible==visible)return;if(!visible){DiscardKeyDraftOnClose();CancelKeyCapture();if(keyDialog!=null)keyDialog.SetActive(false);}
 
         if(visible){menuOpenedFrame=Time.frameCount;Session?.MenuOpened();optionSavedScale=Time.timeScale;Time.timeScale=0;OptionVisible=true;SetHudHelpVisible(false);SetHudHistoryVisible(false);}
 
@@ -62,7 +62,7 @@ public sealed partial class TrainingOverlay
 
     {
 
-        if(menuInput==null)menuInput=new TrainingMenuInput();if(MenuInputFrame.option&&!OptionVisible)SetOptionVisible(true);
+        if(menuInput==null)menuInput=new TrainingMenuInput();UpdateKeyConfig();if(MenuInputFrame.option&&!OptionVisible)SetOptionVisible(true);
 
         if(OptionVisible&&optionRoot!=null){optionRoot.transform.SetAsLastSibling();LayoutOption(hudWidth,hudHeight);RefreshOptionSettings();}
 

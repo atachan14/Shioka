@@ -5,15 +5,15 @@ public sealed class TrainingOptionNavigation:MonoBehaviour{
  TrainingOverlay owner;GameObject root;Selectable selected;Dictionary<Selectable,Outline> outlines=new Dictionary<Selectable,Outline>();bool ownsNavigation,previousNavigation,adjusting;float originalValue;
  public bool Adjusting=>adjusting||(selected!=null&&selected.GetComponent<TrainingOptionValue>()?.Editing==true);public string FocusedName=>selected==null?"":selected.name;
  public void Configure(TrainingOverlay overlay,GameObject optionRoot){owner=overlay;root=optionRoot;foreach(var field in root.GetComponentsInChildren<InputField>(true))field.shouldActivateOnSelect=false;}
- bool Eligible(Selectable s)=>s!=null&&s.IsActive()&&s.IsInteractable()&&s.transform.IsChildOf(root.transform);
- void Update(){if(owner==null||!owner.OptionVisible||EventSystem.current==null)return;
+ bool Eligible(Selectable s)=>s!=null&&s.IsActive()&&s.IsInteractable()&&s.transform.IsChildOf(root.transform)&&(!owner.KeyConfigConfirmVisible||s.transform.IsChildOf(owner.KeyConfigDialogRoot));
+ void Update(){if(owner==null||!owner.OptionVisible||EventSystem.current==null||owner.KeyConfigNavigationBlocked)return;
   if(!ownsNavigation){previousNavigation=EventSystem.current.sendNavigationEvents;EventSystem.current.sendNavigationEvents=false;ownsNavigation=true;}
   var current=EventSystem.current.currentSelectedGameObject;var focus=current==null?null:current.GetComponent<Selectable>();if(!Eligible(focus)){var nav=root.transform.Find("Panel/NavTraining");focus=nav==null?null:nav.GetComponent<Selectable>();if(!Eligible(focus))foreach(var item in root.GetComponentsInChildren<Selectable>())if(Eligible(item)){focus=item;break;}if(focus!=null)EventSystem.current.SetSelectedGameObject(focus.gameObject);}
   if(focus!=selected){adjusting=false;ShowSelection(focus);}
   if(selected==null||owner.MenuOpenedThisFrame)return;var menuFrame=owner.MenuInputFrame;bool confirm=menuFrame.confirm,cancel=menuFrame.cancel||menuFrame.option;bool up=menuFrame.direction.y>0,down=menuFrame.direction.y<0,left=menuFrame.direction.x<0,right=menuFrame.direction.x>0;var field=selected as InputField;if(field!=null&&field.isFocused){if(menuFrame.option||menuFrame.cancelFromPad)field.DeactivateInputField();return;}
   var value=selected.GetComponent<TrainingOptionValue>();if(value!=null&&value.Editing){if(cancel)value.Cancel();else if(confirm)value.Commit();else if(up)value.Adjust(10);else if(down)value.Adjust(-10);else if(left)value.Adjust(-1);else if(right)value.Adjust(1);ShowSelection(selected);return;}
   if(adjusting){float step=selected is Slider numberSlider&&numberSlider.wholeNumbers?1f/Mathf.Max(1,numberSlider.maxValue-numberSlider.minValue):.1f;if(cancel){SetValue(originalValue);adjusting=false;ShowSelection(selected);}else if(confirm){adjusting=false;ShowSelection(selected);}else if(left||down)SetValue(Value()-step);else if(right||up)SetValue(Value()+step);return;}
-  if(cancel){if(!owner.OptionTrainingVisible){owner.ShowTrainingOptions(true);SelectByName("NavTraining");}else owner.SetOptionVisible(false);return;}
+  if(cancel){if(owner.KeyConfigConfirmVisible){owner.CancelKeySwap();return;}if(!owner.OptionTrainingVisible){owner.ShowTrainingOptions(true);SelectByName("NavTraining");}else owner.SetOptionVisible(false);return;}
   if(confirm){if(selected is Slider||selected is Scrollbar){originalValue=Value();adjusting=true;ShowSelection(selected);}else ExecuteEvents.Execute(selected.gameObject,new BaseEventData(EventSystem.current),ExecuteEvents.submitHandler);return;}
   Vector2 direction=up?Vector2.up:down?Vector2.down:left?Vector2.left:right?Vector2.right:Vector2.zero;if(direction!=Vector2.zero)Move(direction);
  }

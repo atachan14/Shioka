@@ -15,7 +15,7 @@ public sealed class TrainingCommandHistory {
    var issued=sample;for(int i=buffer.Samples.Count-1;i>=0;i--)if(buffer.Samples[i].Frame==trace.IssuedFrame){issued=buffer.Samples[i];break;}
    actionEvent=true;if(entries.Count<8)entries.Add(Format(issued.Movement,issued.Facing,issued.Airborne,action));
   }
-  if(sample.AttackPressedMask!=0){var profile=fighter.InputCharacter;var slots=profile==null?CharacterAttackSlot.AwariDefaults():profile.attackSlots;foreach(var id in CharacterAttackSlot.DisplayOrder){if((sample.AttackPressedMask&(1<<(int)id))==0)continue;var slot=Array.Find(slots,x=>x!=null&&x.slot==id);if(slot==null||string.IsNullOrEmpty(slot.displayName))continue;string entry=Format(sample.Movement,sample.Facing,sample.Airborne,slot.displayName);if(!entries.Contains(entry))entries.Add(entry);actionEvent=true;}}
+  if(sample.AttackPressedMask!=0){var profile=fighter.InputCharacter;var slots=KeyConfigService.ResolveSlots(profile);foreach(var id in CharacterAttackSlot.DisplayOrder){if((sample.AttackPressedMask&(1<<(int)id))==0)continue;var slot=Array.Find(slots,x=>x!=null&&x.slot==id);if(slot==null||string.IsNullOrEmpty(slot.displayName))continue;string entry=Format(sample.Movement,sample.Facing,sample.Airborne,slot.displayName);if(!entries.Contains(entry))entries.Add(entry);actionEvent=true;}}
   if(entries.Count==0)entries.Add(Format(sample.Movement,sample.Facing,sample.Airborne,sample.ForceHeld?"Mania":sample.FdHeld?"FD":sample.Dash?"D":""));
   string text=string.Join("/",entries);if(actionEvent||rows.Count==0||rows[rows.Count-1]!=text){rows.Add(text);if(rows.Count>64)rows.RemoveAt(0);}
  }

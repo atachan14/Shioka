@@ -17,9 +17,9 @@ MonoBehaviour:
   modifier1Binding: <Gamepad>/leftShoulder
   modifier2Binding:
   slotGamepadBindings:
-  -
-  -
-  -
+  - 
+  - 
+  - 
   - <Gamepad>/buttonSouth
   - <Gamepad>/buttonEast
   - <Gamepad>/rightTrigger
@@ -41,9 +41,9 @@ MonoBehaviour:
   - <Keyboard>/k
   - <Keyboard>/l
   secondSlotKeyboardBindings:
-  -
-  -
-  -
+  - 
+  - 
+  - 
   - <Keyboard>/numpad7
   - <Keyboard>/numpad9
   - <Keyboard>/numpadMinus
