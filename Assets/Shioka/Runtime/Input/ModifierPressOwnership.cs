@@ -1,33 +1,14 @@
-using System;
-using System.Collections.Generic;
-// Pure per-device resolver. Called at the logical input frame boundary after collecting device events.
-// No grace timer. Modifier snapshot at this boundary wins over callback arrival order.
-public enum ModifiedInputAction { None, A, B, C, X, Y, Z, Throw, TRC, [UnityEngine.InspectorName("Mania")] Force, Dash, Record, Play, Reset, J, K, L }
-public struct ModifierFrameResult { public int attackMask;public bool forceHeld,dashHeld;public ModifiedInputAction[] pulses; }
+using System;using System.Collections.Generic;
+// Per-device sampled chord edges. No grace timer and no cancellation of earlier normal presses.
+public enum ModifiedInputAction { None,A,B,C,X,Y,Z,[UnityEngine.InspectorName("Hold")] Throw,TRC,[UnityEngine.InspectorName("Mania")] Force,Dash,Record,Play,Reset,J,K,L }
+public struct ModifierFrameResult {public int attackMask;public bool forceHeld,dashHeld;public ModifiedInputAction[] pulses;}
 public sealed class ModifierPressOwnership {
- readonly ModifiedInputAction[] owners=new ModifiedInputAction[9];readonly int[] ownerModifier=new int[9];int previousHeld;
- public readonly ModifiedInputAction[] t1={ModifiedInputAction.Record,ModifiedInputAction.Throw,ModifiedInputAction.Force,ModifiedInputAction.Reset,ModifiedInputAction.Play,ModifiedInputAction.Dash,ModifiedInputAction.None,ModifiedInputAction.None,ModifiedInputAction.None};
+ int previousHeld,previousChord1,previousChord2;
+ public readonly ModifiedInputAction[] t1={ModifiedInputAction.None,ModifiedInputAction.None,ModifiedInputAction.None,ModifiedInputAction.Dash,ModifiedInputAction.Throw,ModifiedInputAction.TRC,ModifiedInputAction.A,ModifiedInputAction.B,ModifiedInputAction.C};
  public readonly ModifiedInputAction[] t2=new ModifiedInputAction[9];
- public ModifierFrameResult Sample(int held,int pressed,bool modifier1,bool modifier2,bool training)=>SampleAtBoundary(held,pressed,modifier1,modifier2,modifier1,modifier2,training);
- public ModifierFrameResult SampleAtBoundary(int held,int pressed,bool decision1,bool decision2,bool modifier1,bool modifier2,bool training){
-  held&=511;pressed&=511;var pulses=new List<ModifiedInputAction>();int attacks=0;bool force=false,dash=false;
-  for(int i=0;i<9;i++){
-   int bit=1<<i;bool down=(held&bit)!=0;
-   if((pressed&bit)!=0||(down&&(previousHeld&bit)==0)){
-    // Both modifiers together are undefined: consume without inventing a new action.
-    int modifier=decision1&&decision2?-1:decision1?1:decision2?2:0;
-    var action=modifier==0?(i<6?(ModifiedInputAction)(i+1):(ModifiedInputAction)((int)ModifiedInputAction.J+i-6)):modifier==1?t1[i]:modifier==2?t2[i]:ModifiedInputAction.None;
-    owners[i]=action;ownerModifier[i]=modifier;
-    bool trainingOnly=action==ModifiedInputAction.Record||action==ModifiedInputAction.Play||action==ModifiedInputAction.Reset;
-    if(!trainingOnly||training){if(modifier==0)attacks|=bit;else if(action!=ModifiedInputAction.None&&action!=ModifiedInputAction.Force)pulses.Add(action);}
-   }
-   if(down&&owners[i]==ModifiedInputAction.Force)force|=ownerModifier[i]==1?modifier1:ownerModifier[i]==2&&modifier2;
-   if(down&&owners[i]==ModifiedInputAction.Dash)dash|=ownerModifier[i]==1?modifier1:ownerModifier[i]==2&&modifier2;
-   if(!down){owners[i]=ModifiedInputAction.None;ownerModifier[i]=0;}
-  }
-  previousHeld=held;return new ModifierFrameResult{attackMask=attacks,forceHeld=force,dashHeld=dash,pulses=pulses.ToArray()};
- }
- public void Clear(){previousHeld=0;Array.Clear(owners,0,9);Array.Clear(ownerModifier,0,9);}
+ public ModifierFrameResult Sample(int held,int pressed,bool m1,bool m2,bool training)=>SampleAtBoundary(held,pressed,m1,m2,m1,m2,training);
+ public ModifierFrameResult SampleAtBoundary(int held,int pressed,bool decision1,bool decision2,bool m1,bool m2,bool training){held&=511;pressed&=511;int attacks=0;bool force=false,dash=false;var pulses=new List<ModifiedInputAction>();for(int i=0;i<9;i++){int bit=1<<i;bool down=(held&bit)!=0,newPress=(pressed&bit)!=0||(down&&(previousHeld&bit)==0);if(!decision1&&!decision2&&newPress)attacks|=bit;if(decision1&&decision2)continue;int modifier=decision1?1:decision2?2:0;if(modifier==0)continue;var action=modifier==1?t1[i]:t2[i];int previous=modifier==1?previousChord1:previousChord2;bool candidate=((held|pressed)&bit)!=0;bool edge=candidate&&(((previous&bit)==0)||newPress);bool trainingOnly=action==ModifiedInputAction.Record||action==ModifiedInputAction.Play||action==ModifiedInputAction.Reset;if(edge&&(!trainingOnly||training)&&action!=ModifiedInputAction.None&&action!=ModifiedInputAction.Force)pulses.Add(action);bool active=down&&(modifier==1?m1:m2);force|=active&&action==ModifiedInputAction.Force;dash|=active&&action==ModifiedInputAction.Dash;}previousHeld=held;previousChord1=m1&&!m2?held:0;previousChord2=m2&&!m1?held:0;return new ModifierFrameResult{attackMask=attacks,forceHeld=force,dashHeld=dash,pulses=pulses.ToArray()};}
+ public void Clear(){previousHeld=previousChord1=previousChord2=0;}
  public static bool ValidateBindings(string modifier1,string modifier2,string[] normal,out string error){
   error=null;if(normal==null){error="Bindings required";return false;}var m1=(modifier1??"").Trim();var m2=(modifier2??"").Trim();if(m1.Length>0&&m2.Length>0&&string.Equals(m1,m2,StringComparison.OrdinalIgnoreCase)){error="T1 and T2 must differ";return false;}
   foreach(string path in normal){string p=(path??"").Trim();if(p.Length>0&&(string.Equals(p,m1,StringComparison.OrdinalIgnoreCase)||string.Equals(p,m2,StringComparison.OrdinalIgnoreCase))){error="Modifier cannot share a normal physical binding";return false;}}return true;

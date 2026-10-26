@@ -12,6 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467a7dae652f94e458141ce9ddeb0858, type: 3}
   m_Name: AwariCharacter
   m_EditorClassIdentifier: Assembly-CSharp::TrainingApprovedCharacter
+  attackSlots:
+  - slot: 0
+    assigned: 0
+    command: 0
+    displayName: D1
+  - slot: 1
+    assigned: 0
+    command: 0
+    displayName: D2
+  - slot: 2
+    assigned: 0
+    command: 0
+    displayName: D3
+  - slot: 6
+    assigned: 1
+    command: 1
+    displayName: LP
+  - slot: 7
+    assigned: 1
+    command: 2
+    displayName: MP
+  - slot: 8
+    assigned: 1
+    command: 3
+    displayName: HP
+  - slot: 3
+    assigned: 1
+    command: 4
+    displayName: LK
+  - slot: 4
+    assigned: 1
+    command: 5
+    displayName: MK
+  - slot: 5
+    assigned: 1
+    command: 10
+    displayName: HK
+  contextualMoves: []
   characterName: "\u3041\u308E\u308A"
   provisionalPoses: {fileID: 11400000, guid: 126814fc1d9f68f4ca47fe0f7969482e, type: 2}
   backstepSequence:

@@ -12,6 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f61e7da3bfef049a736aa18e6e07b2, type: 3}
   m_Name: TrainingInputConfig
   m_EditorClassIdentifier: Assembly-CSharp::TrainingInputConfig
+  modifier1Actions: 0000000000000000000000000a0000000700000008000000010000000200000003000000
+  modifier2Actions: 000000000000000000000000000000000000000000000000000000000000000000000000
+  modifier1Binding: <Gamepad>/leftShoulder
+  modifier2Binding:
+  slotGamepadBindings:
+  -
+  -
+  -
+  - <Gamepad>/buttonSouth
+  - <Gamepad>/buttonEast
+  - <Gamepad>/rightTrigger
+  - <Gamepad>/buttonWest
+  - <Gamepad>/buttonNorth
+  - <Gamepad>/rightShoulder
+  trcGamepadBinding:
+  maniaGamepadBinding: <Gamepad>/leftTrigger
+  recordGamepadBinding: <Gamepad>/leftStickPress
+  playGamepadBinding: <Gamepad>/rightStickPress
+  slotKeyboardBindings:
+  - <Keyboard>/u
+  - <Keyboard>/i
+  - <Keyboard>/o
+  - <Keyboard>/m
+  - <Keyboard>/comma
+  - <Keyboard>/period
+  - <Keyboard>/j
+  - <Keyboard>/k
+  - <Keyboard>/l
+  secondSlotKeyboardBindings:
+  -
+  -
+  -
+  - <Keyboard>/numpad7
+  - <Keyboard>/numpad9
+  - <Keyboard>/numpadMinus
+  - <Keyboard>/numpad1
+  - <Keyboard>/numpad2
+  - <Keyboard>/numpad3
   layoutVersion: 3
   chordWindowSeconds: 0
   fdChordEnabled: 1
@@ -33,11 +71,11 @@ MonoBehaviour:
   secondStrongKKeyboardBinding: <Keyboard>/numpadMinus
   firstTrcKeyboardBinding: <Keyboard>/semicolon
   secondTrcKeyboardBinding: <Keyboard>/numpadEnter
-  firstStrongKickGamepadBinding: 
-  firstSpecial1DedicatedBinding: 
-  secondSpecial1DedicatedBinding: 
-  firstSpecial2DedicatedBinding: 
-  secondSpecial2DedicatedBinding: 
+  firstStrongKickGamepadBinding:
+  firstSpecial1DedicatedBinding:
+  secondSpecial1DedicatedBinding:
+  firstSpecial2DedicatedBinding:
+  secondSpecial2DedicatedBinding:
   firstParryKeyboardBinding: <Keyboard>/o
   secondParryKeyboardBinding: <Keyboard>/numpadPlus
   firstAssistKeyboardBinding: <Keyboard>/slash
@@ -45,7 +83,7 @@ MonoBehaviour:
   secondPlayerMap: Training2P
   doubleTapSeconds: 0.25
   firstSpecialKeyboardBinding: <Keyboard>/o
-  firstSpecialGamepadBinding: 
+  firstSpecialGamepadBinding:
   secondSpecialKeyboardBinding: <Keyboard>/numpadPlus
   firstFdGamepadBinding: <Gamepad>/select
   firstLightGamepadBinding: <Gamepad>/buttonWest
@@ -58,7 +96,7 @@ MonoBehaviour:
   firstMoveStickGamepadBinding: <Gamepad>/leftStick
   firstJumpGamepadBinding: <Gamepad>/buttonSouth
   firstHeavyGamepadBinding: <Gamepad>/buttonEast
-  firstThrowKeyboardBinding: <Keyboard>/i
+  firstThrowKeyboardBinding: <Keyboard>/h
   firstThrowGamepadBinding: <Gamepad>/leftStickPress
   secondThrowKeyboardBinding: <Keyboard>/numpadDivide
   firstFdKeyboardBinding: <Keyboard>/u
