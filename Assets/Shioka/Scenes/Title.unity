@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 303b3705bacb35b4ba1b51422edaf0d6, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::TrainingFrontMenu
   catalog: {fileID: 11400000, guid: 124f25257c2e4d94aa83f7f5cf8e3187, type: 2}
   supportedTrainingFighterId: awari
