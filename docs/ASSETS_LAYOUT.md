@@ -1,6 +1,6 @@
 # Assets layout — stage 1
 
-Local development project: G:/source/repos/unity/Shioka-new. Based on public main 78241cc; old private history and old G project remain separate. No push.
+Local development project: G:/source/repos/unity/Shioka. Based on public main 78241cc; old private history and old G project remain separate. No push.
 
 - Assets/Shioka/調整Data/共通System: existing test system profile and compatibility Resources settings. Camera/Display are still one existing SO. Input defaults remain unchanged, pending user clarification.
 - 調整Data/Fighter/Awari: existing Data, Move profiles, per-action movement art, per-skill art, reactions, and existing Moves.asset/Hurtboxes.asset. Skill/Compatibility and Compatibility/Resources retain the distinct legacy/fallback data without pretending they are the v0.1 canonical Moves. No values merged.
@@ -23,6 +23,9 @@ Old G-only QA, source exploration images, legacy preview scenes and guides were 
 - A UnityEditor.Search.SearchDatabase startup index exception occurred during batch Play, outside gameplay code. No migration workaround or package change made. Full manual Editor smoke remains advisable.
 - Original file asset/script GUIDs retained; no duplicate Assets GUIDs. Serialized SO values/art and all adopted image files preserved. BuildSettings repaired using the relocated scene GUID and clean-source bytes; only its path differs.
 - New tests are Editor-only explicit entry points, idle during ordinary Play. This is not a claim that every old private QA suite was transferred or run.
+
+## Current follow-up state
+The sections above record the stage-1 migration. The canonical path is now G:/source/repos/unity/Shioka; the old checkout is recoverable in the Recycle Bin and retirement archive, not a second active project. Profiles/Persistence now implement KeyConfig drafts and explicit user JSON save/load; Menus includes Option navigation. Flow/History/Online remain future placeholders. See KEYCONFIG.md. Individual Idle/ForwardWalk motion assets are now implemented; other motion/per-skill SO conversion and Fighter Prefab remain future work.
 
 ## Subsequent input work
 The stage-1 input-unchanged statement describes the layout commit only. See INPUT_REWORK_CHECKPOINT.md for the later approved nine-slot/no-confirmation-wait input revision and its remaining undecided bindings.

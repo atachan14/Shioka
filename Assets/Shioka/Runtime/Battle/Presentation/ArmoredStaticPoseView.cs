@@ -37,9 +37,10 @@ public sealed class ArmoredStaticPoseView:TrainingFighterPresentation{
   else if(StandingGuardVisible(fighter)){selected=standingGuard;name="StandingGuard";}
   else if(fighter.CurrentPhase==TrainingFighter.Phase.Move){bool running=state=="ForwardDash"||(fighter.HorizontalVelocity*fighter.Facing>.01f&&(fighter.HasDashInertia||Mathf.Abs(fighter.HorizontalVelocity)>fighter.walkSpeed+.1f));bool retreating=fighter.HorizontalVelocity*fighter.Facing<-.01f;selected=retreating?backward:running?dash:forward;name=retreating?"BackwardWalk":running?"Dash":"Walk";}
   var extra=characterProfile==null||characterProfile.provisionalPoses==null?null:characterProfile.provisionalPoses.Select(fighter);if(extra!=null&&extra.sprite!=null){selected=extra.sprite;name="Provisional "+extra.id;}
-  if(selected==null)selected=idle;
+  var motion=(name=="Idle"||name=="Walk")&&extra==null?fighter.MotionPose:null;if(motion!=null)selected=motion.sprite;
+  if(selected==null)selected=characterProfile==null?idle:characterProfile.IdleSprite;
   if(image.sprite!=selected){SpriteChanges++;image.sprite=selected;}DisplayedState=name;
-  image.transform.localRotation=Quaternion.identity;image.transform.localPosition=Vector3.up*(extra==null?0:extra.offsetY)+fighter.SpatialVisualOffset+(fighter.IsAirDashing&&selected==airDash?TrainingCoordinates2D.World(Vector3.zero,airDashVisualOffset,fighter.Facing):Vector3.zero);image.transform.localScale=Vector3.one*CalibratedVisualScale;image.flipX=fighter.Facing<0;
+  image.transform.localRotation=Quaternion.identity;image.transform.localPosition=Vector3.up*(extra==null?0:extra.offsetY)+fighter.SpatialVisualOffset+(fighter.IsAirDashing&&selected==airDash?TrainingCoordinates2D.World(Vector3.zero,airDashVisualOffset,fighter.Facing):Vector3.zero);if(motion!=null)image.transform.localPosition+=new Vector3(motion.visualOffset.x*fighter.Facing,motion.visualOffset.y,0);image.transform.localScale=Vector3.one*CalibratedVisualScale;image.flipX=fighter.Facing<0;
  }
  public bool TrialControlsVisible=>showTrialControls&&GetComponentInParent<TrainingFighter>()?.TrainingSession==null;
  void OnGUI(){if(!TrialControlsVisible)return;GUI.Box(new Rect(12,88,870,44),"APPROVED KEY POSES | A/D: move | W: jump | S: crouch | double tap forward/back: dash/backstep | R: reset\n"+DisplayedState+" | J K L / M , .: combat | guard: back during attack | jump 1/2");}
