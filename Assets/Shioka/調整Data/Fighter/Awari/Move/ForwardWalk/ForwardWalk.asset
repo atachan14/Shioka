@@ -14,8 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainingMotionAction
   loop: 1
   poses:
-  - sprite: {fileID: 21300000, guid: 37a37e45c2bc2e643aa8e36edf7eca73, type: 3}
-    holdFrames: 1
+  - sprite: {fileID: 21300000, guid: 50fa906f7aeaa4f44aa42687892a6f44, type: 3}
+    holdFrames: 4
+    visualOffset: {x: 0, y: 0}
+    hurt:
+    - partId: 0
+      center: {x: 0, y: 0.775}
+      size: {x: 0.52, y: 1.55}
+  - sprite: {fileID: 21300000, guid: c99e75c9696f18d459ad84814c755517, type: 3}
+    holdFrames: 4
+    visualOffset: {x: 0, y: 0}
+    hurt:
+    - partId: 0
+      center: {x: 0, y: 0.775}
+      size: {x: 0.52, y: 1.55}
+  - sprite: {fileID: 21300000, guid: bd02b21eb81c25f4b92aa929f41a6ea8, type: 3}
+    holdFrames: 4
+    visualOffset: {x: 0, y: 0}
+    hurt:
+    - partId: 0
+      center: {x: 0, y: 0.775}
+      size: {x: 0.52, y: 1.55}
+  - sprite: {fileID: 21300000, guid: ae43b803207cfe845b059dac9f0b88eb, type: 3}
+    holdFrames: 4
     visualOffset: {x: 0, y: 0}
     hurt:
     - partId: 0
