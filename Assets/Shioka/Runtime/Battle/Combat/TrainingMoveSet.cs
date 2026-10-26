@@ -52,7 +52,7 @@ public sealed class TrainingMoveSet : ScriptableObject,ISerializationCallbackRec
     TrainingMove GetRole(string role,TrainingMove fallback){if(resolved!=null&&resolved.TryGetValue(role,out var cached))return cached;foreach(var r in catalog)if(r!=null&&r.role==role&&r.asset!=null){if(!Application.isPlaying)return r.asset.data;var copy=JsonUtility.FromJson<TrainingMove>(JsonUtility.ToJson(r.asset.data));if(resolved==null)resolved=new Dictionary<string,TrainingMove>();resolved[role]=copy;return copy;}return fallback;}
     void SetRole(string role,TrainingMove value){if(Application.isPlaying){if(resolved==null)resolved=new Dictionary<string,TrainingMove>();resolved[role]=value;return;}throw new InvalidOperationException("Set compatibility data only before catalog adoption");}
     public UnityEngine.Object PersistentOwner(TrainingMove move){foreach(var r in catalog)if(r?.asset!=null&&ReferenceEquals(r.asset.data,move))return r.asset;return this;}
-    public void OnBeforeSerialize(){}public void OnAfterDeserialize(){cachedMoves=overrideMoves=null;resolved=null;}
+    public void OnBeforeSerialize(){}public void OnAfterDeserialize(){cachedMoves=overrideMoves=null;resolved=null;runtimeRules=null;}
     void OnValidate(){OnAfterDeserialize();}
 
     [SerializeField,HideInInspector,FormerlySerializedAs("sweep")]TrainingMove legacy_sweep;
@@ -62,10 +62,11 @@ public sealed class TrainingMoveSet : ScriptableObject,ISerializationCallbackRec
     public TrainingThrowSettings throwSettings;
     public TrainingFdSettings fdSettings;
     public AnimationClip knockdownClip, getUpBackClip;
-    public float knockdownSeconds = .35f, downHoldSeconds = .55f, getUpSeconds = .9f;
-    public bool allowDownFollowup;
-    public int maxDownFollowups = 1;
-    public float downFollowupDamageScale = .25f;
+    public LegacyBattleRules sharedLegacyRules;
+    [NonSerialized]LegacyBattleRuleValues runtimeRules;
+    LegacyBattleRuleValues Rules {get{if(sharedLegacyRules==null)return null;if(!Application.isPlaying)return sharedLegacyRules.values;if(runtimeRules==null)runtimeRules=JsonUtility.FromJson<LegacyBattleRuleValues>(JsonUtility.ToJson(sharedLegacyRules.values));return runtimeRules;}}
+
+
     public TrainingAirAttackCandidate flyingKick, dropKick, airStrongKick, airDownStrongKick, airStrongPunch;
 
     [SerializeField,HideInInspector,FormerlySerializedAs("airStrongKickMove")]TrainingMove legacy_airStrongKickMove;
@@ -82,8 +83,35 @@ public sealed class TrainingMoveSet : ScriptableObject,ISerializationCallbackRec
     [SerializeField,HideInInspector,FormerlySerializedAs("airSpecial2Move")]TrainingMove legacy_airSpecial2Move;
     public TrainingMove airSpecial2Move {get=>GetRole("airSpecial2Move",legacy_airSpecial2Move);set{if(!Application.isPlaying&&catalog.Length==0)legacy_airSpecial2Move=value;else SetRole("airSpecial2Move",value);}}
     public TrainingAirAttackCandidate airSpecial2;
-    public float receiverGain = 4f, dashGainPerSecond = 12f;
-    public float tensionLevelGainRate = .1f;
+
     public void ClearAdoptedLegacy(){legacyMoves=new TrainingMove[0];legacy_sweep=null;legacy_special=null;legacy_airStrongKickMove=null;legacy_airDownStrongKickMove=null;legacy_airStrongPunchMove=null;legacy_special2=null;legacy_forwardSpecial1=null;legacy_airSpecial2Move=null;OnAfterDeserialize();}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("knockdownSeconds")]float legacyRule_knockdownSeconds=.35f;
+    public float knockdownSeconds {get=>Rules?.knockdownSeconds??legacyRule_knockdownSeconds;set{if(sharedLegacyRules==null)legacyRule_knockdownSeconds=value;else if(Application.isPlaying)Rules.knockdownSeconds=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("downHoldSeconds")]float legacyRule_downHoldSeconds=.55f;
+    public float downHoldSeconds {get=>Rules?.downHoldSeconds??legacyRule_downHoldSeconds;set{if(sharedLegacyRules==null)legacyRule_downHoldSeconds=value;else if(Application.isPlaying)Rules.downHoldSeconds=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("getUpSeconds")]float legacyRule_getUpSeconds=.9f;
+    public float getUpSeconds {get=>Rules?.getUpSeconds??legacyRule_getUpSeconds;set{if(sharedLegacyRules==null)legacyRule_getUpSeconds=value;else if(Application.isPlaying)Rules.getUpSeconds=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("allowDownFollowup")]bool legacyRule_allowDownFollowup=false;
+    public bool allowDownFollowup {get=>Rules?.allowDownFollowup??legacyRule_allowDownFollowup;set{if(sharedLegacyRules==null)legacyRule_allowDownFollowup=value;else if(Application.isPlaying)Rules.allowDownFollowup=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("maxDownFollowups")]int legacyRule_maxDownFollowups=1;
+    public int maxDownFollowups {get=>Rules?.maxDownFollowups??legacyRule_maxDownFollowups;set{if(sharedLegacyRules==null)legacyRule_maxDownFollowups=value;else if(Application.isPlaying)Rules.maxDownFollowups=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("downFollowupDamageScale")]float legacyRule_downFollowupDamageScale=.25f;
+    public float downFollowupDamageScale {get=>Rules?.downFollowupDamageScale??legacyRule_downFollowupDamageScale;set{if(sharedLegacyRules==null)legacyRule_downFollowupDamageScale=value;else if(Application.isPlaying)Rules.downFollowupDamageScale=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("receiverGain")]float legacyRule_receiverGain=4f;
+    public float receiverGain {get=>Rules?.receiverGain??legacyRule_receiverGain;set{if(sharedLegacyRules==null)legacyRule_receiverGain=value;else if(Application.isPlaying)Rules.receiverGain=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("dashGainPerSecond")]float legacyRule_dashGainPerSecond=12f;
+    public float dashGainPerSecond {get=>Rules?.dashGainPerSecond??legacyRule_dashGainPerSecond;set{if(sharedLegacyRules==null)legacyRule_dashGainPerSecond=value;else if(Application.isPlaying)Rules.dashGainPerSecond=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("tensionLevelGainRate")]float legacyRule_tensionLevelGainRate=.1f;
+    public float tensionLevelGainRate {get=>Rules?.tensionLevelGainRate??legacyRule_tensionLevelGainRate;set{if(sharedLegacyRules==null)legacyRule_tensionLevelGainRate=value;else if(Application.isPlaying)Rules.tensionLevelGainRate=value;else throw new InvalidOperationException("Edit shared legacy rule asset");}}
+    public void ClearAdoptedLegacyRules(){legacyRule_knockdownSeconds=0;legacyRule_downHoldSeconds=0;legacyRule_getUpSeconds=0;legacyRule_allowDownFollowup=false;legacyRule_maxDownFollowups=0;legacyRule_downFollowupDamageScale=0;legacyRule_receiverGain=0;legacyRule_dashGainPerSecond=0;legacyRule_tensionLevelGainRate=0;runtimeRules=null;}
     public TrainingMove Find(TrainingCommand command) { if (command == TrainingCommand.Special) return special; if(command==TrainingCommand.Special2)return special2; if(command==TrainingCommand.ForwardSpecial1)return forwardSpecial1; if (command == TrainingCommand.Sweep) return sweep; foreach (var move in moves) if (move.command == command) return move; return null; }
 }

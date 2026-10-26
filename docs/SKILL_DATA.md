@@ -4,3 +4,6 @@ Each adopted TrainingMove definition now lives in Skill/<move>/Data.asset near i
 Select Data.asset to edit timing/intensity/etc outside Play. Open spatial editing for this skill opens the existing authoring scene and selects the command. Save authoritative SO now creates the spatial profile as a subasset in that same Data.asset for adopted skills. Catalog values are never manually synchronized. Legacy/fallback catalogs still read old serialized fields via FormerlySerializedAs.
 
 Play resolves detached runtime copies; JSON reset clears caches and reloads source references. Individual skill authoring never receives developer comparison mutations. Verification: same-file spatial save/reload and untouched catalog; runtime clone/source isolation; motionPlay24, input73/combat146 regression passed. Native mouse interaction is unverified. Existing character presentation/gallery still owns the active key-pose references; images are physically adjacent but this step does not claim new weakP animation material was found.
+
+## 共有互換ルール
+Moves.assetの9個の旧共有数値は共通System/Compatibility/LegacyBattleRules.assetへ同値移行。カタログは技と共有ルールの参照を持つ。新しいダウン／TG獲得仕様を有効化したものではない。Play中の変更は複製値だけに適用される。

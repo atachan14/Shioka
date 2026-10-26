@@ -1,0 +1,2 @@
+using System;using UnityEngine;using UnityEditor;
+public static class ProfileFoundationInstall {public static void Run(){const string path="Assets/Shioka/調整Data/Fighter/Catalog.asset";if(AssetDatabase.LoadMainAssetAtPath(path)!=null)throw new Exception("Refuse overwrite catalog");var data=ScriptableObject.CreateInstance<FighterCatalog>();data.fighters=new[]{AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Shioka/調整Data/Fighter/Awari/Awari.prefab")};if(!data.Validate(out var error))throw new Exception(error);AssetDatabase.CreateAsset(data,path);}}

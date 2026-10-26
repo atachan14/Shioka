@@ -262,12 +262,7 @@ MonoBehaviour:
   fdSettings: {fileID: 11400000, guid: 1fb7670e079e443e81396ba8f83c7fb2, type: 2}
   knockdownClip: {fileID: 0}
   getUpBackClip: {fileID: 0}
-  knockdownSeconds: 0.35
-  downHoldSeconds: 0.55
-  getUpSeconds: 0.9
-  allowDownFollowup: 0
-  maxDownFollowups: 1
-  downFollowupDamageScale: 0.25
+  sharedLegacyRules: {fileID: 11400000, guid: a9e263f453c384241a814f4d23807b95, type: 2}
   flyingKick: {fileID: 11400000, guid: 9283689713dab8d40802fe6edaac15e3, type: 2}
   dropKick: {fileID: 11400000, guid: 06fb89e659783c34c9fb9900ac607b72, type: 2}
   airStrongKick: {fileID: 11400000, guid: 574e9e71c09abf5488a4f163fdf9d5ac, type: 2}
@@ -886,6 +881,12 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   airSpecial2: {fileID: 11400000, guid: eb4d12c42ac73054d9670f5306680360, type: 2}
-  receiverGain: 4
-  dashGainPerSecond: 12
-  tensionLevelGainRate: 0.1
+  legacyRule_knockdownSeconds: 0
+  legacyRule_downHoldSeconds: 0
+  legacyRule_getUpSeconds: 0
+  legacyRule_allowDownFollowup: 0
+  legacyRule_maxDownFollowups: 0
+  legacyRule_downFollowupDamageScale: 0
+  legacyRule_receiverGain: 0
+  legacyRule_dashGainPerSecond: 0
+  legacyRule_tensionLevelGainRate: 0

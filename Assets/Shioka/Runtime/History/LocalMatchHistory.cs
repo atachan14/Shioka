@@ -1,0 +1,4 @@
+using System;using System.Collections.Generic;
+public enum LocalMatchOutcome { Win,Loss,Draw }
+[Serializable]public sealed class LocalMatchRecord {public string matchId,modeId,fighterId,opponentFighterId;public long endedUtcUnixSeconds;public LocalMatchOutcome outcome;public bool Valid=>S(matchId)&&S(modeId)&&modeId!="training"&&S(fighterId)&&S(opponentFighterId)&&endedUtcUnixSeconds>=0&&endedUtcUnixSeconds<=253402300799&&Enum.IsDefined(typeof(LocalMatchOutcome),outcome);static bool S(string s)=>!string.IsNullOrWhiteSpace(s)&&s.Length<=128;}
+[Serializable]public sealed class LocalMatchHistory {public int version=1;public List<LocalMatchRecord> records=new List<LocalMatchRecord>();public bool Valid{get{if(version!=1||records==null||records.Count>1000)return false;var ids=new HashSet<string>();foreach(var r in records)if(r==null||!r.Valid||!ids.Add(r.matchId))return false;return true;}}}

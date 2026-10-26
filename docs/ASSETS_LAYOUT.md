@@ -29,3 +29,12 @@ The sections above record the stage-1 migration. The canonical path is now G:/so
 
 ## Subsequent input work
 The stage-1 input-unchanged statement describes the layout commit only. See INPUT_REWORK_CHECKPOINT.md for the later approved nine-slot/no-confirmation-wait input revision and its remaining undecided bindings.
+
+## 2026-10-26 現在の追加実装（上のstage-1記録より新しい）
+- Idle/ForwardWalkほか8動作の個別画像・HurtBox assetと明示保存のScene編集入口。
+- Skill各Data.assetと近接Sprites、参照主体のMoves.catalog、共有Guard/TG/Combatと互換ルールasset。
+- Awari.prefabを両Scene役割で共有、役割固有override保持。
+- 開発Option partialとEditor検証の分離: DEVELOPMENT_BOUNDARIES.md。
+- 選択キャラ／履歴の最小API: PROFILES_AND_FLOW.md。画面は未実装。
+- 既存KeyConfig編集保存は実装済み（KEYCONFIG.md）。入力仕様はINPUT_REWORK_CHECKPOINT.md。
+- 移動性能一元化は1P/2P既存差の判断待ち。新弱P原本とBackAirDash採用／挙動も保留。D1-D3技割当、Mania新効果、Online等は未実装。
