@@ -1,0 +1,4 @@
+using System;using System.Linq;using UnityEditor;using UnityEngine;
+public static class LayoutProjectChecks {
+ public static void Verify(){const string playable="Assets/Shioka/Scenes/CombatFormulaComparison.unity";var rows=EditorBuildSettings.scenes;Debug.Log("LAYOUT_BUILD_SCENES_BEFORE "+string.Join(";",rows.Select(x=>x.path+" enabled="+x.enabled+" guid="+x.guid)));string resolved=AssetDatabase.GUIDToAssetPath("39c9cd44623d35a4bbd6fe959a5686b8");if(resolved!=playable)throw new Exception("Unexpected playable scene GUID destination: "+resolved);if(rows.Length>1)throw new Exception("Unexpected build scene count; preserve for review");EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(playable,true)};Debug.Log("LAYOUT_BUILD_SCENES_AFTER "+EditorBuildSettings.scenes[0].path);PublicSnapshotChecks.Verify();}
+}
