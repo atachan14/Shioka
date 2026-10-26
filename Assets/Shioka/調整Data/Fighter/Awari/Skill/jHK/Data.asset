@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3076f795b754649861523ba0a37b2f, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: Assembly-CSharp::TrainingMoveData
+  data:
+    category: 0
+    spatialProfile: {fileID: 0}
+    combatDamageMultiplier: 1
+    combatChipMultiplier: 0.1
+    combatPushbackScale: 0.001
+    command: 15
+    strength:
+      enabled: 0
+      weakPoint: {x: 0, y: 0.95, z: 0.25}
+      strongPoint: {x: 0, y: 0.95, z: 1.05}
+      minimumLevel: 30
+      maximumLevel: 60
+    attackClass: 0
+    causesKnockdown: 0
+    state: AirStrongKickGameplay
+    clip: {fileID: 0}
+    startupFrames: 12
+    activeFrames: 6
+    recoveryFrames: 16
+    groundHitKnockbackSpeed: 0
+    attackLevel: 120
+    damage: 20
+    hitGain: 8
+    center: {x: 0, y: 0.78, z: 0.76}
+    halfSize: {x: 0.3, y: 0.25, z: 0.42}
+    contactNormalized: 0.3529412
+    chains: 
+    useLevelCurves: 0
+    attackLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defenseLevelCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useTimedTdcRecovery: 0
+    timedTdcRecoveryCostCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4

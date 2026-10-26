@@ -1,4 +1,4 @@
-using UnityEngine;
+using UnityEngine;using System;using System.Collections.Generic;using UnityEngine.Serialization;
 
 public enum TrainingAttackClass { Mid, High, Low, Throw }
 [System.Serializable]
@@ -42,11 +42,23 @@ public sealed class TrainingMove
     public bool CanChain(TrainingCommand next) => System.Array.IndexOf(chains, next) >= 0;
 }
 [CreateAssetMenu(menuName = "Shioka/Training Move Set")]
-public sealed class TrainingMoveSet : ScriptableObject
+public sealed class TrainingMoveSet : ScriptableObject,ISerializationCallbackReceiver
 {
-    public TrainingMove[] moves = new TrainingMove[0];
-    public TrainingMove sweep;
-    public TrainingMove special;
+    public TrainingMoveReference[] catalog=new TrainingMoveReference[0];
+    [SerializeField,HideInInspector,FormerlySerializedAs("moves")]TrainingMove[] legacyMoves=new TrainingMove[0];
+    [NonSerialized]TrainingMove[] cachedMoves,overrideMoves;
+    [NonSerialized]Dictionary<string,TrainingMove> resolved;
+    public TrainingMove[] moves {get{if(overrideMoves!=null)return overrideMoves;bool any=false;foreach(var r in catalog)if(r!=null&&r.role.StartsWith("move:")){any=true;break;}if(!any)return legacyMoves??new TrainingMove[0];if(Application.isPlaying&&cachedMoves!=null)return cachedMoves;var list=new List<TrainingMove>();foreach(var r in catalog)if(r!=null&&r.role.StartsWith("move:")&&r.asset!=null)list.Add(GetRole(r.role,null));var value=list.ToArray();if(Application.isPlaying)cachedMoves=value;return value;}set{if(Application.isPlaying)overrideMoves=value;else if(catalog.Length==0)legacyMoves=value;else throw new InvalidOperationException("Edit individual skill assets, not catalog values");}}
+    TrainingMove GetRole(string role,TrainingMove fallback){if(resolved!=null&&resolved.TryGetValue(role,out var cached))return cached;foreach(var r in catalog)if(r!=null&&r.role==role&&r.asset!=null){if(!Application.isPlaying)return r.asset.data;var copy=JsonUtility.FromJson<TrainingMove>(JsonUtility.ToJson(r.asset.data));if(resolved==null)resolved=new Dictionary<string,TrainingMove>();resolved[role]=copy;return copy;}return fallback;}
+    void SetRole(string role,TrainingMove value){if(Application.isPlaying){if(resolved==null)resolved=new Dictionary<string,TrainingMove>();resolved[role]=value;return;}throw new InvalidOperationException("Set compatibility data only before catalog adoption");}
+    public UnityEngine.Object PersistentOwner(TrainingMove move){foreach(var r in catalog)if(r?.asset!=null&&ReferenceEquals(r.asset.data,move))return r.asset;return this;}
+    public void OnBeforeSerialize(){}public void OnAfterDeserialize(){cachedMoves=overrideMoves=null;resolved=null;}
+    void OnValidate(){OnAfterDeserialize();}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("sweep")]TrainingMove legacy_sweep;
+    public TrainingMove sweep {get=>GetRole("sweep",legacy_sweep);set{if(!Application.isPlaying&&catalog.Length==0)legacy_sweep=value;else SetRole("sweep",value);}}
+    [SerializeField,HideInInspector,FormerlySerializedAs("special")]TrainingMove legacy_special;
+    public TrainingMove special {get=>GetRole("special",legacy_special);set{if(!Application.isPlaying&&catalog.Length==0)legacy_special=value;else SetRole("special",value);}}
     public TrainingThrowSettings throwSettings;
     public TrainingFdSettings fdSettings;
     public AnimationClip knockdownClip, getUpBackClip;
@@ -55,10 +67,23 @@ public sealed class TrainingMoveSet : ScriptableObject
     public int maxDownFollowups = 1;
     public float downFollowupDamageScale = .25f;
     public TrainingAirAttackCandidate flyingKick, dropKick, airStrongKick, airDownStrongKick, airStrongPunch;
-    public TrainingMove airStrongKickMove, airDownStrongKickMove, airStrongPunchMove;
-    public TrainingMove special2, forwardSpecial1, airSpecial2Move;
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("airStrongKickMove")]TrainingMove legacy_airStrongKickMove;
+    public TrainingMove airStrongKickMove {get=>GetRole("airStrongKickMove",legacy_airStrongKickMove);set{if(!Application.isPlaying&&catalog.Length==0)legacy_airStrongKickMove=value;else SetRole("airStrongKickMove",value);}}
+    [SerializeField,HideInInspector,FormerlySerializedAs("airDownStrongKickMove")]TrainingMove legacy_airDownStrongKickMove;
+    public TrainingMove airDownStrongKickMove {get=>GetRole("airDownStrongKickMove",legacy_airDownStrongKickMove);set{if(!Application.isPlaying&&catalog.Length==0)legacy_airDownStrongKickMove=value;else SetRole("airDownStrongKickMove",value);}}
+    [SerializeField,HideInInspector,FormerlySerializedAs("airStrongPunchMove")]TrainingMove legacy_airStrongPunchMove;
+    public TrainingMove airStrongPunchMove {get=>GetRole("airStrongPunchMove",legacy_airStrongPunchMove);set{if(!Application.isPlaying&&catalog.Length==0)legacy_airStrongPunchMove=value;else SetRole("airStrongPunchMove",value);}}
+
+    [SerializeField,HideInInspector,FormerlySerializedAs("special2")]TrainingMove legacy_special2;
+    public TrainingMove special2 {get=>GetRole("special2",legacy_special2);set{if(!Application.isPlaying&&catalog.Length==0)legacy_special2=value;else SetRole("special2",value);}}
+    [SerializeField,HideInInspector,FormerlySerializedAs("forwardSpecial1")]TrainingMove legacy_forwardSpecial1;
+    public TrainingMove forwardSpecial1 {get=>GetRole("forwardSpecial1",legacy_forwardSpecial1);set{if(!Application.isPlaying&&catalog.Length==0)legacy_forwardSpecial1=value;else SetRole("forwardSpecial1",value);}}
+    [SerializeField,HideInInspector,FormerlySerializedAs("airSpecial2Move")]TrainingMove legacy_airSpecial2Move;
+    public TrainingMove airSpecial2Move {get=>GetRole("airSpecial2Move",legacy_airSpecial2Move);set{if(!Application.isPlaying&&catalog.Length==0)legacy_airSpecial2Move=value;else SetRole("airSpecial2Move",value);}}
     public TrainingAirAttackCandidate airSpecial2;
     public float receiverGain = 4f, dashGainPerSecond = 12f;
     public float tensionLevelGainRate = .1f;
+    public void ClearAdoptedLegacy(){legacyMoves=new TrainingMove[0];legacy_sweep=null;legacy_special=null;legacy_airStrongKickMove=null;legacy_airDownStrongKickMove=null;legacy_airStrongPunchMove=null;legacy_special2=null;legacy_forwardSpecial1=null;legacy_airSpecial2Move=null;OnAfterDeserialize();}
     public TrainingMove Find(TrainingCommand command) { if (command == TrainingCommand.Special) return special; if(command==TrainingCommand.Special2)return special2; if(command==TrainingCommand.ForwardSpecial1)return forwardSpecial1; if (command == TrainingCommand.Sweep) return sweep; foreach (var move in moves) if (move.command == command) return move; return null; }
 }

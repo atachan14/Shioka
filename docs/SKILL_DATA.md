@@ -1,0 +1,6 @@
+# Skill data ownership
+Each adopted TrainingMove definition now lives in Skill/<move>/Data.asset near its existing Sprites folder. Moves.asset is a reference catalog; its20 migrated definitions preserve all serialized values/curves/references exactly. Compatibility definitions retain technical names rather than inventing D1-D3 assignments. Throw settings and airborne candidate metadata remain their existing types for now.
+
+Select Data.asset to edit timing/intensity/etc outside Play. Open spatial editing for this skill opens the existing authoring scene and selects the command. Save authoritative SO now creates the spatial profile as a subasset in that same Data.asset for adopted skills. Catalog values are never manually synchronized. Legacy/fallback catalogs still read old serialized fields via FormerlySerializedAs.
+
+Play resolves detached runtime copies; JSON reset clears caches and reloads source references. Individual skill authoring never receives developer comparison mutations. Verification: same-file spatial save/reload and untouched catalog; runtime clone/source isolation; motionPlay24, input73/combat146 regression passed. Native mouse interaction is unverified. Existing character presentation/gallery still owns the active key-pose references; images are physically adjacent but this step does not claim new weakP animation material was found.
