@@ -1,0 +1,340 @@
+{
+  "title": "Shioka v14: open elbow and nearly straight wrist in04",
+  "base": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13",
+  "change_scope": "Only04 changed. Elbow opens forward/down from03 toward05; hand/metacarpal axis lies much closer to the forearm line rather than a strong downward wrist hook. Natural half-grip and neutral-to-outward axial alignment retained. All other11 PNGs byte-preserved. Strong early wrist flexion in04 is superseded by latest user request.",
+  "frames": [
+    {
+      "source_index": 0,
+      "name": "00-neutral",
+      "file": "frames/00-neutral.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/00-neutral.png",
+      "sha256": "78a9d22c0b082ee6837a1bb70ddc5e312a5c05669bc390a890ace9b35eb80723",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 0,
+      "source_original_hold_ms": 0,
+      "omitted_from_gif": true,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.705
+    },
+    {
+      "source_index": 1,
+      "name": "01-natural-half-grip-lift",
+      "file": "frames/01-natural-half-grip-lift.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/01-natural-half-grip-lift.png",
+      "sha256": "f6f5ef0fdfb428496a298b56b2c57999dfc93481babab77db8ca0179daf54828",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 0,
+      "source_original_hold_ms": 70,
+      "omitted_from_gif": true,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6767
+    },
+    {
+      "source_index": 2,
+      "name": "02-natural-half-grip-preparation",
+      "file": "frames/02-natural-half-grip-preparation.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/02-natural-half-grip-preparation.png",
+      "sha256": "92bd33154afedb2c680edecf61526ac74a1d39f94ec7a1ff4d117de07b31076f",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 70,
+      "source_original_hold_ms": 70,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6763
+    },
+    {
+      "source_index": 3,
+      "name": "03-natural-half-grip-raised",
+      "file": "frames/03-natural-half-grip-raised.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/03-natural-half-grip-raised.png",
+      "sha256": "51e1748c1a69b1883f6202913ee281498f8dede3ed657897c5845d4022798592",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 50,
+      "source_original_hold_ms": 50,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6719
+    },
+    {
+      "source_index": 4,
+      "name": "04-open-elbow-straight-wrist",
+      "file": "frames/04-open-elbow-straight-wrist.png",
+      "source": "/workspace/scratch/4c3d906f1896/generated_images/exec-467ba4b8-f8fc-44fd-8c8a-49cd0c508685.png",
+      "sha256": "8a536706144709f0ebf9d6668f62a2d2d5b5bbd127c4e2741e57021c148234ba",
+      "new_generated_key": true,
+      "byte_identical_to_v13": false,
+      "review_hold_ms": 90,
+      "source_original_hold_ms": 90,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.66
+    },
+    {
+      "source_index": 5,
+      "name": "05-natural-half-grip-down-pass",
+      "file": "frames/05-natural-half-grip-down-pass.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/05-natural-half-grip-down-pass.png",
+      "sha256": "4e80b8de326d94261fea7497ce5efd1c84a7128b0a356c8eb71cb925530dc4ab",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 120,
+      "source_original_hold_ms": 120,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6698
+    },
+    {
+      "source_index": 6,
+      "name": "06-natural-half-grip-release",
+      "file": "frames/06-natural-half-grip-release.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/06-natural-half-grip-release.png",
+      "sha256": "5c7a8fe8db302f0fbacd403ae6e38045d2b80ea91af79becba622c8389bbae09",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 30,
+      "source_original_hold_ms": 30,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6658
+    },
+    {
+      "source_index": 7,
+      "name": "07-down-followthrough",
+      "file": "frames/07-down-followthrough.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/07-down-followthrough.png",
+      "sha256": "38f04d846588c80592366d62dc408a5bd67f716cb270e0c2c53ef6f18524f440",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 110,
+      "source_original_hold_ms": 110,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6698
+    },
+    {
+      "source_index": 8,
+      "name": "08-same-side-finish",
+      "file": "frames/08-same-side-finish.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/08-same-side-finish.png",
+      "sha256": "1d2ca808264cbcc9ad949bba2aa89cc0e6a5abfa9ccbc1611985c763e542104d",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 30,
+      "source_original_hold_ms": 30,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.6708
+    },
+    {
+      "source_index": 9,
+      "name": "09-rearward-behind-hip",
+      "file": "frames/09-rearward-behind-hip.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/09-rearward-behind-hip.png",
+      "sha256": "517c8518dc911071f7776e66efb583055796a665de58617a238d99ef59d215d5",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 100,
+      "source_original_hold_ms": 100,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.675
+    },
+    {
+      "source_index": 10,
+      "name": "10-settle-behind-torso",
+      "file": "frames/10-settle-behind-torso.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/10-settle-behind-torso.png",
+      "sha256": "50fe550959e531ad0fc9dcfd9b928051858d13e28635335dd765896f0ac52f0f",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 30,
+      "source_original_hold_ms": 30,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.7055
+    },
+    {
+      "source_index": 11,
+      "name": "11-neutral-rest",
+      "file": "frames/11-neutral-rest.png",
+      "source": "/workspace/scratch/4c3d906f1896/output/Shioka-omit-key01-comparison-20261025-v13/frames/11-neutral-rest.png",
+      "sha256": "78a9d22c0b082ee6837a1bb70ddc5e312a5c05669bc390a890ace9b35eb80723",
+      "new_generated_key": false,
+      "byte_identical_to_v13": true,
+      "review_hold_ms": 30,
+      "source_original_hold_ms": 30,
+      "omitted_from_gif": false,
+      "canvas": [
+        1024,
+        1536
+      ],
+      "transparent_fraction": 0.705
+    }
+  ],
+  "method": "Built-in imagegen character edit only. Python only copies/assembles/crops/scales/quantizes previews; no code anatomy deformation.",
+  "timing": "v13 no01 playback preserved exactly:02 through11,10 displayed poses,660ms loop. All remaining holds unchanged. Slow preview1980ms.00 and01 remain in source folder but omitted from playback.",
+  "export_verification": {
+    "review": {
+      "frames": 10,
+      "canvas": [
+        512,
+        768
+      ],
+      "durations_ms": [
+        70,
+        50,
+        90,
+        120,
+        30,
+        110,
+        30,
+        100,
+        30,
+        30
+      ],
+      "loop_ms": 660
+    },
+    "slow": {
+      "frames": 10,
+      "canvas": [
+        512,
+        768
+      ],
+      "durations_ms": [
+        210,
+        150,
+        270,
+        360,
+        90,
+        330,
+        90,
+        300,
+        90,
+        90
+      ],
+      "loop_ms": 1980
+    },
+    "early_closeup": {
+      "frames": 6,
+      "canvas": [
+        644,
+        1028
+      ],
+      "durations_ms": [
+        210,
+        150,
+        270,
+        360,
+        90,
+        330
+      ],
+      "loop_ms": 1410
+    },
+    "side_by_side_slow": {
+      "frames": 10,
+      "canvas": [
+        1024,
+        800
+      ],
+      "durations_ms": [
+        210,
+        150,
+        270,
+        360,
+        90,
+        330,
+        90,
+        300,
+        90,
+        90
+      ],
+      "loop_ms": 1980
+    }
+  },
+  "caveats": [
+    "Sparse generated keys do not guarantee smooth interpolated3D articulation.",
+    "Minor generated armor/finger detail differences remain in04."
+  ],
+  "no_unity_repository_or_gameplay_changes": true,
+  "playback": {
+    "displayed_source_indices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "omitted_source_indices": [
+      0,
+      1
+    ],
+    "displayed_count": 10,
+    "durations_ms": [
+      70,
+      50,
+      90,
+      120,
+      30,
+      110,
+      30,
+      100,
+      30,
+      30
+    ],
+    "loop_ms": 660
+  },
+  "visual_review": {
+    "elbow": "More forward and more open than03, beginning extension toward05; no longer standing upright in the former folded04 pose.",
+    "wrist": "Initial result retained a20-30degree projected kink and was refined. Selected palm/metacarpal axis now follows the forearm closely enough; downward curvature reads as curled fingers rather than a hooked wrist.",
+    "half_grip_and_roll": "Half-grip remains recognizable, with no new gross twist or inward axial roll in the inspected key context.",
+    "export": "Decoded exported02-through07 GIF frames and03/04/05 context inspected; all timings read back exactly. Hand is not clipped (visible right edge at1013 of1024).",
+    "limitations": "Generated sparse keys are not rigorous continuous3D motion. Small armor/hand rendering differences remain inside edited04; other11 PNGs are exactly preserved."
+  },
+  "generation": {
+    "initial": "generated_images/exec-e0b1ceae-baf0-4456-adf0-8c554e365dd1.png",
+    "selected_refinement": "generated_images/exec-467ba4b8-f8fc-44fd-8c8a-49cd0c508685.png",
+    "selected_png_is_unmodified_generated_copy": true
+  }
+}

@@ -43,3 +43,7 @@ TrainingMoveDataへ任意のspriteSequenceを追加。画像順・整数holdF、
 ## 技Spriteフォルダ同期
 各技Data.assetの隣のSpriteをEditorで検出。Sync→draft→Save／Cancel、自然順、GUID/local-IDによるhold保持、削除／復元、readonly画像欄。新画像の暫定hold1F。既存20画像のバイト一致と40metaのGUID/値一致（改行を除外）を確認してSpritesからSpriteへ移動。新弱P v14は取得処理download failed・ZIP未作成のため導入未完。取得を迂回せず共通機構だけを完成。
 同期検証24件（新規PNG import、既存校正、保存再読込を含む）、画像Editor26／Play19、入力73／戦闘146／製品Play36成功。実マウス未検証。根拠はtask/folder-verified-reload.txt、folder-sprite-{edit,play}.txt、folder-verified-{input,combat}.txt、folder-live.txt。
+
+## 弱P v14原本受領・導入
+ユーザー提供ローカル原本12枚をmanifest hash照合し全保持、02..11の10枚を5LP/Spriteへ導入。旧単画像はLegacySprite、導入前データはSourceArtへ保持。表示24Fは暫定で660msからの換算ではない。技の画像列以外のserialized値は導入前と一致。PPU700／1.55m、足元の103px横差をpivotで補正。判定は絵より約0.43m長い状態を保持して報告。WEAKP_V14_IMPORT.md参照。
+v14検証: 実Scene134件（全10枚の両向きsample・接地scale、自然時計では6枚を描画観測、技終了）、同期24／Editor26／fallback表示19／入力73／戦闘146／製品Play36成功。手動入力未検証。描画証拠はtask/weakp-v14-checks-{right,left}-active.png。

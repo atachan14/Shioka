@@ -13,6 +13,69 @@ MonoBehaviour:
   m_Name: Data
   m_EditorClassIdentifier: Assembly-CSharp::TrainingMoveData
   data:
+    spriteSequence:
+      rememberedHolds:
+      - identity: 121060a3452fea347b7c3cb3de81b118:21300000
+        holdFrames: 5
+      - identity: 3579847dc949dad448f31750fb74ac36:21300000
+        holdFrames: 2
+      - identity: 3b478750768e9c84287309c96677559d:21300000
+        holdFrames: 3
+      - identity: 5b83c0451d9f61145bd0ba8e9f264ac7:21300000
+        holdFrames: 2
+      - identity: 5dee5ca7c1a19074db84d3ad90a06f29:21300000
+        holdFrames: 2
+      - identity: 641a881eca4f2aa419e2e9348148e764:21300000
+        holdFrames: 2
+      - identity: 81ea17b3ac4edaa42b29c988581817e6:21300000
+        holdFrames: 2
+      - identity: 9b8cbc0b22c71ad4b84cdfd1dcfe81bf:21300000
+        holdFrames: 2
+      - identity: 9c7d2cc41a788854ca7dd86a493ccb6e:21300000
+        holdFrames: 2
+      - identity: d4309cce43dbfc74d82ba2c2b09ed188:21300000
+        holdFrames: 2
+      frames:
+      - sprite: {fileID: 21300000, guid: d4309cce43dbfc74d82ba2c2b09ed188, type: 3}
+        sourceIdentity: d4309cce43dbfc74d82ba2c2b09ed188:21300000
+        sourceName: 02-natural-half-grip-preparation.png / 02-natural-half-grip-preparation
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 9c7d2cc41a788854ca7dd86a493ccb6e, type: 3}
+        sourceIdentity: 9c7d2cc41a788854ca7dd86a493ccb6e:21300000
+        sourceName: 03-natural-half-grip-raised.png / 03-natural-half-grip-raised
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 3b478750768e9c84287309c96677559d, type: 3}
+        sourceIdentity: 3b478750768e9c84287309c96677559d:21300000
+        sourceName: 04-open-elbow-straight-wrist.png / 04-open-elbow-straight-wrist
+        holdFrames: 3
+      - sprite: {fileID: 21300000, guid: 121060a3452fea347b7c3cb3de81b118, type: 3}
+        sourceIdentity: 121060a3452fea347b7c3cb3de81b118:21300000
+        sourceName: 05-natural-half-grip-down-pass.png / 05-natural-half-grip-down-pass
+        holdFrames: 5
+      - sprite: {fileID: 21300000, guid: 81ea17b3ac4edaa42b29c988581817e6, type: 3}
+        sourceIdentity: 81ea17b3ac4edaa42b29c988581817e6:21300000
+        sourceName: 06-natural-half-grip-release.png / 06-natural-half-grip-release
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 3579847dc949dad448f31750fb74ac36, type: 3}
+        sourceIdentity: 3579847dc949dad448f31750fb74ac36:21300000
+        sourceName: 07-down-followthrough.png / 07-down-followthrough
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 641a881eca4f2aa419e2e9348148e764, type: 3}
+        sourceIdentity: 641a881eca4f2aa419e2e9348148e764:21300000
+        sourceName: 08-same-side-finish.png / 08-same-side-finish
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 9b8cbc0b22c71ad4b84cdfd1dcfe81bf, type: 3}
+        sourceIdentity: 9b8cbc0b22c71ad4b84cdfd1dcfe81bf:21300000
+        sourceName: 09-rearward-behind-hip.png / 09-rearward-behind-hip
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 5dee5ca7c1a19074db84d3ad90a06f29, type: 3}
+        sourceIdentity: 5dee5ca7c1a19074db84d3ad90a06f29:21300000
+        sourceName: 10-settle-behind-torso.png / 10-settle-behind-torso
+        holdFrames: 2
+      - sprite: {fileID: 21300000, guid: 5b83c0451d9f61145bd0ba8e9f264ac7, type: 3}
+        sourceIdentity: 5b83c0451d9f61145bd0ba8e9f264ac7:21300000
+        sourceName: 11-neutral-rest.png / 11-neutral-rest
+        holdFrames: 2
     category: 0
     spatialProfile: {fileID: 0}
     combatDamageMultiplier: 1

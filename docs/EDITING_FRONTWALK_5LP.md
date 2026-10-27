@@ -12,4 +12,4 @@ Skill/5LP/Data.assetを選択。隣のSpriteフォルダから自動検出し、
 
 画像列は技開始から再生し、短ければ最後を保持、長ければ技終了で打切り。合計Fで発生・持続・硬直を自動変更しない。小数の技Fと整数holdは割切れる必要がない。詳細はSKILL_SPRITE_SEQUENCE.md。
 
-現在の採用5LPは空列なので、Skill/5LP/Sprite/WeakP.pngの旧単画像をData/AwariCharacter.asset経由でactive中だけ表示する。v14の10枚は未導入。列を明示保存した技だけが新しい表示を使う。通常Playからauthoring保存はしない。実マウスの並替／Scene dragは未検証。
+現在の5LPはv14の02..11を10枚導入済み。表示holdは暫定2,2,3,5,2,2,2,2,2,2F。従来単画像はLegacySprite/WeakP.pngに保持し、空列fallback用にData/AwariCharacter.asset参照を維持。技時間・判定は不変更。判定先端との差などはWEAKP_V14_IMPORT.md参照。通常Playからauthoring保存はしない。実マウス／Scene dragは未検証。

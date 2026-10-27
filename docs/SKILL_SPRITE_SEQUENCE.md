@@ -1,6 +1,6 @@
 # 技画像列の編集
 
-入口: Assets/Shioka/調整Data/Fighter/Awari/Skill/5LP/Data.asset。弱Pに限らずTrainingMoveData共通の構造。現在の採用Dataは空列のままで、旧WeakP.pngとactive時の単画像表示を維持。v14は導入していない。
+入口: Assets/Shioka/調整Data/Fighter/Awari/Skill/5LP/Data.asset。弱Pに限らずTrainingMoveData共通の構造。現在の5LPはv14の02..11を導入済み。従来単画像はLegacySpriteへ保持。未設定の他技は従来表示。WEAKP_V14_IMPORT.md参照。
 
 ## 操作（フォルダ検出）
 各Skill/<技>/Data.assetの隣にSpriteフォルダを置く。既存SkillのSpritesはSpriteへGUIDを保って統一した。両方あれば同期を止め、二重に読まない。Sprite配下を再帰検出するため、原本／不採用画像／旧版退避はこの外へ置く。
@@ -23,4 +23,4 @@ holdは画像GUID＋Sprite local file IDで保持する。削除した画像のh
 通常Playはauthoring assetを保存しない。検証は一時assetと一時runtime値で行い、採用済み5LP数値・画像と移動統一は変更していない。実マウスでの並替／Scene dragは未検証。
 
 ## 新弱P素材の状態
-v14 ZIPのLibrary取得はdownload failedで完了せず、ローカルZIPは未作成。したがってmanifest／12原本／alpha／校正は未検査、ゲームへ未導入。現在のSprite/WeakP.pngを保持し、Data.assetも従来の空列のまま。将来取得後は12原本をSprite外に保持し、採用された10枚だけをSpriteに置く方針。660msプレビューを戦闘時間へ換算しない。
+ユーザー提供ローカル原本から12枚を照合・保持し、再生10枚だけを5LP/Spriteへ導入済み。暫定24Fの表示列と既存25.2Fの技時間は別。660msレビューを換算していない。判定の先端と拳には約0.43mの差が残る。詳細と復旧手順はWEAKP_V14_IMPORT.md。
