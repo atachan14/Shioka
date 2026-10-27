@@ -32,3 +32,6 @@ Title.unity → Fighter select → 既存Trainingと、Option共通のTitle戻�
 新導線28件、別Unityプロセスで選択読込3件成功。最終入力73／戦闘146／KeyConfig59／製品Play36も成功。保存は一時ファイルへ隔離。画面は自動Camera.Renderで確認、物理操作未検証。詳しい入口はTRAINING_FLOW.md。
 FrontWalk4F×4は作業上の暫定値で、承認済み周期ではない。ゲーム用最終周期は未確定。弱P v14 ZIP所在（Library libfile_c449ce57d4ec8191a05cdfb2b55714dc）は判明したが、全体採用と戦闘phase対応未確定のため導入保留。BackAirDash仕様と移動性能統一も引き続き保留。
 Title/Training両Sceneを含む通常Windows64ビルド成功（errors0、387851622bytes）。ビルド由来の4設定だけを外部退避後に復元、EditorBuildSettingsのTitle追加は保持。
+
+## 同キャラ移動の統一（2026-10-27）
+ユーザー承認により、1PだけだったApprovedLocomotionTuningを共有Awari Prefabへ移し、両者同じ採用SOを一度適用。既存1P採用値を正本として保持、2Pを同値へ統一。移動統一の判断待ちは解消。全面Motion SO再設計は別で、既存SharedCharacterと採用jump/backstep SOの責務はそのまま。MOVEMENT_PARITY.md／EDITING_FRONTWALK_5LP.md参照。弱P v14とBackAirDash等の保留は変わらない。
