@@ -1,5 +1,5 @@
 # Skill data ownership
-Each adopted TrainingMove definition now lives in Skill/<move>/Data.asset near its existing Sprites folder. Moves.asset is a reference catalog; its20 migrated definitions preserve all serialized values/curves/references exactly. Compatibility definitions retain technical names rather than inventing D1-D3 assignments. Throw settings and airborne candidate metadata remain their existing types for now.
+Each adopted TrainingMove definition now lives in Skill/<move>/Data.asset near its Sprite folder. Moves.asset is a reference catalog; its20 migrated definitions preserve all serialized values/curves/references exactly. Compatibility definitions retain technical names rather than inventing D1-D3 assignments. Throw settings and airborne candidate metadata remain their existing types for now.
 
 Select Data.asset to edit timing/intensity/etc outside Play. Open spatial editing for this skill opens the existing authoring scene and selects the command. Save authoritative SO now creates the spatial profile as a subasset in that same Data.asset for adopted skills. Catalog values are never manually synchronized. Legacy/fallback catalogs still read old serialized fields via FormerlySerializedAs.
 
@@ -10,3 +10,6 @@ Moves.assetの9個の旧共有数値は共通System/Compatibility/LegacyBattleRu
 
 ## Sprite sequence follow-up
 Data.asset now edits a private whole-skill draft: Save same skill asset adopts it; Cancel/reload or deselection discards it. Save or cancel before opening Spatial. Optional spriteSequence uses shared action-clock frame selection in runtime and Spatial preview. Empty sequences retain character-owned legacy key-pose references. See SKILL_SPRITE_SEQUENCE.md. No v14 art or move-timing changes were adopted.
+
+## Folder detection
+Editor detects Sprite subfolders next to each Data.asset; explicit Sync only edits a private draft. Natural filename order, GUID/local-ID hold retention, tombstones for restored images, no runtime disk search. Original-only art stays outside Sprite. Existing twenty Sprites folders were renamed with image bytes and .meta GUID/values preserved. No new weakP source was imported.

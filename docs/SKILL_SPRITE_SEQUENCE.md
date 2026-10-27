@@ -2,12 +2,16 @@
 
 入口: Assets/Shioka/調整Data/Fighter/Awari/Skill/5LP/Data.asset。弱Pに限らずTrainingMoveData共通の構造。現在の採用Dataは空列のままで、旧WeakP.pngとactive時の単画像表示を維持。v14は導入していない。
 
-## 操作
-Playを止め、Inspector先頭のSprite orderで＋して画像を指定、ドラッグで並替、右のhold Fを編集する。最低1F、最大256画像／合計36000F。各行はspriteと整数holdのみ。画像位置／HitBox／HurtBox／本体移動は既存Spatial側の責務で、二重offsetを増やさない。
+## 操作（フォルダ検出）
+各Skill/<技>/Data.assetの隣にSpriteフォルダを置く。既存SkillのSpritesはSpriteへGUIDを保って統一した。両方あれば同期を止め、二重に読まない。Sprite配下を再帰検出するため、原本／不採用画像／旧版退避はこの外へ置く。
 
-Inspectorは技全体の一時draft。Save same skill assetで同じData.assetへ明示保存、Cancel / reloadや選択を閉じると未保存draftを破棄。無効な画像／holdは保存を拒否。画像列の編集は発生・持続・硬直を自動変更しない（他の技フィールドを自分で編集した場合だけその値を保存）。
+検出はEditorだけ。Inspectorに検出数、追加／削除／rename／順序の差を表示する。Sync detected images to draftで自然数順の列を一時draftへ反映し、表示Fだけを編集する。画像欄は読取専用で、外の画像の手動追加や配列順の手動入替はしない。順序を変えるならファイル名を変更して同期する。1,2,10の順で並ぶ。
 
-保存後、Preview frameを選びOpen spatial editing for this skill。未保存draftがある間はこのボタンを無効化し、保存／取消してから移る。既存Sceneの画像プレビューも同じ技画像列・同じframe位置を使用し、左右反転とSpatialの画像offsetを適用。判定／本体移動のSaveは従来どおり同じData.assetのSpatial subassetへ保存。プレビューは戦闘を進めたりhitを再実行しない。
+同期はauthoring assetを保存しない。Save same skill assetで採用、Cancel / reloadや選択を閉じると未保存draftを破棄。検出差分とUNSAVEDは別で、Cancel後もフォルダに未反映差分があることは表示される。空列は従来表示のまま保存できる。列がある場合、未同期／欠落／別技画像の混在を保存時に拒否する。
+
+holdは画像GUID＋Sprite local file IDで保持する。削除した画像のholdも記憶し、同じIDを復元すれば戻る。同名でも別GUIDの新画像には流用しない。追加画像は暫定1F。新しいPNGの初回importのみSprite/Single、透過、mipmap無しを既定にする。既存または同梱.metaのPPU・pivot等は上書きしない。PPU/pivotを自動身体高正規化する機能ではなく、新素材の校正は別途必要。すでにTextureとしてimport済みのものはUnity InspectorでSpriteへ設定する。
+
+保存後、Preview frameを選びOpen spatial editing for this skill。未保存draftがある間はこのボタンを無効化。Sceneで同じ列・時計・反転を使用し、画像位置／HitBox／HurtBox／本体移動を編集する。Spatial Saveは同じData.assetへ反映する。画像列の長短で戦闘数値は自動変更しない。
 
 ## 時間の定義
 - 単位は60HzのF。技の開始をframe0とし、既存の技経過時計（ground timer、air action clock）×60と同じ値を使う。Hitstop／Block等で既存時計が止まれば表示列も止まる。入力の時計とは分け、描画時間で勝手に進めない。
@@ -17,3 +21,6 @@ Inspectorは技全体の一時draft。Save same skill assetで同じData.asset�
 - 空列／未設定なら既存互換表示。実行時に不正列が来てもnullを返して互換表示へ戻す。
 
 通常Playはauthoring assetを保存しない。検証は一時assetと一時runtime値で行い、採用済み5LP数値・画像と移動統一は変更していない。実マウスでの並替／Scene dragは未検証。
+
+## 新弱P素材の状態
+v14 ZIPのLibrary取得はdownload failedで完了せず、ローカルZIPは未作成。したがってmanifest／12原本／alpha／校正は未検査、ゲームへ未導入。現在のSprite/WeakP.pngを保持し、Data.assetも従来の空列のまま。将来取得後は12原本をSprite外に保持し、採用された10枚だけをSpriteに置く方針。660msプレビューを戦闘時間へ換算しない。

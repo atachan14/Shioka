@@ -39,3 +39,7 @@ Title/Training両Sceneを含む通常Windows64ビルド成功（errors0、387851
 ## 弱P画像列の共通編集対応
 TrainingMoveDataへ任意のspriteSequenceを追加。画像順・整数holdF、全技draftの明示Save／Cancel、同一clockによるSpatial／実表示に対応。空列は旧表示。画像と戦闘時間は独立。Editor26件／Play表示19件、最終入力73／戦闘146成功。旧弱P画像・技数値・d2b5a25移動assetは不変更。v14は未採用のまま。実マウス未検証。SKILL_SPRITE_SEQUENCE.md参照。
 画像列の最終コードで既存動作24件／製品入力Play36件も成功。検証根拠はtask/sprite-verified-{edit,play,input,combat,motion,live}.txt。
+
+## 技Spriteフォルダ同期
+各技Data.assetの隣のSpriteをEditorで検出。Sync→draft→Save／Cancel、自然順、GUID/local-IDによるhold保持、削除／復元、readonly画像欄。新画像の暫定hold1F。既存20画像のバイト一致と40metaのGUID/値一致（改行を除外）を確認してSpritesからSpriteへ移動。新弱P v14は取得処理download failed・ZIP未作成のため導入未完。取得を迂回せず共通機構だけを完成。
+同期検証24件（新規PNG import、既存校正、保存再読込を含む）、画像Editor26／Play19、入力73／戦闘146／製品Play36成功。実マウス未検証。根拠はtask/folder-verified-reload.txt、folder-sprite-{edit,play}.txt、folder-verified-{input,combat}.txt、folder-live.txt。

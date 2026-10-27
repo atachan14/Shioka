@@ -1,0 +1,4 @@
+using System;using System.IO;using System.Linq;using UnityEditor;using UnityEngine;
+public static class SkillSpriteFolderMigration {
+ public static void Run(){string root="Assets/Shioka/調整Data/Fighter/Awari/Skill";var folders=Directory.GetDirectories(root,"Sprites",SearchOption.AllDirectories).Select(x=>x.Replace((char)92,'/')).ToArray();foreach(string from in folders)if(AssetDatabase.IsValidFolder(from.Substring(0,from.Length-1)))throw new Exception("Both Sprite/Sprites exist: "+from);int count=0;foreach(string from in folders){string error=AssetDatabase.MoveAsset(from,from.Substring(0,from.Length-1));if(!string.IsNullOrEmpty(error))throw new Exception(error);count++;}AssetDatabase.SaveAssets();Debug.Log("SKILL_FOLDER_MIGRATION "+count+" folders renamed with GUID preservation; no sequence auto-adopted");}
+}
