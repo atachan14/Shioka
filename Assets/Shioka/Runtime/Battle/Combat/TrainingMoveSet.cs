@@ -4,6 +4,7 @@ public enum TrainingAttackClass { Mid, High, Low, Throw }
 [System.Serializable]
 public sealed class TrainingMove
 {
+    public TrainingSpriteSequence spriteSequence=new TrainingSpriteSequence();
     public TechniqueCategory category; // Metadata only; never an input button or automatic Mania effect.
     public TrainingMoveSpatialProfile spatialProfile;
     [Min(0)]public float combatDamageMultiplier=1,combatChipMultiplier=.1f,combatPushbackScale=.001f;
@@ -38,6 +39,7 @@ public sealed class TrainingMove
         float value=timedTdcRecoveryCostCurve.Evaluate(Mathf.Clamp01(recovery/recoveryFrames));
         return float.IsNaN(value)||float.IsInfinity(value)?1f:Mathf.Clamp(value,.25f,1f);
     }
+    public Sprite SequenceSpriteAt(float frame)=>frame>=0&&frame<Duration*60f-.0001f?spriteSequence?.Sample(frame):null;
     public float Duration => (startupFrames + activeFrames + recoveryFrames) / 60f;
     public bool CanChain(TrainingCommand next) => System.Array.IndexOf(chains, next) >= 0;
 }

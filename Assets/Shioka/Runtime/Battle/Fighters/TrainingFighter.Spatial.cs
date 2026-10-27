@@ -1,6 +1,8 @@
 using UnityEngine;
 public sealed partial class TrainingFighter {
  TrainingMoveSpatialProfile SpatialProfile=>CurrentPhase==Phase.Attack?currentMove==null?null:currentMove.spatialProfile:CurrentPhase==Phase.Air&&airCombatActive?(currentMove!=null&&currentMove.spatialProfile!=null?currentMove.spatialProfile:AirTrialCandidate==null?null:AirTrialCandidate.spatialProfile):CurrentPhase==Phase.ThrowAttempt&&ThrowSettings!=null?ThrowSettings.spatialProfile:null;
+ public float ActionVisualFrame=>SpatialFrame;
+ public Sprite SkillSequenceSprite=>(CurrentPhase==Phase.Attack||IsAirCombatAttack)&&CurrentMove!=null?CurrentMove.SequenceSpriteAt(ActionVisualFrame):null;
  float SpatialFrame=>CurrentPhase==Phase.Air?airTrialClock.Elapsed*60:timer*60;
  public TrainingSpatialKey SpatialSample=>SpatialProfile==null?null:SpatialProfile.Sample(SpatialFrame);
  public Vector3 SpatialVisualOffset {get{var s=SpatialSample;return s==null?Vector3.zero:TrainingCoordinates2D.World(Vector3.zero,s.visualOffset,Facing);}}

@@ -7,3 +7,6 @@ Play resolves detached runtime copies; JSON reset clears caches and reloads sour
 
 ## 共有互換ルール
 Moves.assetの9個の旧共有数値は共通System/Compatibility/LegacyBattleRules.assetへ同値移行。カタログは技と共有ルールの参照を持つ。新しいダウン／TG獲得仕様を有効化したものではない。Play中の変更は複製値だけに適用される。
+
+## Sprite sequence follow-up
+Data.asset now edits a private whole-skill draft: Save same skill asset adopts it; Cancel/reload or deselection discards it. Save or cancel before opening Spatial. Optional spriteSequence uses shared action-clock frame selection in runtime and Spatial preview. Empty sequences retain character-owned legacy key-pose references. See SKILL_SPRITE_SEQUENCE.md. No v14 art or move-timing changes were adopted.

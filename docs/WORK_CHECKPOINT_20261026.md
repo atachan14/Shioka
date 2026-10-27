@@ -35,3 +35,7 @@ Title/Training両Sceneを含む通常Windows64ビルド成功（errors0、387851
 
 ## 同キャラ移動の統一（2026-10-27）
 ユーザー承認により、1PだけだったApprovedLocomotionTuningを共有Awari Prefabへ移し、両者同じ採用SOを一度適用。既存1P採用値を正本として保持、2Pを同値へ統一。移動統一の判断待ちは解消。全面Motion SO再設計は別で、既存SharedCharacterと採用jump/backstep SOの責務はそのまま。MOVEMENT_PARITY.md／EDITING_FRONTWALK_5LP.md参照。弱P v14とBackAirDash等の保留は変わらない。
+
+## 弱P画像列の共通編集対応
+TrainingMoveDataへ任意のspriteSequenceを追加。画像順・整数holdF、全技draftの明示Save／Cancel、同一clockによるSpatial／実表示に対応。空列は旧表示。画像と戦闘時間は独立。Editor26件／Play表示19件、最終入力73／戦闘146成功。旧弱P画像・技数値・d2b5a25移動assetは不変更。v14は未採用のまま。実マウス未検証。SKILL_SPRITE_SEQUENCE.md参照。
+画像列の最終コードで既存動作24件／製品入力Play36件も成功。検証根拠はtask/sprite-verified-{edit,play,input,combat,motion,live}.txt。
