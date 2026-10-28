@@ -117,7 +117,6 @@ public sealed partial class TrainingFighter : MonoBehaviour
     private Vector3 standingHipLocal;
     private Vector3 spawn;
     private ITrainingInputSource inputSource;
-    private readonly RaycastHit[] floorHits = new RaycastHit[8];
     private Material[] materials;
     private Color[] baseColors;
 
@@ -195,7 +194,6 @@ public sealed partial class TrainingFighter : MonoBehaviour
     private void RefreshFacing() { Facing = opponent == null || opponent.transform.position.x > transform.position.x ? 1 : -1; }
     private void ResetLocal()
     {
-        ResetFocusedMediumKickPlant();
         LastTdcCostScale=1f;LastTdcBaseCost=0f;ResetFd();ReleaseThrow();ThrowCount=0;LastThrowResult="None";throwResolved=false;
         body.enabled = false;
         SetCrouching(false);
@@ -760,7 +758,6 @@ public sealed partial class TrainingFighter : MonoBehaviour
                 forearm.rotation = Quaternion.Slerp(forearm.rotation, Quaternion.FromToRotation(hand.position - forearm.position, aim) * forearm.rotation, weight);
             }
         }
-        ApplyFocusedMediumKickGrounding(state);
     }
     private void ApplySweepPose()
     {
