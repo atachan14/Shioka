@@ -15,6 +15,7 @@ public sealed partial class TrainingOverlay
 {
 
     public bool OptionVisible{get;private set;}
+    public bool ReturnToTitleOnOptionClose {get;set;}
 
     GameObject optionRoot,ownedEventSystem;
 
@@ -42,7 +43,7 @@ public sealed partial class TrainingOverlay
 
     {
 
-        if(OptionVisible==visible)return;if(!visible){DiscardKeyDraftOnClose();CancelKeyCapture();if(keyDialog!=null)keyDialog.SetActive(false);}
+        if(OptionVisible==visible)return;bool returnToTitle=!visible&&ReturnToTitleOnOptionClose;ReturnToTitleOnOptionClose=visible&&ReturnToTitleOnOptionClose;if(!visible){DiscardKeyDraftOnClose();CancelKeyCapture();if(keyDialog!=null)keyDialog.SetActive(false);}
 
         if(visible){menuOpenedFrame=Time.frameCount;Session?.MenuOpened();optionSavedScale=Time.timeScale;Time.timeScale=0;OptionVisible=true;SetHudHelpVisible(false);SetHudHistoryVisible(false);}
 
@@ -55,6 +56,7 @@ public sealed partial class TrainingOverlay
         if(EventSystem.current!=null)EventSystem.current.SetSelectedGameObject(null);
 
         if(visible){counterField.SetTextWithoutNotify(dummy.CounterCommand);RefreshOptionSettings();LayoutOption(hudWidth,hudHeight);optionRoot.transform.SetAsLastSibling();}
+        if(returnToTitle){Time.timeScale=1;UnityEngine.SceneManagement.SceneManager.LoadScene(TrainingFlowSession.TitleScene);}
 
     }
 
@@ -138,7 +140,7 @@ public sealed partial class TrainingOverlay
 
         OptionText("Pause","設定中は戦闘停止。閉じた後は操作キーを一度離してください。",panel.transform,12);
 
-        OptionButton("NavTitle","Titleへ戻る",optionPanel,()=>{SetOptionVisible(false);UnityEngine.SceneManagement.SceneManager.LoadScene(TrainingFlowSession.TitleScene);});CreateInputOptions();CreateDeveloperOptions();CreateTrainingOptions();optionRoot.AddComponent<TrainingOptionNavigation>().Configure(this,optionRoot);optionPanel.Find("Pause").GetComponent<Text>().text="WASD: select | J: confirm / edit | K: back | Enter: finish text | Esc: close | Mouse: click";optionRoot.SetActive(false);LayoutOption(hudWidth,hudHeight);
+        OptionButton("NavTitle","Titleへ戻る",optionPanel,()=>{bool returning=ReturnToTitleOnOptionClose;SetOptionVisible(false);if(!returning)UnityEngine.SceneManagement.SceneManager.LoadScene(TrainingFlowSession.TitleScene);});CreateInputOptions();CreateDeveloperOptions();CreateTrainingOptions();optionRoot.AddComponent<TrainingOptionNavigation>().Configure(this,optionRoot);optionPanel.Find("Pause").GetComponent<Text>().text="WASD: select | J: confirm / edit | K: back | Enter: finish text | Esc: close | Mouse: click";optionRoot.SetActive(false);LayoutOption(hudWidth,hudHeight);
 
     }
 

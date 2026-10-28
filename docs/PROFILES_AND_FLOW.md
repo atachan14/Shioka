@@ -1,18 +1,12 @@
-# 選択キャラ・履歴の最小土台
+# Profile / selection / flow
 
-これはデータ/API基盤。TitleMenu／FighterSelect画面、キャラ生成・対戦結果の自動収集、オンライン認証は未実装。
+- `調整Data/Fighter/Catalog.asset`: Fighter Prefab 参照。ID/名前はキャラの authoring profile に由来します。
+- `Runtime/Profiles/PlayerPreferences`: version 2。Player は互換用フィールド `selectedFighterId`、相手選択は `cpuFighterId`。Dummy 別保存は作りません。
+- `Runtime/Persistence/PlayerPreferencesStore`: `Profiles/PlayerPreferences-v1.json`。旧 Player-only 形式のメモリ内移行、明示保存のみ、取消時不変。詳細は TRAINING_FLOW.md。
+- `Runtime/Flow/TrainingFlowRequest`: Catalog の安定 ID 解決。未定義 ID は表示用 fallback を返し、保存済み ID を勝手に置換しません。
+- `TrainingFrontMenu`: 共通 Player / CPU 選択画面のモード切替。Player 確定後 Title、CPU 確定後 Training。
+- `TrainingFlowSession / TrainingSceneEntryGate`: 確定した両者 ID の引渡しと neutral gate。Title Option の一時ホストも管理。既存の 1P/2P 役割や調整数値を上書きしません。
+- `Runtime/History`: 明示的なローカル対戦結果、最大 1000 件、重複 matchId は拒否。Training は対象外。実対戦結果の自動収集・オンライン認証や履歴は未実装。
+- `LocalProfileFile`: 4 MiB 上限、壊れた内容を残す fallback、明示書込時の atomic replace と .bak。個人設定は authoring SO に書き込みません。
 
-- 調整Data/Fighter/Catalog.asset: Awari.prefab参照だけ。キャラ安定IDはcharacter profileから解決。
-- Runtime/Profiles/PlayerPreferences: version1＋selectedFighterId。
-- Runtime/Flow/TrainingFlowRequest: 選択IDからPrefabを解決するだけ。存在しないIDは既定キャラへ一時fallbackし保存値は書き換えない。
-- Runtime/History: 明示的なローカル対戦結果。Trainingは記録対象外。最大1000件、重複matchIdを拒否。サーバーで保証された履歴ではない。
-- Runtime/Persistence: 明示Save/Append時だけJSON保存。通常LoadやPlay開始では書かない。4MiB上限、version/値検証、壊れたファイルを残してfallback。置換時.bakを残す。
-
-既定保存先はApplication.persistentDataPath以下の Profiles/PlayerPreferences-v1.json と History/Matches-v1.json。既存KeyConfig-v1.jsonとは別。今回の検証は一時パスだけを使用し、実ユーザー保存には触れていない。
-
-本番の画面遷移／一般化した生成へ接続する前に、現在1Pだけに適用されるlocomotion調整を2Pへ統一するか決める。無断で両者の挙動を変えない。
-
-## 後続段階
-Title／FighterSelectから既存Trainingへの最小画面導線は追加済み（TRAINING_FLOW.md）。ここまでの「画面未実装」は保存API導入時の記録。一般化したキャラ生成は行わず既存Scene役割を保持するため、1P/2Pの移動統一判断を待たず利用できる。履歴の自動記録／Onlineは引き続き未実装。
-
-移動統一の後続記録: 現在は同じAwari Prefabから両者に採用locomotion SOを適用するため、1P/2P差の確認待ちは解消。一般化したキャラ生成を今回追加したわけではない。
+Title のアートは余白のみ、将来モードは非活性表示。複数キャラの実戦生成、オンライン、実機全種検証はこの段階の完成対象ではありません。
