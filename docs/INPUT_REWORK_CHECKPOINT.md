@@ -1,5 +1,7 @@
 # Current input rules — chord establishment edges
 
+> 2026-10-29 現在: KeyConfig UI/個人保存は後続で実装済みです。「今回範囲外」はそのcheckpoint時点の記録。後押しT1拒否と同時押し待ちは撤回済み。 現在状態は [STATUS](STATUS.md)、全体入口は [README](README.md)。
+
 Latest approved revision after 195d6b4. No simultaneous-input grace or command confirmation wait. Normal 10F buffering/startup and battle eligibility remain unchanged.
 
 ## Modifier edges

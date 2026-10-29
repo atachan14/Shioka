@@ -1,5 +1,7 @@
 # Assets layout — stage 1
 
+> 2026-10-29 現在: 以下は段階的な移行記録です。個別技SO、Awari Prefab、Title/選択、KeyConfig、v14導入、移動同一化は後に実装済み。初期段階の未実装表現は現在の残件ではありません。 現在状態は [STATUS](STATUS.md)、全体入口は [README](README.md)。
+
 Local development project: G:/source/repos/unity/Shioka. Based on public main 78241cc; old private history and old G project remain separate. No push.
 
 - Assets/Shioka/調整Data/共通System: existing test system profile and compatibility Resources settings. Camera/Display are still one existing SO. Input defaults remain unchanged, pending user clarification.

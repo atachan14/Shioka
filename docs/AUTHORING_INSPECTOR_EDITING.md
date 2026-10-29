@@ -1,5 +1,7 @@
 # Inspector の技・動作データ編集
 
+> 2026-10-29 現在: 現在のユーザー調整値は5LP 6/3/10F、hold計19F。本文の7.2/4.8/13.2Fは不具合修正時の値です。Play中編集は依然禁止で、ライブ調整は提案のみ。 現在状態は [STATUS](STATUS.md)、全体入口は [README](README.md)。
+
 Play を停止し、Unity のコンパイル完了後に対象 asset を選び直してください（別の asset を一度選択して戻れば十分です）。Project や Scene の再作成は不要です。
 
 ## 5LP

@@ -1,5 +1,7 @@
 # Individual motion actions: first milestone
 
+> 2026-10-29 現在: 本文はIdle/ForwardWalkから他動作へ展開した順の記録です。Awari Prefabと他動作入口も実装済みで、初期節だけを現在範囲としないでください。 現在状態は [STATUS](STATUS.md)、全体入口は [README](README.md)。
+
 Open Assets/Shioka/調整Data/Fighter/Awari/Move/Idle/Idle.asset or Move/ForwardWalk/ForwardWalk.asset. Select the asset outside Play. The Inspector edits a private draft: poses contain sprite, integer hold frames (60Hz), local-forward X/up Y visual offset in meters, and hurt geometry by stable part ID. The preview shows the calibrated sprite, ground and hurt outlines; Mirror left previews facing. Save same asset explicitly adopts the draft; Cancel/reload discards it. Closing selection discards unsaved edits. Inspector does not save in Play.
 
 AwariCharacter references these assets. The old idle/forward sprite fields are cleared for adopted Awari; Scene sprite fields are compatibility caches populated from character data, not another authoring source. Each asset starts with one existing approved held pose, zero offset, stable part0 center(0,0.775), size(0.52,1.55). No new art, interpolation or walk cycle was imported. Animation changes never change walking speed, acceleration or jump/dash data.

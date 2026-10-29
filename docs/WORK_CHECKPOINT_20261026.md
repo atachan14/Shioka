@@ -1,5 +1,7 @@
 # 採用構造への移行・素材反映チェックポイント
 
+> 2026-10-29 現在: この文書は追記型の過去作業ログです。古い未実装・素材未受領・検証件数を現在状態と扱わないでください。 現在状態は [STATUS](STATUS.md)、全体入口は [README](README.md)。
+
 現役 G:/source/repos/unity/Shioka。Play-Shioka.cmd → CombatFormulaComparison。pushなし。
 
 ## 完了
