@@ -12,7 +12,7 @@
 |---|---|
 | `docs/archive/20261029/` | 2026-10-29 までの docs 一式(作業記録、検証記録、Dot がまとめた入口を含む)。書き換えない。採用時の会話の索引(Slack のメッセージ ID)は、その中の `DOCS_HISTORY.md` にある |
 | 非公開リポジトリ `Shioka-archive`(GitHub) | 旧リポジトリ。ブランチ `cleanup/obsolete-3d-20261025` に docs 54本(下の表)。`main` は初期の版 |
-| ローカルの退役保管 `Shioka-retirement-20261026` | 旧リポジトリの bundle と、ソース・設定の ZIP。今のところ場所が不明([QUESTIONS.md](QUESTIONS.md)) |
+| ローカルの退役保管 `C:\Users\user\Documents\Codex\2026-10-22\task\Shioka-retirement-20261026` | 旧リポジトリの `old-history.bundle`、ソースと設定の `old-source-and-settings.zip`、`RECOVERY.txt`、`SHA256.txt` |
 
 `Shioka-archive` の主な docs(ブランチ `cleanup/obsolete-3d-20261025`):
 

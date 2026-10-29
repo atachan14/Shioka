@@ -15,5 +15,5 @@ docs に書かれている作業上の扱いのうち、ユーザー本人に確
 
 ## その他
 
-- `G:\ShiokaValidation-20261011-task5`(検証用の作業フォルダ)は、たぶん削除してよい。ユーザーがDotに確認する([QUESTIONS](QUESTIONS.md))。
+- `G:\ShiokaValidation-20261011-task5` は、今の開発には不要な旧3D検証環境。旧検証をやり直す必要がなければ、検証の ZIP も含めて退役させてよい(Dot 確認 2026-10-29)。片付けるときは、Unity などが終わっていることを確かめてから、ごみ箱へ移す。
 - `G:\source\repos\unity\Shioka2` はナンバリングが逆だが、Shioka の旧プロジェクトの一つ。原案は [HISTORY](HISTORY.md) の旧資料(`imported/shioka2/`)に含まれている。
