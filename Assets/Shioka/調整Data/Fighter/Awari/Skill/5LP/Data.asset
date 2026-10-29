@@ -47,11 +47,11 @@ MonoBehaviour:
       - sprite: {fileID: 21300000, guid: 3b478750768e9c84287309c96677559d, type: 3}
         sourceIdentity: 3b478750768e9c84287309c96677559d:21300000
         sourceName: 04-open-elbow-straight-wrist.png / 04-open-elbow-straight-wrist
-        holdFrames: 3
+        holdFrames: 2
       - sprite: {fileID: 21300000, guid: 121060a3452fea347b7c3cb3de81b118, type: 3}
         sourceIdentity: 121060a3452fea347b7c3cb3de81b118:21300000
         sourceName: 05-natural-half-grip-down-pass.png / 05-natural-half-grip-down-pass
-        holdFrames: 5
+        holdFrames: 2
       - sprite: {fileID: 21300000, guid: 81ea17b3ac4edaa42b29c988581817e6, type: 3}
         sourceIdentity: 81ea17b3ac4edaa42b29c988581817e6:21300000
         sourceName: 06-natural-half-grip-release.png / 06-natural-half-grip-release
@@ -75,7 +75,7 @@ MonoBehaviour:
       - sprite: {fileID: 21300000, guid: 5b83c0451d9f61145bd0ba8e9f264ac7, type: 3}
         sourceIdentity: 5b83c0451d9f61145bd0ba8e9f264ac7:21300000
         sourceName: 11-neutral-rest.png / 11-neutral-rest
-        holdFrames: 2
+        holdFrames: 1
     category: 0
     spatialProfile: {fileID: 0}
     combatDamageMultiplier: 1
@@ -92,9 +92,9 @@ MonoBehaviour:
     causesKnockdown: 0
     state: Jab
     clip: {fileID: 0}
-    startupFrames: 7.2
-    activeFrames: 4.8
-    recoveryFrames: 13.2
+    startupFrames: 6
+    activeFrames: 3
+    recoveryFrames: 10
     groundHitKnockbackSpeed: 0
     attackLevel: 260
     damage: 10
