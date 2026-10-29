@@ -6,9 +6,10 @@
 
 1. [コンセプト](CONCEPT.md): 何を面白さの中心にするか。初期案と現行仕様を区別。
 2. [現行の暫定仕様](CURRENT_SPEC.md): 戦闘式・入力・Training の重要条件。
-3. [実装状況と未決](STATUS.md): 今できること、勝手に補ってはいけないこと。
+3. [実装状況と未決](STATUS.md): 今できること、まだ決まっていないこと(未決の点の扱いは [USER_NOTES](USER_NOTES.md) も参照)。
 4. [調整入口](EDITING_FRONTWALK_5LP.md)、[Inspector 操作](AUTHORING_INSPECTOR_EDITING.md)、[共通調整](SHARED_SYSTEM_TUNING.md)。
 5. [docs 移行経緯と旧資料の参照](DOCS_HISTORY.md)。旧資料を調べる場合もここから。
+6. [ユーザー確認メモ](USER_NOTES.md): docs の作業上の扱いのうち、ユーザーの方針かどうかを確認したもの。
 
 ## 実装を調べる入口
 
