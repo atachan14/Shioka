@@ -1,0 +1,143 @@
+{
+ "guard": {
+  "normalWindow": 30.0,
+  "continuousWindow": 20.0,
+  "normalDecayFrames": 3.0,
+  "continuousDecayFrames": 2.0,
+  "maxReduction": 10.0,
+  "jgSelfPushReduction": 0.4,
+  "fdAttackerPush": 0.2,
+  "fdJGBonus": 1.5
+ },
+ "tg": {
+  "positiveDivisor": 200.0,
+  "negativeDivisor": 100.0
+ },
+ "combat": {
+  "defenseDivisor": 100.0,
+  "stunDivisor": 10.0,
+  "hitstopDivisor": 40.0,
+  "hitPushRatio": 1.2,
+  "blockPushDivisor": 3.0
+ },
+ "combat_test": {
+  "player_tg": 0.0,
+  "opponent_tg": 0.0,
+  "hp": 2300.0,
+  "push_frames": 10
+ },
+ "display": {
+  "horizontalWidthMode": 1.0,
+  "minimumWidth": 6.0,
+  "maximumWidth": 10.0,
+  "zoomSmoothSeconds": 0.25,
+  "panSmoothSeconds": 0.18,
+  "lookAheadSeconds": 0.2,
+  "minimumZoom": 1.25,
+  "maximumZoom": 3.4,
+  "characterMargin": 1.05,
+  "fitPadding": 1.1,
+  "groundAnchor": 0.82,
+  "airPadding": 0.35,
+  "trainingPanels": 1.0,
+  "panelOpacity": 0.68,
+  "completedComboSeconds": 2.0,
+  "negativeHigh": {
+   "r": 0.31,
+   "g": 0.4,
+   "b": 0.93,
+   "a": 1
+  },
+  "negativeLow": {
+   "r": 0.13,
+   "g": 0.74,
+   "b": 0.86,
+   "a": 1
+  },
+  "zero": {
+   "r": 0.65,
+   "g": 0.7,
+   "b": 0.75,
+   "a": 1
+  },
+  "positiveLow": {
+   "r": 0.94,
+   "g": 0.17,
+   "b": 0.23,
+   "a": 1
+  },
+  "positiveHigh": {
+   "r": 1,
+   "g": 0.74,
+   "b": 0.17,
+   "a": 1
+  }
+ },
+ "input": {
+  "modifier1_actions": [
+   0,
+   0,
+   0,
+   10,
+   7,
+   8,
+   1,
+   2,
+   3
+  ],
+  "modifier2_actions": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "modifier1_binding": "<Gamepad>/leftShoulder",
+  "modifier2_binding": "",
+  "slot_keyboard": [
+   "<Keyboard>/u",
+   "<Keyboard>/i",
+   "<Keyboard>/o",
+   "<Keyboard>/m",
+   "<Keyboard>/comma",
+   "<Keyboard>/period",
+   "<Keyboard>/j",
+   "<Keyboard>/k",
+   "<Keyboard>/l"
+  ],
+  "slot_gamepad": [
+   "",
+   "",
+   "",
+   "<Gamepad>/buttonSouth",
+   "<Gamepad>/buttonEast",
+   "<Gamepad>/rightTrigger",
+   "<Gamepad>/buttonWest",
+   "<Gamepad>/buttonNorth",
+   "<Gamepad>/rightShoulder"
+  ],
+  "second_slot_keyboard": [
+   "",
+   "",
+   "",
+   "<Keyboard>/numpad7",
+   "<Keyboard>/numpad9",
+   "<Keyboard>/numpadMinus",
+   "<Keyboard>/numpad1",
+   "<Keyboard>/numpad2",
+   "<Keyboard>/numpad3"
+  ],
+  "trc_gamepad": "",
+  "mania_gamepad": "<Gamepad>/leftTrigger",
+  "record_gamepad": "<Gamepad>/leftStickPress",
+  "play_gamepad": "<Gamepad>/rightStickPress",
+  "first_throw_keyboard": "<Keyboard>/h",
+  "second_throw_keyboard": "<Keyboard>/numpadDivide",
+  "second_trc_keyboard": "<Keyboard>/numpadEnter",
+  "double_tap_seconds": 0.25
+ }
+}

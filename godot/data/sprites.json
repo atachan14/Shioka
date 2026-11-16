@@ -1,0 +1,686 @@
+{
+ "res://assets/awari/Skill/5LP/Sprite/02-natural-half-grip-preparation.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.0234375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/02-natural-half-grip-preparation.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/03-natural-half-grip-raised.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.022135416
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/03-natural-half-grip-raised.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/04-open-elbow-straight-wrist.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.01953125
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/04-open-elbow-straight-wrist.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/05-natural-half-grip-down-pass.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.022786459
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/05-natural-half-grip-down-pass.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/06-natural-half-grip-release.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.022135416
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/06-natural-half-grip-release.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/07-down-followthrough.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.022786459
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/07-down-followthrough.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/08-same-side-finish.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.022135416
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/08-same-side-finish.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/09-rearward-behind-hip.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.021484375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/09-rearward-behind-hip.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/10-settle-behind-torso.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.0234375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/10-settle-behind-torso.png"
+ },
+ "res://assets/awari/Skill/5LP/Sprite/11-neutral-rest.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.44941407,
+   0.0234375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/Sprite/11-neutral-rest.png"
+ },
+ "res://assets/awari/Move/Idle/Sprites/Neutral.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.0234375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Idle/Sprites/Neutral.png"
+ },
+ "res://assets/awari/Skill/5HK/Sprite/5HK.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.40364584,
+   0.009765625
+  ],
+  "ppu": 500.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5HK/Sprite/5HK.png"
+ },
+ "res://assets/awari/Skill/5LP/LegacySprite/WeakP.png": {
+  "size": [
+   1278,
+   1230
+  ],
+  "pivot": [
+   0.48513302,
+   0.0016260162
+  ],
+  "ppu": 600.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LP/LegacySprite/WeakP.png"
+ },
+ "res://assets/awari/Skill/5MP/Sprite/MediumP.png": {
+  "size": [
+   1312,
+   1199
+  ],
+  "pivot": [
+   0.49542683,
+   0.0033361134
+  ],
+  "ppu": 600.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5MP/Sprite/MediumP.png"
+ },
+ "res://assets/awari/Skill/5HP/Sprite/StrongP.png": {
+  "size": [
+   1312,
+   1199
+  ],
+  "pivot": [
+   0.38109756,
+   0.043369476
+  ],
+  "ppu": 600.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5HP/Sprite/StrongP.png"
+ },
+ "res://assets/awari/Reactions/StandingGuard/Sprites/StandingGuard.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.011067708
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/StandingGuard/Sprites/StandingGuard.png"
+ },
+ "res://assets/awari/Reactions/2Guard/Sprites/2Guard.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5371094,
+   0.0234375
+  ],
+  "ppu": 1000.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/2Guard/Sprites/2Guard.png"
+ },
+ "res://assets/awari/Reactions/2Hit/Sprites/2Hit.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5566406,
+   0.020182291
+  ],
+  "ppu": 1000.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/2Hit/Sprites/2Hit.png"
+ },
+ "res://assets/awari/Skill/2HK/Sprite/2HK.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.4231771,
+   0.04296875
+  ],
+  "ppu": 650.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/2HK/Sprite/2HK.png"
+ },
+ "res://assets/awari/Skill/2HP/Sprite/2HP.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5371094,
+   0.010416667
+  ],
+  "ppu": 800.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/2HP/Sprite/2HP.png"
+ },
+ "res://assets/awari/Skill/2LP/Sprite/2LP.png": {
+  "size": [
+   1246,
+   1263
+  ],
+  "pivot": [
+   0.5457464,
+   0.008709422
+  ],
+  "ppu": 900.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/2LP/Sprite/2LP.png"
+ },
+ "res://assets/awari/Skill/2MP/Sprite/2MP.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.5208333,
+   0.03125
+  ],
+  "ppu": 650.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/2MP/Sprite/2MP.png"
+ },
+ "res://assets/awari/Reactions/5Hit/Sprites/5Hit.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.60546875,
+   0.028645834
+  ],
+  "ppu": 730.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/5Hit/Sprites/5Hit.png"
+ },
+ "res://assets/awari/Skill/5LK/Sprite/5LK.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.546875,
+   0.017578125
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5LK/Sprite/5LK.png"
+ },
+ "res://assets/awari/Skill/5MK/Sprite/5MK.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.43945312,
+   0.059244793
+  ],
+  "ppu": 650.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/5MK/Sprite/5MK.png"
+ },
+ "res://assets/awari/Skill/AirThrow/Sprite/AirThrow.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.52734375,
+   0.375
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/AirThrow/Sprite/AirThrow.png"
+ },
+ "res://assets/awari/Reactions/Down/Sprites/Down.png": {
+  "size": [
+   1774,
+   887
+  ],
+  "pivot": [
+   0.535513,
+   0.08680947
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/Down/Sprites/Down.png"
+ },
+ "res://assets/awari/Reactions/jGuard/Sprites/jGuard.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5175781,
+   0.34895834
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/jGuard/Sprites/jGuard.png"
+ },
+ "res://assets/awari/Reactions/jHit/Sprites/jHit.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5566406,
+   0.4466146
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Reactions/jHit/Sprites/jHit.png"
+ },
+ "res://assets/awari/Skill/jHK/Sprite/jHK.png": {
+  "size": [
+   1203,
+   1307
+  ],
+  "pivot": [
+   0.48212802,
+   0.5026779
+  ],
+  "ppu": 650.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/jHK/Sprite/jHK.png"
+ },
+ "res://assets/awari/Skill/jHP/Sprite/jHP.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5371094,
+   0.43359375
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/jHP/Sprite/jHP.png"
+ },
+ "res://assets/awari/Skill/jLK/Sprite/jLK.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.48828125,
+   0.47916666
+  ],
+  "ppu": 950.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/jLK/Sprite/jLK.png"
+ },
+ "res://assets/awari/Skill/jLP/Sprite/jLP.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.48828125,
+   0.4466146
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/jLP/Sprite/jLP.png"
+ },
+ "res://assets/awari/Skill/jMK/Sprite/jMK.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.4231771,
+   0.3359375
+  ],
+  "ppu": 650.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/jMK/Sprite/jMK.png"
+ },
+ "res://assets/awari/Skill/jMP/Sprite/jMP.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.48828125,
+   0.4466146
+  ],
+  "ppu": 850.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/jMP/Sprite/jMP.png"
+ },
+ "res://assets/awari/Skill/Throw/Sprite/Throw.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5859375,
+   0.01171875
+  ],
+  "ppu": 750.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/Throw/Sprite/Throw.png"
+ },
+ "res://assets/awari/Skill/2LK/Sprite/2LK.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.3580729,
+   0.025390625
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/2LK/Sprite/2LK.png"
+ },
+ "res://assets/awari/Skill/2MK/Sprite/2MK.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.5,
+   0.18652344
+  ],
+  "ppu": 600.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Skill/2MK/Sprite/2MK.png"
+ },
+ "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/01-contact-A.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.0234375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/ForwardWalk/Sprites/ApprovedCycle4/01-contact-A.png"
+ },
+ "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/02-passing-near-support.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.021484375
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/ForwardWalk/Sprites/ApprovedCycle4/02-passing-near-support.png"
+ },
+ "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/03-contact-B.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.042317707
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/ForwardWalk/Sprites/ApprovedCycle4/03-contact-B.png"
+ },
+ "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/04-passing-far-support.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.033203125
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/ForwardWalk/Sprites/ApprovedCycle4/04-passing-far-support.png"
+ },
+ "res://assets/awari/Move/BackwardWalk/Sprites/BackwardWalk.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.55,
+   0.015625
+  ],
+  "ppu": 720.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/BackwardWalk/Sprites/BackwardWalk.png"
+ },
+ "res://assets/awari/Move/Crouch/Sprites/Crouch.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.56,
+   0.046223957
+  ],
+  "ppu": 900.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Crouch/Sprites/Crouch.png"
+ },
+ "res://assets/awari/Move/GroundDash/Sprites/Dash.png": {
+  "size": [
+   1536,
+   1024
+  ],
+  "pivot": [
+   0.52,
+   0.044921875
+  ],
+  "ppu": 840.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/GroundDash/Sprites/Dash.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/Backstep1.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5,
+   0.005859375
+  ],
+  "ppu": 770.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/Backstep1.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/02-new.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.515,
+   0.009114583
+  ],
+  "ppu": 740.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/02-new.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/03-mid.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.53,
+   0.005859375
+  ],
+  "ppu": 710.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/03-mid.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/04-new.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.545,
+   0.005859375
+  ],
+  "ppu": 680.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/04-new.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/Backstep2.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.56,
+   0.045572918
+  ],
+  "ppu": 650.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/Backstep2.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/06-new.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.5525,
+   0.017578125
+  ],
+  "ppu": 670.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/06-new.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/07-mid.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.54499996,
+   0.012369792
+  ],
+  "ppu": 690.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/07-mid.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/08-new.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.53749996,
+   0.020182291
+  ],
+  "ppu": 710.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/08-new.png"
+ },
+ "res://assets/awari/Move/Backstep/Sprites/Backstep3.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.53,
+   0.036458332
+  ],
+  "ppu": 730.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Backstep/Sprites/Backstep3.png"
+ },
+ "res://assets/awari/Move/AirDash/Sprites/AirDash.png": {
+  "size": [
+   1112,
+   1414
+  ],
+  "pivot": [
+   0.78125,
+   0.26757812
+  ],
+  "ppu": 700.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/AirDash/Sprites/AirDash.png"
+ },
+ "res://assets/awari/Move/Jump/Sprites/JumpAscent.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.58,
+   0.037109375
+  ],
+  "ppu": 780.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Jump/Sprites/JumpAscent.png"
+ },
+ "res://assets/awari/Move/Jump/Sprites/JumpDescent.png": {
+  "size": [
+   1024,
+   1536
+  ],
+  "pivot": [
+   0.6,
+   0.051432293
+  ],
+  "ppu": 840.0,
+  "source": "Shioka/調整Data/Fighter/Awari/Move/Jump/Sprites/JumpDescent.png"
+ }
+}

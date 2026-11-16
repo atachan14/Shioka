@@ -1,6 +1,6 @@
 # 戦闘(接触・TG・ガード・押し返し)
 
-暫定仕様(v0.1)。バランスの最終値ではない。根拠はコード(`Runtime/Battle/Combat/CombatV01Formula.cs` ほか)と共通パラメータのアセット。
+暫定仕様(v0.1)。バランスの最終値ではない。根拠は Godot 版のコード(`godot/scripts/core/combat_formula.gd`、`fighter.gd`、`match.gd`)と `godot/data/system.json`。Unity 版の `CombatV01Formula.cs` ほかと同じ計算。
 
 ## 用語
 
@@ -56,7 +56,7 @@ H = A × M(攻撃側TG) / M(防御側TG) / (1 + D/100)
 
 ## 調整する場所
 
-- 共通の係数: `Assets/Shioka/調整Data/共通System/` の `Guard.asset`(直前ガードの窓・減衰・FD の押し返し)、`TG.asset`(TG の倍率の割る数)、`Combat.asset`(防御・硬直・ヒットストップの割る数、押し返しの比率)。
-- 技ごとの値: 各技の `Skill/<技>/Data.asset`(攻撃の強さ、ダメージと削りの倍率、押し返しの係数)。
-- HP と、Training 開始時の TG: `共通System/CombatTestV01.asset`。
-- 編集のしかたは [guides/editing.md](../guides/editing.md)。
+- 共通の係数: `godot/data/system.json` の `guard`(直前ガードの窓・減衰・FD の押し返し)、`tg`(TG の倍率の割る数)、`combat`(防御・硬直・ヒットストップの割る数、押し返しの比率)。
+- 技ごとの値: `godot/data/awari.json` の `moves`(攻撃の強さ `attack_level`、ダメージと削りの倍率、押し返しの係数)。
+- HP と、Training 開始時の TG: `system.json` の `combat_test`。
+- 編集のしかたは [../guides/godot.md](../guides/godot.md)。

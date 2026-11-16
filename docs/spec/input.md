@@ -1,6 +1,6 @@
 # 入力
 
-根拠はコード(`Runtime/Input/`)と `調整Data/共通System/Resources/TrainingInputConfig.asset`、キャラの `AwariCharacter.asset`。
+根拠は Godot 版のコード(`godot/scripts/input/`)と `godot/data/system.json` の `input`、`godot/data/awari.json` の `attack_slots`。Unity 版(`Runtime/Input/`、`TrainingInputConfig.asset`、`AwariCharacter.asset`)と同じ規則。
 
 ## 攻撃の9枠とキャラの技
 
@@ -55,5 +55,6 @@
 - 入口: Option → KeyConfig。「基本キー設定」は全キャラ共通の物理入力、「ぁゎり」はキャラの技と枠の対応。
 - 行を選んでキーかボタンを入力する。同じキーなら解除、ほかの1行と重なるなら確認して入れ替える。複数の行と同時に重なる登録は拒否する。T1/T2 だけでは同時押しの登録にならない。方向入力は固定。
 - 変更は下書き。Save で保存、Cancel・戻る・閉じるで破棄。Defaults(既定に戻す)も Save するまでは下書き。
-- 保存先: `Application.persistentDataPath/Profiles/KeyConfig-v1.json`。既存のファイルは `.bak` を残して置き換える。壊れている・足りない・知らないバージョンのときは既定値を使い、元のファイルは残す。
-- 2人目用のデバッグ用キーボードと機器の割り当て UI はない。
+- 保存先: `user://Profiles/KeyConfig-v1.json`(Windows では `%APPDATA%\Godot\app_userdata\Shioka\Profiles\`)。キーの書き方は Unity の Input System と同じ(`<Keyboard>/j`、`T1+<Gamepad>/buttonWest`)。既存のファイルは `.bak` を残して置き換える。壊れている・足りない・知らないバージョンのときは既定値を使い、元のファイルは残す。
+- 2人目はテンキーで動かせる(8/5/4/6 で移動、7 9 - で弱中強K、1 2 3 で弱中強P、/ で Hold、Enter で TRC、0 で Dash)。Training settings の「2P: keyboard」で切り替える(切り替えのボタンは Godot 版で足したもの)。2人目のパッドと、機器の割り当ての UI はない。
+- パッドのボタンは Godot(SDL)の配置で読む。□ = West、△ = North、○ = East、× = South。

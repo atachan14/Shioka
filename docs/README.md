@@ -1,6 +1,11 @@
 # Shioka docs
 
-Unity で作っている2D対戦格闘ゲーム。2026-10-29 に作り直した docs(コード `106c62f` 時点)。
+2D対戦格闘ゲーム。**2026-11-16 に Unity から Godot 4(GDScript)に移した。今後は Godot 版(`godot/`)が正。** Unity のプロジェクト(`Assets/` など)は参照用に残している。
+
+- Godot での開き方・動かし方・調整: [guides/godot.md](guides/godot.md)
+- Unity 版との対応・違い・未確認の点: [UNITY_TO_GODOT.md](UNITY_TO_GODOT.md)
+
+docs は 2026-10-29 に作り直したもの(コード `106c62f` 時点)を、移行に合わせて Godot 版の内容に直した。
 
 ## 読む順番
 
@@ -13,7 +18,8 @@ Unity で作っている2D対戦格闘ゲーム。2026-10-29 に作り直した 
    - [flow-and-save.md](spec/flow-and-save.md) — 画面の流れと保存ファイル
    - [character-data.md](spec/character-data.md) — キャラのデータの持ち方とプロジェクトの構成
 4. 手順(`guides/`)
-   - [editing.md](guides/editing.md) — Unity Editor での技・動作・共通パラメータの調整
+   - [godot.md](guides/godot.md) — Godot での開き方・動かし方・テスト・調整データの編集
+   - [UNITY_TO_GODOT.md](UNITY_TO_GODOT.md) — Unity 版との対応表、違う点、確かめられなかった点
 5. そのほか
    - [USER_NOTES.md](USER_NOTES.md) — ユーザーに確認した作業上の扱い
    - [QUESTIONS.md](QUESTIONS.md) — 確認待ちの質問

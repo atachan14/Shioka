@@ -5,11 +5,13 @@
 - 旧非公開リポジトリ(3D の時代を含む)には docs が数十本あった。2026-10-25 に、今の公開リポジトリを旧リポジトリと履歴を共有しない形で作り直したとき、docs はほとんど引き継がれなかった。
 - その後の docs は、作業ごとの記録が中心に積み重なった。2026-10-29 に Dot がコンセプト・現行仕様・状態の入口を復元した。
 - 同じ日、Claude Opus 5.5 が、それまでの docs 一式を `docs/archive/20261029/` に移し、今のコードと旧資料とユーザーの確認をもとに、docs を作り直した(今の docs)。
+- 2026-11-16、Claude Opus 5.5 が Unity 版を Godot 4(GDScript)に移した(`godot/`)。docs は Godot 版の内容に直し、Unity Editor での調整手順(`guides/editing.md`)は `docs/archive/20261116/` に移した。移行の対応表と違いは [UNITY_TO_GODOT.md](UNITY_TO_GODOT.md)。
 
 ## 旧資料の場所
 
 | 場所 | 中身 |
 |---|---|
+| `docs/archive/20261116/` | Unity 版の調整手順(Inspector とシーン上のハンドル)。Godot 版では使えない。書き換えない |
 | `docs/archive/20261029/` | 2026-10-29 までの docs 一式(作業記録、検証記録、Dot がまとめた入口を含む)。書き換えない。採用時の会話の索引(Slack のメッセージ ID)は、その中の `DOCS_HISTORY.md` にある |
 | 非公開リポジトリ `Shioka-archive`(GitHub) | 旧リポジトリ。ブランチ `cleanup/obsolete-3d-20261025` に docs 54本(下の表)。`main` は初期の版 |
 | ローカルの退役保管 `C:\Users\user\Documents\Codex\2026-10-22\task\Shioka-retirement-20261026` | 旧リポジトリの `old-history.bundle`、ソースと設定の `old-source-and-settings.zip`、`RECOVERY.txt`、`SHA256.txt` |

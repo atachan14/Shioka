@@ -1,0 +1,2836 @@
+{
+ "id": "awari",
+ "name": "ぁゎり",
+ "definition": {
+  "walkSpeed": 3.5,
+  "dashSpeed": 6.0,
+  "acceleration": 30.0,
+  "dashDeceleration": 10.0,
+  "backstepSpeed": 6.0,
+  "backstepSeconds": 0.18,
+  "jumpVelocity": 9.5,
+  "gravity": -25.0,
+  "takeoffSeconds": 0.1,
+  "landingSeconds": 0.14,
+  "crouchHeight": 1.1,
+  "crouchTransitionSeconds": 0.15,
+  "attackStartup": 0.12,
+  "attackActive": 0.08,
+  "attackRecovery": 0.22,
+  "attackLevel": 60.0,
+  "damage": 10.0,
+  "maxHealth": 100.0,
+  "defenseLevel": 50.0,
+  "guardDefenseLevel": 100.0,
+  "standingLowGuardMultiplier": 0.65,
+  "crouchingLowGuardMultiplier": 1.5,
+  "standingHighGuardMultiplier": 1.3,
+  "crouchingHighGuardMultiplier": 0.7,
+  "timedGuardWindowFrames": 10.0,
+  "timedGuardCooldownFrames": 20.0,
+  "timedGuardNearBonus": 0.5,
+  "timedGuardFarBonus": 0.05,
+  "jabContactNormalized": 0.5483871
+ },
+ "locomotion": {
+  "version": 1,
+  "backstepFrames": 25,
+  "pose1EndFrame": 10,
+  "pose2EndFrame": 15,
+  "jumpAirFrames": 54,
+  "backstepDistance": 1.5,
+  "jumpHeight": 2
+ },
+ "air_dash": {
+  "duration_frames": 12,
+  "distance": 1.8,
+  "reset_vertical_velocity_on_start": false,
+  "post_dash_speed_ratio": 0.5,
+  "post_dash_deceleration": 4.0
+ },
+ "motor": {
+  "center_y": 0.775,
+  "height": 1.55,
+  "radius": 0.26,
+  "skin_width": 0.01
+ },
+ "body": {
+  "standing_height": 1.55,
+  "reference_sprite": "res://assets/awari/Move/Idle/Sprites/Neutral.png",
+  "skull_pixel": [
+   625.0,
+   145.0
+  ],
+  "sole_pixel": [
+   550.0,
+   1500.0
+  ]
+ },
+ "attack_slots": [
+  {
+   "slot": 0,
+   "assigned": false,
+   "command": 0,
+   "display_name": "D1",
+   "operation_id": ""
+  },
+  {
+   "slot": 1,
+   "assigned": false,
+   "command": 0,
+   "display_name": "D2",
+   "operation_id": ""
+  },
+  {
+   "slot": 2,
+   "assigned": false,
+   "command": 0,
+   "display_name": "D3",
+   "operation_id": ""
+  },
+  {
+   "slot": 6,
+   "assigned": true,
+   "command": 1,
+   "display_name": "LP",
+   "operation_id": ""
+  },
+  {
+   "slot": 7,
+   "assigned": true,
+   "command": 2,
+   "display_name": "MP",
+   "operation_id": ""
+  },
+  {
+   "slot": 8,
+   "assigned": true,
+   "command": 3,
+   "display_name": "HP",
+   "operation_id": ""
+  },
+  {
+   "slot": 3,
+   "assigned": true,
+   "command": 4,
+   "display_name": "LK",
+   "operation_id": ""
+  },
+  {
+   "slot": 4,
+   "assigned": true,
+   "command": 5,
+   "display_name": "MK",
+   "operation_id": ""
+  },
+  {
+   "slot": 5,
+   "assigned": true,
+   "command": 10,
+   "display_name": "HK",
+   "operation_id": ""
+  }
+ ],
+ "contextual_moves": [],
+ "hurtboxes": [
+  {
+   "id": 0,
+   "correction": 1.0,
+   "priority": 0,
+   "shape": 3,
+   "center": [
+    0.0,
+    0.85,
+    0.0
+   ],
+   "size": [
+    0.6,
+    1.7,
+    0.6
+   ],
+   "high": 100.0,
+   "mid": 100.0,
+   "low": 100.0
+  }
+ ],
+ "throw": {
+  "startup": 6.0,
+  "active": 3.0,
+  "recovery": 21.0,
+  "hold": 24.0,
+  "targets": 1,
+  "box_center": [
+   0.0,
+   0.8,
+   0.425
+  ],
+  "box_size": [
+   0.1,
+   0.12,
+   0.25
+  ],
+  "attack_level": 110.0,
+  "damage": 16.0,
+  "hit_gain": 8.0
+ },
+ "throw_hurtbox": {
+  "center": [
+   0.0,
+   0.8,
+   0.0
+  ],
+  "size": [
+   0.6,
+   0.12,
+   0.6
+  ]
+ },
+ "fd": {
+  "cost_per_attack_level": 0.15,
+  "push_distance": 0.5
+ },
+ "legacy_rules": {
+  "knockdownSeconds": 0.35,
+  "downHoldSeconds": 0.55,
+  "getUpSeconds": 0.9,
+  "allowDownFollowup": 0.0,
+  "maxDownFollowups": 1.0,
+  "downFollowupDamageScale": 0.25,
+  "receiverGain": 4.0,
+  "dashGainPerSecond": 12.0,
+  "tensionLevelGainRate": 0.1
+ },
+ "poses": {
+  "strongKick": "res://assets/awari/Skill/5HK/Sprite/5HK.png",
+  "weakPunch": "res://assets/awari/Skill/5LP/LegacySprite/WeakP.png",
+  "mediumPunch": "res://assets/awari/Skill/5MP/Sprite/MediumP.png",
+  "strongPunch": "res://assets/awari/Skill/5HP/Sprite/StrongP.png",
+  "standingGuard": "res://assets/awari/Reactions/StandingGuard/Sprites/StandingGuard.png"
+ },
+ "air_dash_visual_offset": [
+  0.0,
+  0.85,
+  0.0
+ ],
+ "provisional": [
+  {
+   "id": "2Guard",
+   "sprite": "res://assets/awari/Reactions/2Guard/Sprites/2Guard.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2Hit",
+   "sprite": "res://assets/awari/Reactions/2Hit/Sprites/2Hit.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2HK",
+   "sprite": "res://assets/awari/Skill/2HK/Sprite/2HK.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2HP",
+   "sprite": "res://assets/awari/Skill/2HP/Sprite/2HP.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2LP",
+   "sprite": "res://assets/awari/Skill/2LP/Sprite/2LP.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2MP",
+   "sprite": "res://assets/awari/Skill/2MP/Sprite/2MP.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "5Hit",
+   "sprite": "res://assets/awari/Reactions/5Hit/Sprites/5Hit.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "5HK",
+   "sprite": "res://assets/awari/Skill/5HK/Sprite/5HK.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "5LK",
+   "sprite": "res://assets/awari/Skill/5LK/Sprite/5LK.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "5MK",
+   "sprite": "res://assets/awari/Skill/5MK/Sprite/5MK.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "AirThrow",
+   "sprite": "res://assets/awari/Skill/AirThrow/Sprite/AirThrow.png",
+   "offset_y": 0.85,
+   "preview_only": true
+  },
+  {
+   "id": "Down",
+   "sprite": "res://assets/awari/Reactions/Down/Sprites/Down.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "jGuard",
+   "sprite": "res://assets/awari/Reactions/jGuard/Sprites/jGuard.png",
+   "offset_y": 0.85,
+   "preview_only": false
+  },
+  {
+   "id": "jHit",
+   "sprite": "res://assets/awari/Reactions/jHit/Sprites/jHit.png",
+   "offset_y": 0.85,
+   "preview_only": false
+  },
+  {
+   "id": "jHK",
+   "sprite": "res://assets/awari/Skill/jHK/Sprite/jHK.png",
+   "offset_y": 0.85,
+   "preview_only": false
+  },
+  {
+   "id": "jHP",
+   "sprite": "res://assets/awari/Skill/jHP/Sprite/jHP.png",
+   "offset_y": 0.85,
+   "preview_only": false
+  },
+  {
+   "id": "jLK",
+   "sprite": "res://assets/awari/Skill/jLK/Sprite/jLK.png",
+   "offset_y": 0.85,
+   "preview_only": false
+  },
+  {
+   "id": "jLP",
+   "sprite": "res://assets/awari/Skill/jLP/Sprite/jLP.png",
+   "offset_y": 0.85,
+   "preview_only": true
+  },
+  {
+   "id": "jMK",
+   "sprite": "res://assets/awari/Skill/jMK/Sprite/jMK.png",
+   "offset_y": 0.85,
+   "preview_only": false
+  },
+  {
+   "id": "jMP",
+   "sprite": "res://assets/awari/Skill/jMP/Sprite/jMP.png",
+   "offset_y": 0.85,
+   "preview_only": true
+  },
+  {
+   "id": "Throw",
+   "sprite": "res://assets/awari/Skill/Throw/Sprite/Throw.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2LK",
+   "sprite": "res://assets/awari/Skill/2LK/Sprite/2LK.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  },
+  {
+   "id": "2MK",
+   "sprite": "res://assets/awari/Skill/2MK/Sprite/2MK.png",
+   "offset_y": 0.0,
+   "preview_only": false
+  }
+ ],
+ "motions": {
+  "idle": {
+   "playback": 0,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/Idle/Sprites/Neutral.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": false,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "forwardWalk": {
+   "playback": 0,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/01-contact-A.png",
+     "hold": 4,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": false,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/02-passing-near-support.png",
+     "hold": 4,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": false,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/03-contact-B.png",
+     "hold": 4,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": false,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/ForwardWalk/Sprites/ApprovedCycle4/04-passing-far-support.png",
+     "hold": 4,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": false,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "backwardWalk": {
+   "playback": 0,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/BackwardWalk/Sprites/BackwardWalk.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "crouch": {
+   "playback": 0,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/Crouch/Sprites/Crouch.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.55
+       ],
+       "size": [
+        0.52,
+        1.1
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "groundDash": {
+   "playback": 0,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/GroundDash/Sprites/Dash.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "backstep": {
+   "playback": 2,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/Backstep1.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/02-new.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/03-mid.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/04-new.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/Backstep2.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/06-new.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/07-mid.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/08-new.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Backstep/Sprites/Backstep3.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "airDash": {
+   "playback": 0,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/AirDash/Sprites/AirDash.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.85
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "jump": {
+   "playback": 1,
+   "loop": true,
+   "poses": [
+    {
+     "sprite": "res://assets/awari/Move/Jump/Sprites/JumpAscent.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    },
+    {
+     "sprite": "res://assets/awari/Move/Jump/Sprites/JumpDescent.png",
+     "hold": 1,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "hurt": [
+      {
+       "part": 0,
+       "inherit_body": true,
+       "center": [
+        0.0,
+        0.775
+       ],
+       "size": [
+        0.52,
+        1.55
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "moves": [
+  {
+   "role": "move:0",
+   "command": 1,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Jab",
+   "startup": 6.0,
+   "active": 3.0,
+   "recovery": 10.0,
+   "attack_level": 260.0,
+   "damage": 10.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.95,
+    0.65
+   ],
+   "half_size": [
+    0.32,
+    0.3,
+    0.4
+   ],
+   "contact_normalized": 0.5483871,
+   "chains": [
+    1,
+    2,
+    3
+   ],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": [
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/02-natural-half-grip-preparation.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/03-natural-half-grip-raised.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/04-open-elbow-straight-wrist.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/05-natural-half-grip-down-pass.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/06-natural-half-grip-release.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/07-down-followthrough.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/08-same-side-finish.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/09-rearward-behind-hip.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/10-settle-behind-torso.png",
+     "hold": 2
+    },
+    {
+     "sprite": "res://assets/awari/Skill/5LP/Sprite/11-neutral-rest.png",
+     "hold": 1
+    }
+   ]
+  },
+  {
+   "role": "move:1",
+   "command": 2,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Hook",
+   "startup": 11.0,
+   "active": 6.0,
+   "recovery": 18.0,
+   "attack_level": 360.0,
+   "damage": 13.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.95,
+    0.65
+   ],
+   "half_size": [
+    0.32,
+    0.3,
+    0.4
+   ],
+   "contact_normalized": 0.5231,
+   "chains": [
+    3
+   ],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:2",
+   "command": 3,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Uppercut",
+   "startup": 13.0,
+   "active": 6.0,
+   "recovery": 21.0,
+   "attack_level": 460.0,
+   "damage": 16.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.95,
+    0.65
+   ],
+   "half_size": [
+    0.32,
+    0.3,
+    0.4
+   ],
+   "contact_normalized": 0.35,
+   "chains": [
+    9
+   ],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:3",
+   "command": 4,
+   "attack_class": 2,
+   "causes_knockdown": false,
+   "state": "WeakKickGameplay",
+   "startup": 15.0,
+   "active": 6.0,
+   "recovery": 24.0,
+   "attack_level": 105.0,
+   "damage": 19.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.5,
+    0.65
+   ],
+   "half_size": [
+    0.3,
+    0.22,
+    0.4
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:4",
+   "command": 5,
+   "attack_class": 1,
+   "causes_knockdown": false,
+   "state": "MediumKickGameplay",
+   "startup": 17.0,
+   "active": 6.0,
+   "recovery": 27.0,
+   "attack_level": 120.0,
+   "damage": 22.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.82,
+    0.72
+   ],
+   "half_size": [
+    0.3,
+    0.24,
+    0.44
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:5",
+   "command": 10,
+   "attack_class": 1,
+   "causes_knockdown": false,
+   "state": "StrongKickGameplay",
+   "startup": 20.0,
+   "active": 6.0,
+   "recovery": 30.0,
+   "attack_level": 135.0,
+   "damage": 25.0,
+   "hit_gain": 10.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    1.16,
+    0.68
+   ],
+   "half_size": [
+    0.3,
+    0.24,
+    0.43
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:6",
+   "command": 12,
+   "attack_class": 2,
+   "causes_knockdown": false,
+   "state": "CrouchWeakKickGameplay",
+   "startup": 7.0,
+   "active": 3.0,
+   "recovery": 13.0,
+   "attack_level": 65.0,
+   "damage": 8.0,
+   "hit_gain": 5.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.18,
+    0.45
+   ],
+   "half_size": [
+    0.28,
+    0.15,
+    0.3
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:7",
+   "command": 13,
+   "attack_class": 2,
+   "causes_knockdown": false,
+   "state": "CrouchMediumKickGameplay",
+   "startup": 10.0,
+   "active": 4.0,
+   "recovery": 18.0,
+   "attack_level": 85.0,
+   "damage": 12.0,
+   "hit_gain": 7.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.22,
+    0.55
+   ],
+   "half_size": [
+    0.28,
+    0.17500001,
+    0.38
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:8",
+   "command": 14,
+   "attack_class": 2,
+   "causes_knockdown": false,
+   "state": "CrouchStrongKickGameplay",
+   "startup": 14.0,
+   "active": 5.0,
+   "recovery": 22.0,
+   "attack_level": 105.0,
+   "damage": 17.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.26,
+    0.65
+   ],
+   "half_size": [
+    0.28,
+    0.2,
+    0.46
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:9",
+   "command": 20,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Jab",
+   "startup": 6.0,
+   "active": 4.0,
+   "recovery": 12.0,
+   "attack_level": 60.0,
+   "damage": 10.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.55,
+    0.55
+   ],
+   "half_size": [
+    0.32,
+    0.22,
+    0.3
+   ],
+   "contact_normalized": 0.5,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:10",
+   "command": 21,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Hook",
+   "startup": 9.0,
+   "active": 5.0,
+   "recovery": 17.0,
+   "attack_level": 75.0,
+   "damage": 13.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.55,
+    0.75
+   ],
+   "half_size": [
+    0.32,
+    0.24,
+    0.4
+   ],
+   "contact_normalized": 0.5,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "move:11",
+   "command": 22,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Uppercut",
+   "startup": 13.0,
+   "active": 6.0,
+   "recovery": 23.0,
+   "attack_level": 90.0,
+   "damage": 16.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.9,
+    0.6
+   ],
+   "half_size": [
+    0.32,
+    0.45,
+    0.35
+   ],
+   "contact_normalized": 0.5,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "sweep",
+   "command": 7,
+   "attack_class": 2,
+   "causes_knockdown": true,
+   "state": "LowKick",
+   "startup": 14.0,
+   "active": 6.0,
+   "recovery": 26.0,
+   "attack_level": 90.0,
+   "damage": 16.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.23,
+    0.78
+   ],
+   "half_size": [
+    0.32,
+    0.18,
+    0.46
+   ],
+   "contact_normalized": 0.41666666,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "special",
+   "command": 9,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "SideKick",
+   "startup": 18.0,
+   "active": 5.0,
+   "recovery": 26.0,
+   "attack_level": 140.0,
+   "damage": 18.0,
+   "hit_gain": 10.0,
+   "ground_hit_knockback_speed": 5.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.95,
+    1.0
+   ],
+   "half_size": [
+    0.32,
+    0.3,
+    0.5
+   ],
+   "contact_normalized": 0.43333334,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": true,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     null
+    ],
+    [
+     0.42857143,
+     0.78571427,
+     0.0,
+     null
+    ],
+    [
+     1.0,
+     0.78571427,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     0.7,
+     0.0,
+     null
+    ],
+    [
+     0.36734694,
+     1.2,
+     0.0,
+     null
+    ],
+    [
+     0.46938777,
+     0.7,
+     0.0,
+     null
+    ],
+    [
+     1.0,
+     0.7,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": true,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     -2.6
+    ],
+    [
+     0.1923077,
+     0.5,
+     -2.6,
+     2.6
+    ],
+    [
+     0.3846154,
+     1.0,
+     2.6,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "special2",
+   "command": 11,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "Special2Gameplay",
+   "startup": 13.0,
+   "active": 6.0,
+   "recovery": 25.0,
+   "attack_level": 125.0,
+   "damage": 22.0,
+   "hit_gain": 9.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    1.45,
+    0.42
+   ],
+   "half_size": [
+    0.3,
+    0.45,
+    0.35
+   ],
+   "contact_normalized": 0.4,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "forwardSpecial1",
+   "command": 18,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "ForwardSpecial1Gameplay",
+   "startup": 18.0,
+   "active": 7.0,
+   "recovery": 25.0,
+   "attack_level": 130.0,
+   "damage": 20.0,
+   "hit_gain": 9.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    1.0,
+    1.15
+   ],
+   "half_size": [
+    0.32,
+    0.3,
+    0.48
+   ],
+   "contact_normalized": 0.4,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "airStrongKickMove",
+   "command": 15,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "AirStrongKickGameplay",
+   "startup": 12.0,
+   "active": 6.0,
+   "recovery": 16.0,
+   "attack_level": 120.0,
+   "damage": 20.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.78,
+    0.76
+   ],
+   "half_size": [
+    0.3,
+    0.25,
+    0.42
+   ],
+   "contact_normalized": 0.3529412,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "airDownStrongKickMove",
+   "command": 16,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "AirDownStrongKickGameplay",
+   "startup": 14.0,
+   "active": 6.0,
+   "recovery": 18.0,
+   "attack_level": 125.0,
+   "damage": 21.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.15,
+    0.58
+   ],
+   "half_size": [
+    0.3,
+    0.26,
+    0.36
+   ],
+   "contact_normalized": 0.36842105,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "airStrongPunchMove",
+   "command": 17,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "AirStrongPunchGameplay",
+   "startup": 11.0,
+   "active": 5.0,
+   "recovery": 16.0,
+   "attack_level": 110.0,
+   "damage": 18.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    1.2,
+    0.64
+   ],
+   "half_size": [
+    0.28,
+    0.24,
+    0.35
+   ],
+   "contact_normalized": 0.34375,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  },
+  {
+   "role": "airSpecial2Move",
+   "command": 19,
+   "attack_class": 0,
+   "causes_knockdown": false,
+   "state": "AirSpecial2Gameplay",
+   "startup": 14.0,
+   "active": 6.0,
+   "recovery": 20.0,
+   "attack_level": 120.0,
+   "damage": 21.0,
+   "hit_gain": 8.0,
+   "ground_hit_knockback_speed": 0.0,
+   "damage_multiplier": 1.0,
+   "chip_multiplier": 0.1,
+   "pushback_scale": 0.001,
+   "center": [
+    0.0,
+    0.58,
+    0.6
+   ],
+   "half_size": [
+    0.32,
+    0.34,
+    0.38
+   ],
+   "contact_normalized": 0.35,
+   "chains": [],
+   "strength": {
+    "enabled": false,
+    "weak_point": [
+     0.0,
+     0.95,
+     0.25
+    ],
+    "strong_point": [
+     0.0,
+     0.95,
+     1.05
+    ],
+    "minimum_level": 30.0,
+    "maximum_level": 60.0
+   },
+   "use_level_curves": false,
+   "attack_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "defense_level_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "use_timed_trc_recovery": false,
+   "timed_trc_recovery_cost_curve": [
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "spatial_profile": null,
+   "sprites": []
+  }
+ ],
+ "air_candidates": {
+  "flyingKick": {
+   "duration": 0.32000005,
+   "contact_center": [
+    -0.35740522,
+    0.85794115,
+    0.8173936
+   ],
+   "half_size": [
+    0.32,
+    0.16,
+    0.2
+   ],
+   "pose_offset": [
+    -0.0444,
+    -0.4632,
+    -0.7481
+   ]
+  },
+  "dropKick": {
+   "duration": 0.31999993,
+   "contact_center": [
+    0.0418287,
+    0.62654513,
+    0.43710417
+   ],
+   "half_size": [
+    0.32,
+    0.1469537,
+    0.17389986
+   ],
+   "pose_offset": [
+    0.134,
+    -0.5607,
+    -0.9043
+   ]
+  },
+  "airStrongKick": {
+   "duration": 0.56666666,
+   "contact_center": [
+    0.0,
+    0.78,
+    0.76
+   ],
+   "half_size": [
+    0.3,
+    0.25,
+    0.42
+   ],
+   "pose_offset": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "airDownStrongKick": {
+   "duration": 0.6333333,
+   "contact_center": [
+    0.0,
+    0.15,
+    0.58
+   ],
+   "half_size": [
+    0.3,
+    0.26,
+    0.36
+   ],
+   "pose_offset": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "airStrongPunch": {
+   "duration": 0.53333336,
+   "contact_center": [
+    0.0,
+    1.2,
+    0.64
+   ],
+   "half_size": [
+    0.28,
+    0.24,
+    0.35
+   ],
+   "pose_offset": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "airSpecial2": {
+   "duration": 0.6666667,
+   "contact_center": [
+    0.0,
+    0.58,
+    0.6
+   ],
+   "half_size": [
+    0.32,
+    0.34,
+    0.38
+   ],
+   "pose_offset": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ }
+}

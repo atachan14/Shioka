@@ -1,10 +1,10 @@
 # 画面の流れと保存
 
-根拠はコード(`Runtime/Flow/`、`Runtime/Menus/`、`Runtime/Profiles/`、`Runtime/Persistence/`)。
+根拠は Godot 版のコード(`godot/scripts/flow.gd`、`scripts/ui/title_menu.gd`、`scripts/ui/training_ui.gd`、`scripts/local_file.gd`)。Unity 版(`Runtime/Flow/`、`Runtime/Menus/`、`Runtime/Profiles/`、`Runtime/Persistence/`)と同じ流れ。
 
 ## 画面の流れ
 
-入口は `Assets/Shioka/Scenes/Title.unity`(ビルドの最初のシーン)。Editor のメニュー `Shioka > Play > Open title scene` でも開ける。`Play-Shioka.cmd` は正式なプロジェクトを開く。Training のシーン `CombatFormulaComparison.unity` を直接 Play することもできる。
+入口は `godot/scenes/title.tscn`(メインシーン)。Training のシーン `godot/scenes/training.tscn` を直接実行することもできる(キャラは2人ともぁゎり)。開き方は [../guides/godot.md](../guides/godot.md)。
 
 - **Title**: 確定済みの Player 名、FighterSelect、Training、CommandList(未実装)、Option。Online / Offline は見出しで、Rank / Exhibition / Arcade / VS CPU は「(未実装)」として灰色で表示され、選べない。
 - **FighterSelect**: 共通の選択画面を Player モードで開く。確定すると Player だけを保存して Title に戻る。
@@ -16,13 +16,14 @@
 
 ## 保存するもの
 
-| ファイル(`Application.persistentDataPath/Profiles/` の下) | 中身 |
+| ファイル(`user://Profiles/` の下。Windows では `%APPDATA%\Godot\app_userdata\Shioka\Profiles\`) | 中身 |
 |---|---|
 | `PlayerPreferences-v1.json` | 選んだキャラ。version 2。Player は `selectedFighterId`(旧形式との互換のため名前はそのまま)、CPU は `cpuFighterId`。Training のダミーと将来の VS CPU は、同じ CPU の選択を使う |
 | `KeyConfig-v1.json` | キー設定([input.md](input.md)) |
-| 対戦履歴 | 明示的に保存したローカルの対戦結果。最大1000件、同じ matchId は拒否。Training は対象外。実際の対戦結果を自動で集める仕組みはまだない |
+| 対戦履歴 | Unity 版には保存の仕組み(最大1000件)だけがあったが、使う画面がなかったので Godot には移していない |
 
 - 保存は、明示的に確定・保存したときだけ。書き込みは一時ファイルを使って置き換え、`.bak` を残す。上限は4MiB。
 - 読み込むだけではファイルを書き換えない。壊れた JSON・知らないバージョン・登録されていない ID のときは、表示用の安全な代わりの値を使い、元のファイルは消さない。
 - 旧 version 1(Player だけ)は、CPU を既定のキャラで補って読み、次に確定したときに version 2 で保存する。
-- 個人の設定は、調整用のアセット(ScriptableObject)には書き込まない。
+- 個人の設定は、調整用のデータ(`godot/data/`)には書き込まない。
+- Unity 版の保存ファイルは引き継いでいない(中身の形は同じなので、コピーすれば読める)。
