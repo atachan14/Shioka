@@ -4,3 +4,5 @@
 *.translation
 export_presets.cfg
 __pycache__/
+# Local-only work files (generated test assets). Not published.
+_work/
