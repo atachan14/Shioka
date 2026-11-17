@@ -41,6 +41,7 @@ func _init() -> void:
 	test_formula()
 	test_5lp_hit()
 	test_guard()
+	test_chain()
 	test_5hk_length()
 	test_jump_and_backstep()
 	test_trc()
@@ -128,6 +129,24 @@ func test_guard() -> void:
 	eq(m.dummy_fighter.last_result, "Guard", "guarding dummy guards 5LP")
 	eq(m.dummy_fighter.v01_last_contact.stun_frames, 13, "guard stun 13F without just guard")
 	expect(m.dummy_fighter.health < 2300.0 and m.dummy_fighter.health > 2280.0, "chip damage applied")
+
+## 5LP -> 5MP -> 5HP chain (moves' chains lists). Presses made during hitstop come out
+## when hitstop ends, if they are still inside the 10F buffer.
+func test_chain() -> void:
+	var r := new_match(1.0)
+	var m: Match = r[0]
+	press_slot(r[1], 1, Sk.Slot.J)
+	press_slot(r[1], 8, Sk.Slot.K)
+	press_slot(r[1], 24, Sk.Slot.L)
+	var started := {}
+	for t in range(1, 80):
+		m.step()
+		var cm = m.player.current_move
+		if cm != null and not started.has(cm.command):
+			started[cm.command] = t
+	eq(started.get(Sk.Cmd.MEDIUM, -1), 13, "5LP -> 5MP chains when 5LP hitstop ends")
+	eq(started.get(Sk.Cmd.HEAVY, -1), 33, "5MP -> 5HP chains when 5MP hitstop ends")
+	eq(m.player.chain_count, 2, "two chains counted")
 
 func test_5hk_length() -> void:
 	var r := new_match(4.0)

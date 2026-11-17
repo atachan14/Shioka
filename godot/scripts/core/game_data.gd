@@ -87,7 +87,8 @@ class MoveDef:
 		center = d.center
 		half_size = d.half_size
 		contact_normalized = float(d.contact_normalized)
-		chains = d.chains
+		# JSON numbers load as float, and Array.has(int) never matches a float.
+		chains = d.chains.map(func(c): return int(c))
 		strength = d.strength
 		use_level_curves = bool(d.use_level_curves)
 		attack_level_curve = d.attack_level_curve
